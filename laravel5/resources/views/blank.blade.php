@@ -10,9 +10,10 @@
 </head>
 <body>
   <app-root></app-root>
-<script type="text/javascript" src="bikestickers/inline.bundle.js"></script>
-<script type="text/javascript" src="bikestickers/polyfills.bundle.js"></script>
-<script type="text/javascript" src="bikestickers/styles.bundle.js"></script>
-<script type="text/javascript" src="bikestickers/vendor.bundle.js"></script>
-<script type="text/javascript" src="bikestickers/main.bundle.js"></script></body>
+  <script type="text/javascript" src="bikestickers/inline.bundle.js"   ></script>
+  <script type="text/javascript" src="bikestickers/polyfills.bundle.js"></script>
+  <script type="text/javascript" src="bikestickers/styles.bundle.js"   ></script>
+  <script type="text/javascript" src="bikestickers/vendor.bundle.js"   ></script>
+  <script type="text/javascript" src="bikestickers/main.bundle.js"     ></script>
+</body>
 </html>

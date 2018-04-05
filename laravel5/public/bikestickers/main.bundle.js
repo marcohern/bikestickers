@@ -181,7 +181,8 @@ var RequestService = /** @class */ (function () {
     RequestService.prototype.getHeader = function () {
         return {
             "Accept": "application/json",
-            "Accept-Language": "en-US"
+            "Accept-Language": "en-US",
+            "Origin": "marcohern.com"
         };
     };
     RequestService.prototype.getOptions = function () {
