@@ -8,13 +8,17 @@ import { RequestService } from './mods/request/request.service';
 })
 export class AppComponent implements OnInit {
   title = 'app';
+  public isCollapsed = true;
 
   constructor(private rs:RequestService) {}
 
+  collapseClick() {
+    console.log("collapseClick");
+    this.isCollapsed = !this.isCollapsed;
+  }
+
   ngOnInit() {
-  	this.rs.get('http://www.google.com/search', {q:'Marco Hernandez'})
-  		.subscribe(response => {
-  			console.log(response);
-  		});
+    console.log("ngOnInit");
+
   }
 }
