@@ -4,7 +4,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutes } from './app.routes';
 import { RequestModule } from './mods/request/request.module';
-import { BikeModule } from './mods/bike/bike.module';
+import { MenuModule } from './mods/menu/menu.module';
 
 import { AppComponent } from './app.component';
 
@@ -18,8 +18,8 @@ import { AppComponent } from './app.component';
     NgbModule.forRoot(),
 
     AppRoutes,
-    RequestModule,
-    BikeModule
+    MenuModule,
+    RequestModule
   ],
   providers: [],
   bootstrap: [AppComponent]
