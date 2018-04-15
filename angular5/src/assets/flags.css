@@ -1,3 +1,7 @@
+.flagname {
+    text-transform: capitalize;
+}
+
 .flag {
     width:1em;
     height:1em;
