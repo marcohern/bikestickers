@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { BikeService } from '../bike.service';
+import { Flag } from '../flag';
+import { Order } from '../order';
 
 @Component({
   selector: 'app-page1',
@@ -8,28 +12,33 @@ import { NgForm } from '@angular/forms';
 })
 export class Page1Component implements OnInit {
 
-  flags:any = [
-    {"selector":"flag-colombia", "name":"colombia"},
-    {"selector":"flag-iran", "name":"iran"},
-    {"selector":"flag-argentina", "name":"argentina"},
-    {"selector":"flag-ukraine", "name":"ukraine"},
-    {"selector":"flag-germany", "name":"germany"},
-    {"selector":"flag-hong-kong", "name":"hong kong"},
-    {"selector":"flag-united-arab-emirates", "name":"united arab emirates"},
-    {"selector":"flag-laos", "name":"laos"},
-    {"selector":"flag-ireland", "name":"ireland"},
-    {"selector":"flag-greece", "name":"greece"},
-    {"selector":"flag-denmark", "name":"denmark"},
-    {"selector":"flag-sweden", "name":"sweden"}
+  flags:Flag[] = [
+    {"selector":"flag-colombia" , "name":"colombia" , "code":"CO"},
+    {"selector":"flag-iran"     , "name":"iran"     , "code":"IR"},
+    {"selector":"flag-argentina", "name":"argentina", "code":"AR"},
+    {"selector":"flag-ukraine"  , "name":"ukraine"  , "code":"UA"},
+    {"selector":"flag-germany"  , "name":"germany"  , "code":"DE"},
+    {"selector":"flag-hong-kong", "name":"hong kong", "code":"HK"},
+    {"selector":"flag-united-arab-emirates", "name":"united arab emirates", "code":"AE"},
+    {"selector":"flag-laos"     , "name":"laos"     , "code":"LA"},
+    {"selector":"flag-ireland"  , "name":"ireland"  , "code":"IE"},
+    {"selector":"flag-greece"   , "name":"greece"   , "code":"GR"},
+    {"selector":"flag-denmark"  , "name":"denmark"  , "code":"DK"},
+    {"selector":"flag-sweden"   , "name":"sweden"   , "code":"SE"}
   ];
 
-  flag:any = null;
-  username:string = '';
+  flag:Flag = null;
+  fname:string = '';
+  lname:string = '';
+  order:Order = null;
 
-  constructor() { }
+  constructor(private router:Router, private bs:BikeService) { }
 
   ngOnInit() {
-
+    this.order = this.bs.loadOrder();
+    this.flag  = this.order.sticker.flag;
+    this.fname = this.order.sticker.fname;
+    this.lname = this.order.sticker.lname;
   }
 
   selectFlag(flag:any) {
@@ -48,6 +57,14 @@ export class Page1Component implements OnInit {
   }
 
   next() {
-    console.log(this.username,this.flag);
+    console.log(this.fname,this.lname,this.flag);
+
+
+    this.order.sticker.flag = this.flag;
+    this.order.sticker.fname = this.fname;
+    this.order.sticker.lname = this.lname;
+
+    this.bs.saveOrder(this.order);
+    this.router.navigate(['/page2']);
   }
 }
