@@ -1,0 +1,13 @@
+<button class="btn btn-outline-primary" (click)="previous()">Previous</button>
+
+<div class="btn btn-outline-primary flagname" id="country" *ngIf="flag!=null">
+  <i class="flag" [ngClass]="flag.selector"></i> {{ flag.name }}
+</div>
+<div class="btn btn-outline-primary flagname" id="country">
+  {{fname}}
+</div>
+<div class="btn btn-outline-primary flagname" id="country">
+  {{lname}}
+</div>
+
+<button class="btn btn-outline-primary" (click)="next()">Next</button>
