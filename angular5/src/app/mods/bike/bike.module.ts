@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NameAndFlagComponent } from './name-and-flag/name-and-flag.component';
 import { DesignComponent } from './design/design.component';
@@ -15,6 +15,7 @@ import { CoverComponent } from './cover/cover.component';
   imports: [
     CommonModule,
     FormsModule,
+    RouterModule,
     NgbModule
   ],
   declarations: [ NameAndFlagComponent, DesignComponent, PackageComponent, BillingComponent, CoverComponent],

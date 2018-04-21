@@ -1,8 +1,11 @@
 .proride-cover { 
-    background: url('/assets/proride/bg1.jpg') no-repeat center center fixed; 
     background-size: cover;
     width: 100%;
     height:250px;
+}
+
+.proride-cover.cover1 {
+    background: url('/assets/proride/bg1.jpg') no-repeat center 0 fixed; 
 }
 
 .proride-bars {

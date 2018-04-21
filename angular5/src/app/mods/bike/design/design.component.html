@@ -1,13 +1,24 @@
-<button class="btn btn-outline-primary" (click)="previous()">Previous</button>
+<proride-cover asset="cover1"></proride-cover>
+<br><br><br>
 
-<div class="btn btn-outline-primary flagname" id="country" *ngIf="flag!=null">
-  <i class="flag" [ngClass]="flag.selector"></i> {{ flag.name }}
-</div>
-<div class="btn btn-outline-primary flagname" id="country">
-  {{fname}}
-</div>
-<div class="btn btn-outline-primary flagname" id="country">
-  {{lname}}
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <div class="btn btn-outline-primary btn-lg btn-block" id="country">
+        <i class="flag" [ngClass]="flag.selector"></i> <span class="flagname">({{flag.name}})</span> {{fname}} {{lname}}
+    </div>
+  </div>
+  <div class="col-md-1"></div>
 </div>
 
-<button class="btn btn-outline-primary" (click)="next()">Next</button>
+<br><br><br>
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+          <button class="btn btn-outline-primary btn-lg btn-block" (click)="previous()">Anterior</button>
+      </div>
+      <div class="col-md-6">
+          <button class="btn btn-outline-primary btn-lg btn-block" (click)="next()">Siguiente</button>
+      </div>
+    </div>
+</div>

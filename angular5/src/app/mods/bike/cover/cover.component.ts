@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'proride-cover',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoverComponent implements OnInit {
 
+  @Input()
+  asset: string = 'cover1';
+
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

@@ -1,19 +1,37 @@
-<proride-cover></proride-cover>
-<div ngbDropdown class="d-inline-block">
-  <button class="btn btn-outline-primary flagname" id="country" ngbDropdownToggle>
-      <i class="flag" [ngClass]="getFlagSelector()"></i> {{getFlagName()}}
-  </button>
-  <div ngbDropdownMenu aria-labelledby="country">
-    <button class="dropdown-item flagname" *ngFor="let flag of flags" (click)="selectFlag(flag)">
-      <i class="flag" [ngClass]="flag.selector"></i>{{flag.name}}
-    </button>
+<proride-cover asset="cover1"></proride-cover>
+<br><br><br>
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2">
+    <div ngbDropdown class="input-group">
+        <button class="btn btn-outline-primary btn-lg btn-block flagname" id="flag" ngbDropdownToggle>
+            <i class="flag" [ngClass]="getFlagSelector()"></i>
+        </button>
+        <div ngbDropdownMenu aria-labelledby="country">
+          <button class="dropdown-item flagname" *ngFor="let flag of flags" (click)="selectFlag(flag)">
+            <i class="flag" [ngClass]="flag.selector"></i>{{flag.name}}
+          </button>
+        </div>
+    </div>
   </div>
-</div>
-<div class="input group">
-    <input type="text" class="form-control" placeholder="First Name" aria-label="Last Name" [(ngModel)]="fname">
-</div>
-<div class="input group">
-  <input type="text" class="form-control" placeholder="Last Name" aria-label="First Name" [(ngModel)]="lname">
+  <div class="col-md-4">
+    <div class="input-group">
+        <input type="text" class="form-control form-control-lg" placeholder="First Name" aria-label="Last Name" [(ngModel)]="fname">
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="input-group">
+      <input type="text" class="form-control form-control-lg" placeholder="Last Name" aria-label="First Name" [(ngModel)]="lname">
+    </div>
+  </div>
+  <div class="col-md-1"></div>
 </div>
 
-<button class="btn btn-outline-primary" (click)="next()">Next</button>
+<br><br><br>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+          <button class="btn btn-outline-primary btn-lg btn-block" (click)="next()">Siguiente</button>
+      </div>
+    </div>
+</div>

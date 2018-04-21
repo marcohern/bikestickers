@@ -26,11 +26,11 @@ export class DesignComponent implements OnInit {
   }
 
   next() {
-    this.router.navigate(['/page1']);
+    this.router.navigate(['/package']);
   }
 
   previous() {
-    this.router.navigate(['/page1']);
+    this.router.navigate(['/name-and-flag']);
   }
 
 }
