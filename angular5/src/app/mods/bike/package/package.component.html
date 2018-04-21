@@ -5,7 +5,7 @@
     <div class="col-md-1"></div>
     <div class="col-md-10">
         <div class="btn btn-dark btn-lg btn-block">
-            <i class="flag" [ngClass]="flag.selector"></i> <span class="flagname">({{flag.name}})</span> {{fname}} {{lname}}
+            <i class="flag" [ngClass]="flag.selector"></i> <span class="flagname">({{flag.name}})</span> {{fname}} {{lname}} ({{design.name}})
         </div>
     </div>
     <div class="col-md-1"></div>
@@ -14,26 +14,10 @@
 <br><br><br>
 <div class="row">
     <div class="col-md-1"></div>
-    <div class="col-md-10">
-        <div ngbDropdown class="input-group">
-            <button class="btn btn-outline-primary btn-lg btn-block flagname" id="package" ngbDropdownToggle>
-                <i class="flag"></i>Package
-            </button>
-            <div ngbDropdownMenu aria-labelledby="country">
-                <button class="dropdown-item flagname">
-                    <i class="flag"></i>A
-                </button>
-                <button class="dropdown-item flagname">
-                    <i class="flag"></i>B
-                </button>
-                <button class="dropdown-item flagname">
-                    <i class="flag"></i>C
-                </button>
-                <button class="dropdown-item flagname">
-                    <i class="flag"></i>D
-                </button>
-            </div>
-        </div>
+    <div class="col-md-10" style="text-align: center;">
+        <a *ngFor="let package of packages" (click)="selectPackageOption(package)" [ngClass]="getStatus(package)">
+            <img alt="{{package.name}}" class="img-fluid" src="/assets/proride/{{package.code}}.png"/>
+        </a>
     </div>
     <div class="col-md-1"></div>
 </div>

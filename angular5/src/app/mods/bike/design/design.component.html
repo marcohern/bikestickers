@@ -14,26 +14,10 @@
 <br><br><br>
 <div class="row">
     <div class="col-md-1"></div>
-    <div class="col-md-10">
-        <div ngbDropdown class="input-group">
-            <button class="btn btn-outline-primary btn-lg btn-block flagname" id="design" ngbDropdownToggle>
-                <i class="flag"></i>Design
-            </button>
-            <div ngbDropdownMenu aria-labelledby="country">
-                <button class="dropdown-item flagname">
-                    <i class="flag"></i>A
-                </button>
-                <button class="dropdown-item flagname">
-                    <i class="flag"></i>B
-                </button>
-                <button class="dropdown-item flagname">
-                    <i class="flag"></i>C
-                </button>
-                <button class="dropdown-item flagname">
-                    <i class="flag"></i>D
-                </button>
-            </div>
-        </div>
+    <div class="col-md-10" style="text-align: center;">
+        <a *ngFor="let design of designs" (click)="selectDesign(design)">
+            <img alt="{{design.name}}" class="img-fluid" src="/assets/proride/{{design.code}}.png" />
+        </a>
     </div>
     <div class="col-md-1"></div>
 </div>

@@ -52,7 +52,7 @@ export class NameAndFlagComponent implements OnInit {
   }
 
   getFlagName() {
-    if (this.flag==null) return '';
+    if (this.flag==null || this.flag.name == '') return '- Bandera -';
     return this.flag.name;
   }
 
