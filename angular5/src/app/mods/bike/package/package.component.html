@@ -1,10 +1,42 @@
 <proride-cover asset="cover1"></proride-cover>
 <br><br><br>
 
-<p>
-  package works!
-</p>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div class="btn btn-dark btn-lg btn-block">
+            <i class="flag" [ngClass]="flag.selector"></i> <span class="flagname">({{flag.name}})</span> {{fname}} {{lname}}
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+</div>
 
+<br><br><br>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div ngbDropdown class="input-group">
+            <button class="btn btn-outline-primary btn-lg btn-block flagname" id="package" ngbDropdownToggle>
+                <i class="flag"></i>Package
+            </button>
+            <div ngbDropdownMenu aria-labelledby="country">
+                <button class="dropdown-item flagname">
+                    <i class="flag"></i>A
+                </button>
+                <button class="dropdown-item flagname">
+                    <i class="flag"></i>B
+                </button>
+                <button class="dropdown-item flagname">
+                    <i class="flag"></i>C
+                </button>
+                <button class="dropdown-item flagname">
+                    <i class="flag"></i>D
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+</div>
 
 <br><br><br>
 <div class="container">

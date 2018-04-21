@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BikeService } from '../bike.service';
 
 @Component({
   selector: 'app-billing',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BillingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router, private bs:BikeService) { }
 
   ngOnInit() {
+  }
+
+  pay() {
+    console.log("pay");
+  }
+
+  previous() {
+    this.router.navigate(['/package']);
   }
 
 }
