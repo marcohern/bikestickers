@@ -6,11 +6,11 @@ import { Flag } from '../flag';
 import { Order } from '../order';
 
 @Component({
-  selector: 'app-page1',
-  templateUrl: './page1.component.html',
-  styleUrls: ['./page1.component.css']
+  selector: 'app-name-and-flag',
+  templateUrl: './name-and-flag.component.html',
+  styleUrls: ['./name-and-flag.component.css']
 })
-export class Page1Component implements OnInit {
+export class NameAndFlagComponent implements OnInit {
 
   flags:Flag[] = [
     {"selector":"flag-colombia" , "name":"colombia" , "code":"CO"},
