@@ -15,36 +15,36 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="Nombre" /><br>
+            <input class="form-control" type="text" placeholder="Nombre" [(ngModel)]="bill.fname" /><br>
         </div>
         <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="Apellido" /><br>
+            <input class="form-control" type="text" placeholder="Apellido"  [(ngModel)]="bill.lname" /><br>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="Email" /><br>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="Direccion 1" /><br>
-        </div>
-        <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="Direccion 2" /><br>
+            <input class="form-control" type="text" placeholder="Email"  [(ngModel)]="bill.email"/><br>
         </div>
     </div>
 
     <div class="row">
+        <div class="col-md-6">
+            <input class="form-control" type="text" placeholder="Direccion 1" [(ngModel)]="bill.address1"/><br>
+        </div>
+        <div class="col-md-6">
+            <input class="form-control" type="text" placeholder="Direccion 2"  [(ngModel)]="bill.address2"/><br>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col-md-4">
-            <input class="form-control" type="text" placeholder="Ciudad" /><br>
+            <input class="form-control" type="text" placeholder="Ciudad"  [(ngModel)]="bill.city"/><br>
         </div>
         <div class="col-md-4">
-            <input class="form-control" type="text" placeholder="Estado/Provincia/Depto" /><br>
+            <input class="form-control" type="text" placeholder="Estado/Provincia/Depto" [(ngModel)]="bill.state"/><br>
         </div>
         <div class="col-md-4">
-            <input class="form-control" type="text" placeholder="Pais" /><br>
+            <input class="form-control" type="text" placeholder="Pais" [(ngModel)]="bill.country"/><br>
         </div>
     </div>
 </div>

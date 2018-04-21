@@ -5,6 +5,7 @@ import { Package } from '../package';
 import { Design } from '../design';
 import { Flag } from '../flag';
 import { Order } from '../order';
+import { Billing } from '../billing';
 
 @Component({
   selector: 'app-billing',
@@ -17,7 +18,9 @@ export class BillingComponent implements OnInit {
   lname:string = '';
   design:Design = null;
   pack:Package = null;
+  bill:Billing = null;
   order:Order = null;
+
 
   constructor(private router:Router, private bs:BikeService) { }
 
@@ -28,10 +31,14 @@ export class BillingComponent implements OnInit {
     this.lname = this.order.sticker.lname;
     this.design = this.order.design;
     this.pack = this.order.package;
+    this.bill = this.order.billing;
+    
   }
 
   pay() {
     console.log("pay");
+    this.order.billing = this.bill;
+    this.bs.saveOrder(this.order);
   }
 
   previous() {
