@@ -1,3 +1,5 @@
 <ul class="nav nav-fill">
+  <li class="nav-item" *ngFor="let crumb of crumbs">
+    <a class="nav-link" [ngClass]="crumb.cls" [routerLink]="crumb.route">{{crumb.num}}. {{crumb.name}}</a>
   </li>
 </ul>
