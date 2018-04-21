@@ -65,6 +65,6 @@ export class NameAndFlagComponent implements OnInit {
     this.order.sticker.lname = this.lname;
 
     this.bs.saveOrder(this.order);
-    this.router.navigate(['/page2']);
+    this.router.navigate(['/design']);
   }
 }

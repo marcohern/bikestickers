@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { Page2Component } from './page2/page2.component';
 import { Page3Component } from './page3/page3.component';
 import { NameAndFlagComponent } from './name-and-flag/name-and-flag.component';
+import { DesignComponent } from './design/design.component';
 import { BikeService } from './bike.service';
+
 
 @NgModule({
   imports: [
@@ -14,7 +15,7 @@ import { BikeService } from './bike.service';
     FormsModule,
     NgbModule
   ],
-  declarations: [ Page2Component, Page3Component, NameAndFlagComponent],
+  declarations: [ Page3Component, NameAndFlagComponent, DesignComponent],
   providers: [ BikeService ]
 })
 export class BikeModule { 

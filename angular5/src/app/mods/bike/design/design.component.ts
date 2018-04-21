@@ -5,11 +5,11 @@ import { Flag } from '../flag';
 import { Order } from '../order';
 
 @Component({
-  selector: 'app-page2',
-  templateUrl: './page2.component.html',
-  styleUrls: ['./page2.component.css']
+  selector: 'app-design',
+  templateUrl: './design.component.html',
+  styleUrls: ['./design.component.css']
 })
-export class Page2Component implements OnInit {
+export class DesignComponent implements OnInit {
   flag:Flag = null;
   fname:string = '';
   lname:string = '';
