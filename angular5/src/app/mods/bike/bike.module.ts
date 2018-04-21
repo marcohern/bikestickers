@@ -9,6 +9,7 @@ import { PackageComponent } from './package/package.component';
 import { BikeService } from './bike.service';
 import { BillingComponent } from './billing/billing.component';
 import { CoverComponent } from './cover/cover.component';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { CoverComponent } from './cover/cover.component';
     RouterModule,
     NgbModule
   ],
-  declarations: [ NameAndFlagComponent, DesignComponent, PackageComponent, BillingComponent, CoverComponent],
+  declarations: [ NameAndFlagComponent, DesignComponent, PackageComponent, BillingComponent, CoverComponent, BreadcrumbsComponent],
   providers: [ BikeService ]
 })
 export class BikeModule { 
