@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BikeService } from '../bike.service';
+import { Package } from '../package';
+import { Design } from '../design';
+import { Flag } from '../flag';
+import { Order } from '../order';
 
 @Component({
   selector: 'app-billing',
@@ -8,10 +12,22 @@ import { BikeService } from '../bike.service';
   styleUrls: ['./billing.component.css']
 })
 export class BillingComponent implements OnInit {
+  flag:Flag = null;
+  fname:string = '';
+  lname:string = '';
+  design:Design = null;
+  pack:Package = null;
+  order:Order = null;
 
   constructor(private router:Router, private bs:BikeService) { }
 
   ngOnInit() {
+    this.order = this.bs.loadOrder();
+    this.flag = this.order.sticker.flag;
+    this.fname = this.order.sticker.fname;
+    this.lname = this.order.sticker.lname;
+    this.design = this.order.design;
+    this.pack = this.order.package;
   }
 
   pay() {

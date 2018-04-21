@@ -20,9 +20,9 @@ export class PackageComponent implements OnInit {
   order:Order = null;
 
   packages:Package[] = [
-    {id:1, code:"pack1", name:"Paquete 1", enabled:true  },
-    {id:2, code:"pack2", name:"Paquete 2", enabled:false },
-    {id:3, code:"pack3", name:"Paquete 3", enabled:false }
+    {id:1, code:"pack1", name:"x6 (4g + 2s)", price: 35000, enabled:true  },
+    {id:2, code:"pack2", name:"Paquete 2", price: 0, enabled:false },
+    {id:3, code:"pack3", name:"Paquete 3", price: 0, enabled:false }
   ];
 
   constructor(private router:Router, private bs:BikeService) { }
@@ -34,6 +34,7 @@ export class PackageComponent implements OnInit {
     this.lname = this.order.sticker.lname;
     this.design = this.order.design;
     this.pack = this.order.package;
+    if (this.pack.id == 0) this.pack = this.packages[0];
   }
 
   getStatus(pack:Package) {

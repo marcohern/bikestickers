@@ -1,9 +1,53 @@
 <proride-cover asset="cover1"></proride-cover>
 <br><br><br>
 
-<p>
-  billing works!
-</p>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div class="btn btn-dark btn-lg btn-block">
+            <i class="flag" [ngClass]="flag.selector"></i> <span class="flagname">({{flag.name}})</span> {{fname}} {{lname}} ({{design.name}}) {{pack.name}}
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+</div>
+<br><br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <input class="form-control" type="text" placeholder="Nombre" /><br>
+        </div>
+        <div class="col-md-6">
+            <input class="form-control" type="text" placeholder="Apellido" /><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <input class="form-control" type="text" placeholder="Email" /><br>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <input class="form-control" type="text" placeholder="Direccion 1" /><br>
+        </div>
+        <div class="col-md-6">
+            <input class="form-control" type="text" placeholder="Direccion 2" /><br>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <input class="form-control" type="text" placeholder="Ciudad" /><br>
+        </div>
+        <div class="col-md-4">
+            <input class="form-control" type="text" placeholder="Estado/Provincia/Depto" /><br>
+        </div>
+        <div class="col-md-4">
+            <input class="form-control" type="text" placeholder="Pais" /><br>
+        </div>
+    </div>
+</div>
 
 
 <br><br><br>
