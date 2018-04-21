@@ -1,12 +1,12 @@
 <proride-cover asset="cover1"></proride-cover>
-<proride-breadcrumbs></proride-breadcrumbs>
+<proride-breadcrumbs [level]="3"></proride-breadcrumbs>
 <br><br><br>
 
 <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10">
         <div class="btn btn-dark btn-lg btn-block">
-            <i class="flag" [ngClass]="flag.selector"></i> <span class="flagname">({{flag.name}})</span> {{fname}} {{lname}} ({{design.name}}) {{pack.name}}
+            <i class="flag" [ngClass]="flag.selector"></i> <span class="flagname">({{flag.name}})</span> {{fname}} {{lname}} ({{design.name}} {{design.price | currency:COP}}) {{pack.name}}
         </div>
     </div>
     <div class="col-md-1"></div>

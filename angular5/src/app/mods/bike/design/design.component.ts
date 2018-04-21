@@ -18,9 +18,9 @@ export class DesignComponent implements OnInit {
   design:Design = null;
 
   designs:Design[] = [
-    {id:1, code:"sticker_bardet"  , name:"Romain Bardet"},
-    {id:2, code:"sticker_contador", name:"Alberto Contador"},
-    {id:3, code:"sticker_nairo"   , name:"Nairo Quintana"}
+    {id:1, code:"sticker_bardet"  , name:"Romain Bardet", price:35000},
+    {id:2, code:"sticker_contador", name:"Alberto Contador", price:0},
+    {id:3, code:"sticker_nairo"   , name:"Nairo Quintana", price:0}
   ];
 
   constructor(private router:Router, private bs:BikeService) { }
