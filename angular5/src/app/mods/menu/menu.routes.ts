@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { NameAndFlagComponent } from '../bike/name-and-flag/name-and-flag.component';
 import { DesignComponent } from '../bike/design/design.component';
 import { PackageComponent } from '../bike/package/package.component';
+import { BillingComponent } from '../bike/billing/billing.component';
 
 const routes: Routes = [
     { path: 'name-and-flag', component: NameAndFlagComponent },
     { path: 'design'       , component: DesignComponent },
     { path: 'package'      , component: PackageComponent },
+    { path: 'billing'      , component: BillingComponent },
     { path: ''  , redirectTo: 'name-and-flag', pathMatch: 'full' },
     { path: '**', redirectTo: 'name-and-flag', pathMatch: 'full' }
 ];
@@ -18,5 +20,5 @@ const routes: Routes = [
 })
 export class MenuRoutes { }
 
-export const appRoutesComponents = [NameAndFlagComponent,DesignComponent,PackageComponent];
+export const appRoutesComponents = [NameAndFlagComponent,DesignComponent,PackageComponent,BillingComponent];
 

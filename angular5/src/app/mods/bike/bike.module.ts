@@ -7,6 +7,7 @@ import { NameAndFlagComponent } from './name-and-flag/name-and-flag.component';
 import { DesignComponent } from './design/design.component';
 import { PackageComponent } from './package/package.component';
 import { BikeService } from './bike.service';
+import { BillingComponent } from './billing/billing.component';
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import { BikeService } from './bike.service';
     FormsModule,
     NgbModule
   ],
-  declarations: [ NameAndFlagComponent, DesignComponent, PackageComponent],
+  declarations: [ NameAndFlagComponent, DesignComponent, PackageComponent, BillingComponent],
   providers: [ BikeService ]
 })
 export class BikeModule { 
