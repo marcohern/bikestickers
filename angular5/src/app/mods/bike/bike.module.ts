@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { Page3Component } from './page3/page3.component';
 import { NameAndFlagComponent } from './name-and-flag/name-and-flag.component';
 import { DesignComponent } from './design/design.component';
+import { PackageComponent } from './package/package.component';
 import { BikeService } from './bike.service';
 
 
@@ -15,7 +15,7 @@ import { BikeService } from './bike.service';
     FormsModule,
     NgbModule
   ],
-  declarations: [ Page3Component, NameAndFlagComponent, DesignComponent],
+  declarations: [ NameAndFlagComponent, DesignComponent, PackageComponent],
   providers: [ BikeService ]
 })
 export class BikeModule { 
