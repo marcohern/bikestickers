@@ -4,6 +4,7 @@ import { BikeService } from '../bike.service';
 import { Flag } from '../flag';
 import { Order } from '../order';
 import { Design } from '../design';
+import { environment } from '../../../../environments/environment.prod';
 
 @Component({
   selector: 'app-design',
@@ -16,6 +17,7 @@ export class DesignComponent implements OnInit {
   lname:string = '';
   order:Order = null;
   design:Design = null;
+  root:string = '';
 
   designs:Design[] = [
     {id:1, code:"sticker_bardet"  , name:"Romain Bardet", price:35000},
@@ -23,7 +25,9 @@ export class DesignComponent implements OnInit {
     {id:3, code:"sticker_nairo"   , name:"Nairo Quintana", price:0}
   ];
 
-  constructor(private router:Router, private bs:BikeService) { }
+  constructor(private router:Router, private bs:BikeService) { 
+    this.root = environment.root;
+  }
 
   ngOnInit() {
 

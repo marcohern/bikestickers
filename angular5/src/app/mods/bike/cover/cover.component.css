@@ -4,10 +4,6 @@
     height:250px;
 }
 
-.proride-cover.cover1 {
-    background: url('/assets/proride/bg1.jpg') no-repeat center 0 fixed; 
-}
-
 .proride-bars {
     width: 100%;
 }

@@ -5,6 +5,7 @@ import { Package } from '../package';
 import { Design } from '../design';
 import { Flag } from '../flag';
 import { Order } from '../order';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-package',
@@ -18,6 +19,7 @@ export class PackageComponent implements OnInit {
   design:Design = null;
   pack:Package = null;
   order:Order = null;
+  root:string = '';
 
   packages:Package[] = [
     {id:1, code:"pack1", name:"x6 (4g + 2s)", price: 35000, enabled:true  },
@@ -25,7 +27,9 @@ export class PackageComponent implements OnInit {
     {id:3, code:"pack3", name:"Paquete 3", price: 0, enabled:false }
   ];
 
-  constructor(private router:Router, private bs:BikeService) { }
+  constructor(private router:Router, private bs:BikeService) { 
+    this.root = environment.root;
+  }
 
   ngOnInit() {
     this.order = this.bs.loadOrder();
