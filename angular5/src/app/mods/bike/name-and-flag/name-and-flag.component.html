@@ -1,31 +1,33 @@
 <proride-cover asset="cover1"></proride-cover>
 <proride-breadcrumbs [level]="0"></proride-breadcrumbs>
 <br><br><br>
-<div class="row">
-  <div class="col-md-1"></div>
-  <div class="col-md-2">
-    <div ngbDropdown class="input-group">
-        <button class="btn btn-outline-dark btn-lg btn-block flagname" id="flag" ngbDropdownToggle>
-            <i class="flag" [ngClass]="getFlagSelector()"></i> {{getFlagName()}}
-        </button>
-        <div ngbDropdownMenu aria-labelledby="country">
-          <button class="dropdown-item flagname" *ngFor="let flag of flags" (click)="selectFlag(flag)">
-            <i class="flag" [ngClass]="flag.selector"></i>{{flag.name}}
+<div class="container">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+      <div ngbDropdown class="input-group">
+          <button class="btn btn-outline-dark btn-lg btn-block flagname" id="flag" ngbDropdownToggle>
+              <i class="flag" [ngClass]="getFlagSelector()"></i> {{getFlagName()}}
           </button>
-        </div>
+          <div ngbDropdownMenu aria-labelledby="country">
+            <button class="dropdown-item flagname" *ngFor="let flag of flags" (click)="selectFlag(flag)">
+              <i class="flag" [ngClass]="flag.selector"></i> {{flag.name}}
+            </button>
+          </div>
+      </div>
     </div>
-  </div>
-  <div class="col-md-4">
-    <div class="input-group">
-        <input type="text" class="form-control form-control-lg" placeholder="Nombre" aria-label="Nombre" [(ngModel)]="fname">
+    <div class="col-md-4">
+      <div class="input-group">
+          <input type="text" class="form-control form-control-lg" placeholder="Nombre" aria-label="Nombre" [(ngModel)]="fname">
+      </div>
     </div>
-  </div>
-  <div class="col-md-4">
-    <div class="input-group">
-      <input type="text" class="form-control form-control-lg" placeholder="Apellido" aria-label="Apellido" [(ngModel)]="lname">
+    <div class="col-md-4">
+      <div class="input-group">
+        <input type="text" class="form-control form-control-lg" placeholder="Apellido" aria-label="Apellido" [(ngModel)]="lname">
+      </div>
     </div>
+    <div class="col-md-1"></div>
   </div>
-  <div class="col-md-1"></div>
 </div>
 
 <br><br><br>

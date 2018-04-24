@@ -1,6 +1,10 @@
 
+.proride-bg-dark {
+    background-color: black;
+}
+
 .proride-cover.cover1 {
-    background: url('bg1.jpg') no-repeat center 0 fixed; 
+    background: url('bg1.jpg') no-repeat center 10% fixed; 
 }
 
 .proride-logo {

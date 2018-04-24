@@ -7,14 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BreadcrumbsComponent implements OnInit {
 
-  past:string[] = ['bg-dark','text-light'];
+  past:string[] = ['proride-bg-dark','text-light'];
   present:string[] = ['bg-primary','text-light'];
   future:string[] = ['bg-light','text-dark'];
 
   crumbs:any[] = [
     {num:1, name:'Nombre/Pais', route:'/name-and-flag', level:0, cls:[] },
     {num:2, name:'Diseño'     , route:'/design'       , level:1, cls:[] },
-    {num:3, name:'Empaque'    , route:'/package'      , level:2, cls:[] },
+    {num:3, name:'Paquete'    , route:'/package'      , level:2, cls:[] },
     {num:4, name:'Pago'       , route:'/billing'      , level:3, cls:[] }
   ]
 
