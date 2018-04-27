@@ -4,7 +4,19 @@
 }
 
 .proride-cover.cover1 {
-    background: url('bg1.jpg') no-repeat center 10% fixed; 
+    background-image: url('bg1.jpg'); 
+}
+
+.proride-cover.cover2 {
+    background-image: url('bg2.jpg'); 
+}
+
+.proride-cover.cover3 {
+    background-image: url('bg3.jpg'); 
+}
+
+.proride-cover.cover4 {
+    background-image: url('bg4.jpg'); 
 }
 
 .proride-logo {
