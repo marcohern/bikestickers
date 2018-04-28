@@ -1,58 +1,20 @@
 
-.proride-bg-dark {
-    background-color: black;
-}
-.proride-logo {
-    background-image: url(logow_150x30.png);
-}
+.proride-bg-dark { background-color: black; }
+.proride-logo    { background-image: url(logow_150x30.png); }
 
-.proride-cover.cover1 {
-    background-image: url('bg1_4x3.jpg'); 
-}
+.proride-cover.cover1 { background-image: url('bg1_4x3.jpg'); }
+.proride-cover.cover2 { background-image: url('bg2_4x3.jpg'); }
+.proride-cover.cover3 { background-image: url('bg3_4x3.jpg'); }
+.proride-cover.cover4 { background-image: url('bg4_4x3.jpg'); }
 
-.proride-cover.cover2 {
-    background-image: url('bg2_4x3.jpg'); 
-}
-
-.proride-cover.cover3 {
-    background-image: url('bg3_4x3.jpg'); 
-}
-
-.proride-cover.cover4 {
-    background-image: url('bg4_4x3.jpg'); 
-}
-
-@media (min-width: 576px) {
-
-}
-
-@media (min-width: 768px) {
-}
-
+@media (min-width: 576px) { }
+@media (min-width: 768px) { }
 @media (min-width: 992px) {
-
-    .proride-cover {
-        height: 300px;
-    }
-
-    .proride-cover.cover1 {
-        background-image: url('bg1.jpg'); 
-    }
-    
-    .proride-cover.cover2 {
-        background-image: url('bg2.jpg'); 
-    }
-    
-    .proride-cover.cover3 {
-        background-image: url('bg3.jpg'); 
-    }
-    
-    .proride-cover.cover4 {
-        background-image: url('bg4.jpg'); 
-    }
-
+    .proride-cover { height: 300px; }
+    .proride-cover.cover1 { background-image: url('bg1.jpg'); }
+    .proride-cover.cover2 { background-image: url('bg2.jpg'); }
+    .proride-cover.cover3 { background-image: url('bg3.jpg'); }
+    .proride-cover.cover4 { background-image: url('bg4.jpg'); }
 }
 
-@media (min-width: 1200px) {
-    
-}
+@media (min-width: 1200px) { }
