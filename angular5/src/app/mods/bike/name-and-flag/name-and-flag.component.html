@@ -39,10 +39,16 @@
   </div>
   <div class="modal-body text-dark">
     <input type="text" class="form-control form-control-lg" placeholder="flagSearch" aria-label="Buscar Bandera" #searchFlag (keyup)="filterFlags($event,searchFlag.value)">
-    <p>One fine body&hellip;</p>
-      <button (click)="c(flag)" *ngFor="let flag of flags">
-        <img [alt]="flag.name" [src]="fs.flagPath(flag)" width="48px" />{{flag.name}}
-      </button>
+    <div class="row">
+      <div class="col-6 col-md-4 col-lg-3" *ngFor="let flag of flags">
+        <div class="card" (click)="c(flag)">
+          <img class="card-img-top" [src]="fs.flagPath(flag)" [alt]="flag.name">
+          <div class="card-body">
+            <h5 class="card-text" style="font-size: 1em">{{flag.name}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
