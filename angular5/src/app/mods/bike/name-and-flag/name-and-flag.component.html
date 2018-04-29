@@ -3,9 +3,14 @@
 <br><br><br>
 <div class="container">
   <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-outline-dark btn-lg btn-block" (click)="modal(flagPicker)">Seleccionar Bandera</button>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-md-2">
       <div *ngIf="flag">
-        <img [alt]="flag.name" [src]="fs.flagPath(flag)" width="64px" />
+        <img [alt]="flag.name" [src]="fs.flagPath(flag)" width="64px" /> {{flag.name}}
       </div>
     </div>
     <div class="col-md-5">
@@ -54,5 +59,3 @@
     <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
   </div>
 </ng-template>
-
-<button class="btn btn-outline-dark btn-lg btn-block" (click)="modal(flagPicker)">Modal</button>
