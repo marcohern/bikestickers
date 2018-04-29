@@ -9,7 +9,7 @@
 .proride-cover.cover4 { background-image: url('bg4_4x3.jpg'); }
 
 @media (min-width: 576px) { 
-    .proride-cover { height: 200px; }
+    .proride-cover { height: 150px; }
     .proride-cover.cover1 { background-image: url('bg1_4x3.jpg'); }
     .proride-cover.cover2 { background-image: url('bg2_4x3.jpg'); }
     .proride-cover.cover3 { background-image: url('bg3_4x3.jpg'); }
@@ -17,7 +17,7 @@
 }
 
 @media (min-width: 768px) { 
-    .proride-cover { height: 250px; }
+    .proride-cover { height: 200px; }
     .proride-cover.cover1 { background-image: url('bg1_4x3.jpg'); }
     .proride-cover.cover2 { background-image: url('bg2_4x3.jpg'); }
     .proride-cover.cover3 { background-image: url('bg3_4x3.jpg'); }
@@ -25,7 +25,7 @@
 }
 
 @media (min-width: 992px) {
-    .proride-cover { height: 300px; }
+    .proride-cover { height: 250px; }
     .proride-cover.cover1 { background-image: url('bg1.jpg'); }
     .proride-cover.cover2 { background-image: url('bg2.jpg'); }
     .proride-cover.cover3 { background-image: url('bg3.jpg'); }
@@ -33,7 +33,7 @@
 }
 
 @media (min-width: 1200px) { 
-    .proride-cover { height: 350px; }
+    .proride-cover { height: 300px; }
     .proride-cover.cover1 { background-image: url('bg1.jpg'); }
     .proride-cover.cover2 { background-image: url('bg2.jpg'); }
     .proride-cover.cover3 { background-image: url('bg3.jpg'); }

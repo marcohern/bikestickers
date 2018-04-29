@@ -2,15 +2,13 @@
 <proride-breadcrumbs [level]="1"></proride-breadcrumbs>
 <br><br><br>
 <div class="container">
-<div class="row">
-  <div class="col-md-1"></div>
-  <div class="col-md-10">
-    <div class="btn btn-dark btn-lg btn-block">
-        <img *ngIf="flag" [alt]="flag.name" [src]="fs.flagPath(flag)" width="64px" /> {{fname}} <strong>{{lname}}</strong>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="btn btn-dark btn-lg btn-block">
+                <img *ngIf="flag" [alt]="flag.name" [src]="fs.flagPath(flag)" width="64px" /> {{fname}} <strong>{{lname}}</strong>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="col-md-1"></div>
-</div>
 </div>
 <br><br><br>
 <div class="container">

@@ -8,7 +8,7 @@
         
         <div class="btn btn-dark btn-lg btn-block">
             <img *ngIf="flag" [alt]="flag.name" [src]="fs.flagPath(flag)" width="64px" /> {{fname}} <strong>{{lname}}</strong>
-            <span *ngIf="design">({{design.name}})</span>
+            <span *ngIf="design" class="d-none d-md-inline">({{design.name}})</span>
         </div>
     </div>
     <div class="col-md-1"></div>

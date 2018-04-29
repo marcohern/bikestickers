@@ -1,21 +1,19 @@
 <proride-cover asset="cover4"></proride-cover>
 <proride-breadcrumbs [level]="3"></proride-breadcrumbs>
 <br><br><br>
-
-<div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-10">
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
             <div class="btn btn-dark btn-lg btn-block">
                 <img *ngIf="flag" [alt]="flag.name" [src]="fs.flagPath(flag)" width="64px" /> {{fname}} <strong>{{lname}}</strong>
-                <span *ngIf="design">({{design.name}})</span>
-                <span *ngIf="pack">({{pack.name}})</span>
+                <span *ngIf="design" class="d-none d-lg-inline">({{design.name}})</span>
+                <span *ngIf="pack" class="d-none d-lg-inline">({{pack.name}})</span>
             </div>
+        </div>
     </div>
-    <div class="col-md-1"></div>
-</div>
-<br><br><br>
+    <br><br><br>
 
-<div class="container">
+
     <div class="row">
         <div class="col-md-6">
             <input class="form-control" type="text" placeholder="Nombre" [(ngModel)]="bill.fname" /><br>
