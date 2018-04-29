@@ -4,4 +4,5 @@ export class Package {
     name:string = '';
     price:number = 0;
     enabled:boolean = true;
+    selected:string = '';
 }

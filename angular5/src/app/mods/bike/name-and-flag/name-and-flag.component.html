@@ -6,7 +6,7 @@
     <div class="col-md-12">
       <button class="btn btn-outline-dark btn-lg btn-block" (click)="modal(flagPicker)">Seleccionar Bandera</button>
     </div>
-  </div>
+  </div><br>
   <div class="row">
     <div class="col-md-2">
       <div *ngIf="flag">
@@ -24,17 +24,16 @@
       </div>
     </div>
   </div>
+  <br><br><br>
+
+  <div class="row">
+    <div class="col-md-12">
+        <button class="btn btn-outline-dark btn-lg btn-block" (click)="next()">Siguiente</button>
+    </div>
+  </div>
+<br><br><br>
 </div>
 
-<br><br><br>
-<div class="container">
-    <div class="row">
-      <div class="col-md-12">
-          <button class="btn btn-outline-dark btn-lg btn-block" (click)="next()">Siguiente</button>
-      </div>
-    </div>
-</div>
-<br><br><br>
 <ng-template #flagPicker let-c="close" let-d="dismiss">
   <div class="modal-header">
     <h4 class="modal-title text-dark">Modal title</h4>
@@ -43,7 +42,8 @@
     </button>
   </div>
   <div class="modal-body text-dark">
-    <input type="text" class="form-control form-control-lg" placeholder="flagSearch" aria-label="Buscar Bandera" #searchFlag (keyup)="filterFlags($event,searchFlag.value)">
+    <input type="text" class="form-control form-control-lg" placeholder="Nombre de la bandera" aria-label="Buscar Bandera" #searchFlag (keyup)="filterFlags($event,searchFlag.value)">
+    <br>
     <div class="row">
       <div class="col-6 col-md-4 col-lg-3" *ngFor="let flag of flags">
         <div class="card" (click)="c(flag)">

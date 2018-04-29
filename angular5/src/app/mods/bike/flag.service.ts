@@ -267,12 +267,13 @@ export class FlagService {
   }
 
   filterFlags(query:string = null) {
-    var q = query.trim().toLowerCase();
+    var q = query.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
     var flags = this.getFlags();
     if (q==null || q=='') return flags;
     var filteredFlags:Flag[] = [];
     for(let flag of flags) {
-      if (flag.name.toLowerCase().includes(q)) {
+      var flagname = flag.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+      if (flagname.includes(q)) {
         filteredFlags.push(flag);
       }
     }

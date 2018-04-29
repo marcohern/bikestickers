@@ -21,9 +21,9 @@ export class DesignComponent implements OnInit {
   root:string = '';
 
   designs:Design[] = [
-    {id:1, code:"sticker_bardet"  , name:"Romain Bardet"   , price:0},
-    {id:2, code:"sticker_contador", name:"Alberto Contador", price:0},
-    {id:3, code:"sticker_nairo"   , name:"Nairo Quintana"  , price:0}
+    {id:1, code:"sticker_bardet"  , name:"Romain Bardet"   , price:0, selected:'btn-outline-dark'},
+    {id:2, code:"sticker_contador", name:"Alberto Contador", price:0, selected:'btn-outline-dark'},
+    {id:3, code:"sticker_nairo"   , name:"Nairo Quintana"  , price:0, selected:'btn-outline-dark'}
   ];
 
   constructor(
@@ -43,11 +43,15 @@ export class DesignComponent implements OnInit {
   }
 
   selectDesign(design:Design) {
-    console.log(design);
+   
+    this.design.selected = 'btn-outline-dark';
+    design.selected = 'btn-primary';
+
     this.design = design;
     this.order.design = design;
     this.bs.saveOrder(this.order);
-    this.next();
+    console.log(this.order);
+    //this.next();
   }
 
   next() {

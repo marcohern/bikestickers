@@ -12,16 +12,15 @@
 </div>
 <br><br><br>
 <div class="container">
-<div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-10" style="text-align: center;">
-        <button *ngFor="let design of designs" class="btn btn-outline-dark btn-lg" (click)="selectDesign(design)">
-            <img alt="{{design.name}}" class="img-fluid" src="{{root}}/assets/proride/{{design.code}}.png" width="200" height="200" />
-        </button><br><br>
-        <div> Seleccionaste <span class="btn btn-dark">{{design.name}}</span></div>
+    <div class="row">
+        <div class="col-md-12" style="text-align: center;">
+            <button *ngFor="let design of designs" class="btn btn-lg" (click)="selectDesign(design)" [ngClass]="design.selected">
+                <img alt="{{design.name}}" class="img-fluid" src="{{root}}/assets/proride/{{design.code}}.png" width="200" height="200" />
+            </button><br><br>
+            <div> Seleccionaste <span class="btn btn-dark">{{design.name}}</span></div>
+        </div>
+    
     </div>
-    <div class="col-md-1"></div>
-</div>
 </div>
 <br><br><br>
 <div class="container">

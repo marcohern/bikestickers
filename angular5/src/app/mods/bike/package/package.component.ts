@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, PACKAGE_ROOT_URL } from '@angular/core';
 import { Router } from '@angular/router';
 import { BikeService } from '../bike.service';
 import { FlagService } from '../flag.service';
@@ -23,9 +23,9 @@ export class PackageComponent implements OnInit {
   root:string = '';
 
   packages:Package[] = [
-    {id:1, code:"pack1", name:"x6 (4g + 2s)", price: 35000, enabled:true  },
-    {id:2, code:"pack2", name:"Paquete 2"   , price: 50000, enabled:false },
-    {id:3, code:"pack3", name:"Paquete 3"   , price: 60000, enabled:false }
+    {id:1, code:"pack1", name:"x6 (4g + 2s)", price: 35000, enabled:true , selected:'btn-outline-dark' },
+    {id:2, code:"pack2", name:"Paquete 2"   , price: 50000, enabled:false, selected:'btn-outline-dark' },
+    {id:3, code:"pack3", name:"Paquete 3"   , price: 60000, enabled:false, selected:'btn-outline-dark' }
   ];
 
   constructor(
@@ -46,15 +46,20 @@ export class PackageComponent implements OnInit {
   }
 
   getStatus(pack:Package) {
-    if (!pack.enabled) return 'occlude';
-    return '';
+    var c:string[] = [];
+    if (!pack.enabled) c.push('occlude');
+    c.push(pack.selected);
+    return c;
   }
 
   selectPackageOption(pack:Package) {
+
+    this.pack.selected = 'btn-outline-dark';
+    pack.selected = 'btn-primary';
+
     this.pack = pack;
     this.order.package = pack;
     this.bs.saveOrder(this.order);
-    this.next();
   }
 
   next() {
