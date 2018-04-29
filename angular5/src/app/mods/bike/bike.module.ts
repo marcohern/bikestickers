@@ -6,10 +6,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NameAndFlagComponent } from './name-and-flag/name-and-flag.component';
 import { DesignComponent } from './design/design.component';
 import { PackageComponent } from './package/package.component';
-import { BikeService } from './bike.service';
 import { BillingComponent } from './billing/billing.component';
 import { CoverComponent } from './cover/cover.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+
+import { BikeService } from './bike.service';
+import { FlagService } from './flag.service';
+
 
 
 @NgModule({
@@ -19,8 +22,8 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
     RouterModule,
     NgbModule
   ],
-  declarations: [ NameAndFlagComponent, DesignComponent, PackageComponent, BillingComponent, CoverComponent, BreadcrumbsComponent],
-  providers: [ BikeService ]
+  declarations: [ NameAndFlagComponent, DesignComponent, PackageComponent, BillingComponent, CoverComponent, BreadcrumbsComponent ],
+  providers: [ BikeService,FlagService ]
 })
 export class BikeModule { 
 

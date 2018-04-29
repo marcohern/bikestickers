@@ -5,15 +5,8 @@
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-2">
-      <div ngbDropdown class="input-group">
-          <button class="btn btn-outline-dark btn-lg btn-block flagname" id="flag" ngbDropdownToggle>
-              <i class="flag" [ngClass]="getFlagSelector()"></i> {{getFlagName()}}
-          </button>
-          <div ngbDropdownMenu aria-labelledby="country">
-            <button class="dropdown-item flagname" *ngFor="let flag of flags" (click)="selectFlag(flag)">
-              <i class="flag" [ngClass]="flag.selector"></i> {{flag.name}}
-            </button>
-          </div>
+      <div *ngIf="flag">
+        <img [alt]="flag.name" [src]="fs.flagPath(flag)" width="50%" />
       </div>
     </div>
     <div class="col-md-4">
@@ -39,3 +32,21 @@
     </div>
 </div>
 <br><br><br>
+<ng-template #flagPicker let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title text-dark">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-dark">
+    <p>One fine body&hellip;</p>
+      <button (click)="c(flag)" *ngFor="let flag of flags">
+        <img [alt]="flag.name" [src]="fs.flagPath(flag)" width="48px" />{{flag.name}}
+      </button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
+<button class="btn btn-outline-dark btn-lg btn-block" (click)="modal(flagPicker)">Modal</button>

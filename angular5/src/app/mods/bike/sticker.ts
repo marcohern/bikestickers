@@ -6,6 +6,6 @@ export class Sticker {
     lname:string = '';
 
     constructor() {
-        this.flag = new Flag();
+        this.flag = null;
     }
 }

@@ -1,4 +1,7 @@
+import { environment } from "../../../environments/environment";
+
 export class Flag {
-    selector:string = '';
+    id:number = 0;
+    code:string = '';
     name:string = '';
 }
