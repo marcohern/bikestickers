@@ -6,6 +6,7 @@ import { BikeService } from '../bike.service';
 import { FlagService } from '../flag.service';
 import { Flag } from '../flag';
 import { Order } from '../order';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-name-and-flag',
@@ -33,7 +34,7 @@ export class NameAndFlagComponent implements OnInit {
     this.flag  = this.order.sticker.flag;
     this.fname = this.order.sticker.fname;
     this.lname = this.order.sticker.lname;
-    this.root = '';//environment.root;
+    this.root = environment.root;
   }
 
   selectFlag(flag:any) {
@@ -54,13 +55,22 @@ export class NameAndFlagComponent implements OnInit {
   next() {
     console.log(this.fname,this.lname,this.flag);
 
-
     this.order.sticker.flag = this.flag;
     this.order.sticker.fname = this.fname;
     this.order.sticker.lname = this.lname;
 
     this.bs.saveOrder(this.order);
     this.router.navigate(['/design']);
+  }
+
+  modal(flagPicker) {
+    this.flags = this.fs.getFlags();
+    this.ms.open(flagPicker, {size:'lg', windowClass:'light-modal'}).result.then((result) => {
+      console.log(`Closed with:`, result);
+      this.selectFlag(result);
+    }, (reason) => {
+      console.log(`Dismissed ${this.getDismissReason(reason)}`);
+    });
   }
 
   private getDismissReason(reason: any): string {
@@ -73,13 +83,7 @@ export class NameAndFlagComponent implements OnInit {
     }
   }
 
-  modal(flagPicker) {
-    this.flags = this.fs.getFlags();
-    this.ms.open(flagPicker, {size:'lg', windowClass:'light-modal'}).result.then((result) => {
-      console.log(`Closed with:`, result);
-      this.selectFlag(result);
-    }, (reason) => {
-      console.log(`Dismissed ${this.getDismissReason(reason)}`);
-    });
+  filterFlags($event:any, q:string) {
+    this.flags = this.fs.filterFlags(q);
   }
 }

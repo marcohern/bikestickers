@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BikeService } from '../bike.service';
+import { FlagService } from '../flag.service';
 import { Flag } from '../flag';
 import { Order } from '../order';
 import { Design } from '../design';
-import { environment } from '../../../../environments/environment.prod';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-design',
@@ -20,12 +21,15 @@ export class DesignComponent implements OnInit {
   root:string = '';
 
   designs:Design[] = [
-    {id:1, code:"sticker_bardet"  , name:"Romain Bardet", price:35000},
+    {id:1, code:"sticker_bardet"  , name:"Romain Bardet"   , price:0},
     {id:2, code:"sticker_contador", name:"Alberto Contador", price:0},
-    {id:3, code:"sticker_nairo"   , name:"Nairo Quintana", price:0}
+    {id:3, code:"sticker_nairo"   , name:"Nairo Quintana"  , price:0}
   ];
 
-  constructor(private router:Router, private bs:BikeService) { 
+  constructor(
+    private router:Router,
+    private bs:BikeService,
+    private fs:FlagService) { 
     this.root = environment.root;
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BikeService } from '../bike.service';
+import { FlagService } from '../flag.service';
 import { Package } from '../package';
 import { Design } from '../design';
 import { Flag } from '../flag';
@@ -22,7 +23,11 @@ export class BillingComponent implements OnInit {
   order:Order = null;
 
 
-  constructor(private router:Router, private bs:BikeService) { }
+  constructor(
+    private router:Router,
+    private bs:BikeService,
+    private fs:FlagService
+  ) { }
 
   ngOnInit() {
     this.order = this.bs.loadOrder();

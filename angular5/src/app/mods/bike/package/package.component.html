@@ -5,22 +5,10 @@
 <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10">
+        
         <div class="btn btn-dark btn-lg btn-block">
-            <i class="flag" [ngClass]="flag.selector"></i> <span class="flagname">({{flag.name}})</span> {{fname}} <strong>{{lname}}</strong> ({{design.name}} {{design.price | currency:COP}}) 
-        </div>
-    </div>
-    <div class="col-md-1"></div>
-</div>
-
-<br><br><br>
-<div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-10" style="text-align: center;">
-        <button class="btn btn-outline-dark" *ngFor="let package of packages" (click)="selectPackageOption(package)" [ngClass]="getStatus(package)" [disabled]="!package.enabled">
-            <img alt="{{package.name}}" src="{{root}}/assets/proride/{{package.code}}.png" width="200" height="200"/>
-        </button><br><br>
-        <div class="btn btn-dark">
-            <span>{{pack.name}}</span>
+            <img *ngIf="flag" [alt]="flag.name" [src]="fs.flagPath(flag)" width="64px" /> {{fname}} <strong>{{lname}}</strong>
+            <span *ngIf="design">({{design.name}})</span>
         </div>
     </div>
     <div class="col-md-1"></div>
@@ -33,6 +21,23 @@
             <p>*Envio Gratis</p>
         </div>
     </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12" style="text-align: center;">
+            <button class="btn btn-outline-dark" *ngFor="let package of packages" (click)="selectPackageOption(package)" [ngClass]="getStatus(package)" [disabled]="!package.enabled">
+                <img alt="{{package.name}}" src="{{root}}/assets/proride/{{package.code}}.png" width="200" height="200"/>
+            </button><br><br>
+            <div class="btn btn-dark">
+                <span>{{pack.name}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br><br><br>
+<div class="container">
     <div class="row">
       <div class="col-md-6">
           <button class="btn btn-outline-dark btn-lg btn-block" (click)="previous()">Anterior</button>

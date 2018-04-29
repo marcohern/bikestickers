@@ -5,9 +5,11 @@
 <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10">
-        <div class="btn btn-dark btn-lg btn-block">
-            <i class="flag" [ngClass]="flag.selector"></i> <span class="flagname">({{flag.name}})</span> {{fname}} {{lname}} ({{design.name}} {{design.price | currency:COP}}) {{pack.name}}
-        </div>
+            <div class="btn btn-dark btn-lg btn-block">
+                <img *ngIf="flag" [alt]="flag.name" [src]="fs.flagPath(flag)" width="64px" /> {{fname}} <strong>{{lname}}</strong>
+                <span *ngIf="design">({{design.name}})</span>
+                <span *ngIf="pack">({{pack.name}})</span>
+            </div>
     </div>
     <div class="col-md-1"></div>
 </div>

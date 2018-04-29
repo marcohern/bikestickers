@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BikeService } from '../bike.service';
+import { FlagService } from '../flag.service';
 import { Package } from '../package';
 import { Design } from '../design';
 import { Flag } from '../flag';
@@ -23,11 +24,14 @@ export class PackageComponent implements OnInit {
 
   packages:Package[] = [
     {id:1, code:"pack1", name:"x6 (4g + 2s)", price: 35000, enabled:true  },
-    {id:2, code:"pack2", name:"Paquete 2", price: 0, enabled:false },
-    {id:3, code:"pack3", name:"Paquete 3", price: 0, enabled:false }
+    {id:2, code:"pack2", name:"Paquete 2"   , price: 50000, enabled:false },
+    {id:3, code:"pack3", name:"Paquete 3"   , price: 60000, enabled:false }
   ];
 
-  constructor(private router:Router, private bs:BikeService) { 
+  constructor(
+    private router:Router,
+    private bs:BikeService,
+    private fs:FlagService) { 
     this.root = environment.root;
   }
 
