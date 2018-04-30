@@ -13,18 +13,15 @@
         </div>
         <div class="col-md-1"></div>
     </div>
-</div>
 
-<br><br><br>
-<div class="container">
+    <br><br><br>
+
     <div class="row">
         <div class="col-md-12 text-center">
             <p>*Envio Gratis</p>
         </div>
     </div>
-</div>
-
-<div class="container">
+    
     <div class="row">
         <div class="col-md-12 text-center">
             <button class="btn" *ngFor="let package of packages" (click)="selectPackageOption(package)" [ngClass]="getStatus(package)" [disabled]="!package.enabled">
@@ -35,10 +32,8 @@
             </div>
         </div>
     </div>
-</div>
 
-<br><br><br>
-<div class="container">
+    <br><br><br>
     <div class="row">
       <div class="col-md-6">
           <button class="btn btn-outline-dark btn-lg btn-block" (click)="previous()">Anterior</button>
