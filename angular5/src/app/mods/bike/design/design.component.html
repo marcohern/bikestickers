@@ -13,7 +13,7 @@
 <br><br><br>
 <div class="container">
     <div class="row">
-        <div class="col-md-12" style="text-align: center;">
+        <div class="col-md-12 text-center">
             <button *ngFor="let design of designs" class="btn btn-lg" (click)="selectDesign(design)" [ngClass]="design.selected">
                 <img alt="{{design.name}}" class="img-fluid" src="{{root}}/assets/proride/{{design.code}}.png" width="200" height="200" />
             </button><br><br>
