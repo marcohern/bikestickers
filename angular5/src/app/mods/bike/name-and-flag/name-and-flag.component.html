@@ -10,18 +10,18 @@
   </div><br>
   <div class="row">
     <div class="col-md-2">
-      <div *ngIf="flag">
-        <img [alt]="flag.name" [src]="fs.flagPath(flag)" width="64px" /> {{flag.name}}
+      <div *ngIf="order.sticker.flag">
+        <img [alt]="order.sticker.flag.name" [src]="fs.flagPath(order.sticker.flag)" width="64px" /> {{order.sticker.flag.name}}
       </div>
     </div>
     <div class="col-md-5">
       <div class="input-group">
-          <input type="text" class="form-control form-control-lg" placeholder="Nombre" aria-label="Nombre" [(ngModel)]="fname">
+          <input type="text" class="form-control form-control-lg" placeholder="Nombre" aria-label="Nombre" [(ngModel)]="order.sticker.fname">
       </div>
     </div>
     <div class="col-md-5">
       <div class="input-group">
-        <input type="text" class="form-control form-control-lg" placeholder="Apellido" aria-label="Apellido" [(ngModel)]="lname">
+        <input type="text" class="form-control form-control-lg" placeholder="Apellido" aria-label="Apellido" [(ngModel)]="order.sticker.lname">
       </div>
     </div>
   </div>

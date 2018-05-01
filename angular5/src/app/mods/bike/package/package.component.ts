@@ -6,21 +6,14 @@ import { Package } from '../package';
 import { Design } from '../design';
 import { Flag } from '../flag';
 import { Order } from '../order';
-import { environment } from '../../../../environments/environment';
+import { OrderBehavior } from '../order-behavior';
 
 @Component({
   selector: 'app-package',
   templateUrl: './package.component.html',
   styleUrls: ['./package.component.css']
 })
-export class PackageComponent implements OnInit {
-  flag:Flag = null;
-  fname:string = '';
-  lname:string = '';
-  design:Design = null;
-  pack:Package = null;
-  order:Order = null;
-  root:string = '';
+export class PackageComponent extends OrderBehavior implements OnInit {
 
   packages:Package[] = [
     {id:1, code:"pack1", name:"x6 (4g + 2s)", price: 35000, enabled:true , selected:'btn-outline-dark' },
@@ -32,17 +25,11 @@ export class PackageComponent implements OnInit {
     private router:Router,
     private bs:BikeService,
     private fs:FlagService) { 
-    this.root = environment.root;
+      super(bs);
   }
 
   ngOnInit() {
-    this.order = this.bs.loadOrder();
-    this.flag = this.order.sticker.flag;
-    this.fname = this.order.sticker.fname;
-    this.lname = this.order.sticker.lname;
-    this.design = this.order.design;
-    this.pack = this.order.package;
-    if (this.pack.id == 0) this.pack = this.packages[0];
+    this.loadOrder();
   }
 
   getStatus(pack:Package) {
@@ -54,12 +41,11 @@ export class PackageComponent implements OnInit {
 
   selectPackageOption(pack:Package) {
 
-    this.pack.selected = 'btn-outline-dark';
+    this.order.package.selected = 'btn-outline-dark';
     pack.selected = 'btn-primary';
 
-    this.pack = pack;
     this.order.package = pack;
-    this.bs.saveOrder(this.order);
+    this.saveOrder();
   }
 
   next() {

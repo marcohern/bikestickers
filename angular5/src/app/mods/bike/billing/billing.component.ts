@@ -7,42 +7,30 @@ import { Design } from '../design';
 import { Flag } from '../flag';
 import { Order } from '../order';
 import { Billing } from '../billing';
+import { OrderBehavior } from '../order-behavior';
 
 @Component({
   selector: 'app-billing',
   templateUrl: './billing.component.html',
   styleUrls: ['./billing.component.css']
 })
-export class BillingComponent implements OnInit {
-  flag:Flag = null;
-  fname:string = '';
-  lname:string = '';
-  design:Design = null;
-  pack:Package = null;
-  bill:Billing = null;
-  order:Order = null;
-
+export class BillingComponent extends OrderBehavior implements OnInit {
 
   constructor(
     private router:Router,
     private bs:BikeService,
     private fs:FlagService
-  ) { }
+  ) { 
+    super(bs);
+  }
 
   ngOnInit() {
-    this.order = this.bs.loadOrder();
-    this.flag = this.order.sticker.flag;
-    this.fname = this.order.sticker.fname;
-    this.lname = this.order.sticker.lname;
-    this.design = this.order.design;
-    this.pack = this.order.package;
-    this.bill = this.order.billing;
+    this.loadOrder();
     
   }
 
   next() {
-    this.order.billing = this.bill;
-    this.bs.saveOrder(this.order);
+    this.saveOrder();
     this.router.navigate(['/summary']);
   }
 

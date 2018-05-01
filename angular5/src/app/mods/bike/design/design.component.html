@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="btn btn-dark btn-lg btn-block">
-                <img *ngIf="flag" [alt]="flag.name" [src]="fs.flagPath(flag)" width="64px" /> {{fname}} <strong>{{lname}}</strong>
+                <img *ngIf="order.sticker.flag" [alt]="order.sticker.flag.name" [src]="fs.flagPath(order.sticker.flag)" width="64px" /> {{order.sticker.fname}} <strong>{{order.sticker.lname}}</strong>
             </div>
         </div>  
     </div>
@@ -17,7 +17,7 @@
             <button *ngFor="let design of designs" class="btn btn-lg" (click)="selectDesign(design)" [ngClass]="design.selected">
                 <img alt="{{design.name}}" class="img-fluid" src="{{root}}/assets/proride/{{design.code}}.png" width="200" height="200" />
             </button><br><br>
-            <div> Seleccionaste <span class="btn btn-dark">{{design.name}}</span></div>
+            <div *ngIf="order.design"> Seleccionaste <span class="btn btn-dark">{{order.design.name}}</span></div>
         </div>
     </div>
     <br><br><br>

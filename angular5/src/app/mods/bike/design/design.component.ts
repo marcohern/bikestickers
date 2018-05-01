@@ -5,20 +5,14 @@ import { FlagService } from '../flag.service';
 import { Flag } from '../flag';
 import { Order } from '../order';
 import { Design } from '../design';
-import { environment } from '../../../../environments/environment';
+import { OrderBehavior } from '../order-behavior';
 
 @Component({
   selector: 'app-design',
   templateUrl: './design.component.html',
   styleUrls: ['./design.component.css']
 })
-export class DesignComponent implements OnInit {
-  flag:Flag = null;
-  fname:string = '';
-  lname:string = '';
-  order:Order = null;
-  design:Design = null;
-  root:string = '';
+export class DesignComponent extends OrderBehavior implements OnInit {
 
   designs:Design[] = [
     {id:1, code:"sticker_bardet"  , name:"Romain Bardet"   , price:0, selected:'btn-outline-dark'},
@@ -30,28 +24,20 @@ export class DesignComponent implements OnInit {
     private router:Router,
     private bs:BikeService,
     private fs:FlagService) { 
-    this.root = environment.root;
+    super(bs);
   }
 
   ngOnInit() {
-
-    this.order = this.bs.loadOrder();
-    this.flag = this.order.sticker.flag;
-    this.fname = this.order.sticker.fname;
-    this.lname = this.order.sticker.lname;
-    this.design = this.order.design;
+    this.loadOrder();
   }
 
   selectDesign(design:Design) {
    
-    this.design.selected = 'btn-outline-dark';
+    this.order.design.selected = 'btn-outline-dark';
     design.selected = 'btn-primary';
 
-    this.design = design;
     this.order.design = design;
-    this.bs.saveOrder(this.order);
-    console.log(this.order);
-    //this.next();
+    this.saveOrder();
   }
 
   next() {
