@@ -1,7 +1,8 @@
 <proride-cover asset="cover2"></proride-cover>
 <proride-breadcrumbs [level]="1"></proride-breadcrumbs>
-<br><br><br>
+<br>
 <div class="container">
+    <h2>Diseño</h2>
     <div class="row">
         <div class="col-md-12">
             <div class="btn btn-dark btn-lg btn-block">
@@ -9,9 +10,8 @@
             </div>
         </div>  
     </div>
-</div>
-<br><br><br>
-<div class="container">
+    <br><br><br>
+
     <div class="row">
         <div class="col-md-12 text-center">
             <button *ngFor="let design of designs" class="btn btn-lg" (click)="selectDesign(design)" [ngClass]="design.selected">
@@ -19,11 +19,8 @@
             </button><br><br>
             <div> Seleccionaste <span class="btn btn-dark">{{design.name}}</span></div>
         </div>
-    
     </div>
-</div>
-<br><br><br>
-<div class="container">
+    <br><br><br>
     <div class="row">
       <div class="col-md-6">
           <button class="btn btn-outline-dark btn-lg btn-block" (click)="previous()">Anterior</button>

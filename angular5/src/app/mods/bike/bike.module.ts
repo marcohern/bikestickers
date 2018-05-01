@@ -12,6 +12,7 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
 import { BikeService } from './bike.service';
 import { FlagService } from './flag.service';
+import { SummaryComponent } from './summary/summary.component';
 
 
 
@@ -22,7 +23,7 @@ import { FlagService } from './flag.service';
     RouterModule,
     NgbModule
   ],
-  declarations: [ NameAndFlagComponent, DesignComponent, PackageComponent, BillingComponent, CoverComponent, BreadcrumbsComponent ],
+  declarations: [ NameAndFlagComponent, DesignComponent, PackageComponent, BillingComponent, CoverComponent, BreadcrumbsComponent, SummaryComponent ],
   providers: [ BikeService,FlagService ]
 })
 export class BikeModule { 

@@ -40,10 +40,10 @@ export class BillingComponent implements OnInit {
     
   }
 
-  pay() {
-    console.log("pay");
+  next() {
     this.order.billing = this.bill;
     this.bs.saveOrder(this.order);
+    this.router.navigate(['/summary']);
   }
 
   previous() {

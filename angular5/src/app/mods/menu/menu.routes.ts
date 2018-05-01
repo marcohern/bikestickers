@@ -4,12 +4,14 @@ import { NameAndFlagComponent } from '../bike/name-and-flag/name-and-flag.compon
 import { DesignComponent } from '../bike/design/design.component';
 import { PackageComponent } from '../bike/package/package.component';
 import { BillingComponent } from '../bike/billing/billing.component';
+import { SummaryComponent } from '../bike/summary/summary.component';
 
 const routes: Routes = [
     { path: 'name-and-flag', component: NameAndFlagComponent },
     { path: 'design'       , component: DesignComponent },
     { path: 'package'      , component: PackageComponent },
     { path: 'billing'      , component: BillingComponent },
+    { path: 'summary'      , component: SummaryComponent },
     { path: ''  , redirectTo: 'name-and-flag', pathMatch: 'full' },
     { path: '**', redirectTo: 'name-and-flag', pathMatch: 'full' }
 ];
@@ -20,5 +22,11 @@ const routes: Routes = [
 })
 export class MenuRoutes { }
 
-export const appRoutesComponents = [NameAndFlagComponent,DesignComponent,PackageComponent,BillingComponent];
+export const appRoutesComponents = [
+  NameAndFlagComponent,
+  DesignComponent,
+  PackageComponent,
+  BillingComponent,
+  SummaryComponent
+];
 

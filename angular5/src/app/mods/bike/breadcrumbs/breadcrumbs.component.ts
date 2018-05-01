@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Crumb } from './crumb';
 
 @Component({
   selector: 'proride-breadcrumbs',
@@ -11,11 +12,12 @@ export class BreadcrumbsComponent implements OnInit {
   present:string[] = ['bg-primary','text-light'];
   future:string[] = ['bg-light','text-dark'];
 
-  crumbs:any[] = [
-    {num:1, name:'Nombre/Pais', route:'/name-and-flag', level:0, cls:[] },
-    {num:2, name:'Diseño'     , route:'/design'       , level:1, cls:[] },
-    {num:3, name:'Paquete'    , route:'/package'      , level:2, cls:[] },
-    {num:4, name:'Pago'       , route:'/billing'      , level:3, cls:[] }
+  crumbs:Crumb[] = [
+    {num:1, name:'Bandera/Nombre', route:'/name-and-flag', level:0, cls:[], enabled:true },
+    {num:2, name:'Diseño'     , route:'/design'       , level:1, cls:[], enabled:true },
+    {num:3, name:'Paquete'    , route:'/package'      , level:2, cls:[], enabled:true },
+    {num:4, name:'Envio'      , route:'/billing'      , level:3, cls:[], enabled:true },
+    {num:5, name:'Resumen'    , route:'/summary'      , level:4, cls:[], enabled:true }
   ]
 
   private _level:number = 0;
@@ -32,12 +34,15 @@ export class BreadcrumbsComponent implements OnInit {
     var i:number;
     for (i=0;i<this._level;i++) {
       this.crumbs[i].cls = this.past;
+      this.crumbs[i].enabled = true;
     }
 
     this.crumbs[this._level].cls = this.present;
+    this.crumbs[this._level].enabled = true;
 
     for (i=this._level+1;i<this.crumbs.length;i++) {
       this.crumbs[i].cls = this.future;
+      this.crumbs[i].enabled = false;
     }
   }
 

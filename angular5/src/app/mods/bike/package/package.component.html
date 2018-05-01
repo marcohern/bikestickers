@@ -1,17 +1,15 @@
 <proride-cover asset="cover3"></proride-cover>
 <proride-breadcrumbs [level]="2"></proride-breadcrumbs>
-<br><br><br>
+<br>
 <div class="container">
+    <h2>Paquete</h2>
     <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            
+        <div class="col-md-12">
             <div class="btn btn-dark btn-lg btn-block">
                 <img *ngIf="flag" [alt]="flag.name" [src]="fs.flagPath(flag)" width="64px" /> {{fname}} <strong>{{lname}}</strong>
                 <span *ngIf="design" class="d-none d-md-inline">({{design.name}})</span>
             </div>
         </div>
-        <div class="col-md-1"></div>
     </div>
 
     <br><br><br>
