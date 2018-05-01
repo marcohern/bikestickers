@@ -1,6 +1,6 @@
 import { RootBehavior } from './root-behavior';
-import { BikeService } from './bike.service';
-import { Order } from './order';
+import { BikeService } from '../bike.service';
+import { Order } from '../models/order';
 
 
 export class OrderBehavior extends RootBehavior {

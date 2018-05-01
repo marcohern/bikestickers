@@ -1,4 +1,4 @@
-import { Flag } from './flag';
+import { Flag } from '../models/flag';
 
 export const flags:Flag[] = [
     {id:1001,code:"AD",name:"Andorra"},

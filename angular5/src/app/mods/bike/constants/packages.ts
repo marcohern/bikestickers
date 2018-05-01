@@ -1,4 +1,4 @@
-import { Package } from "./package";
+import { Package } from "../models/package";
 
 export const packages:Package[] = [
     {id:1, code:"pack1", name:"x6 (4g + 2s)", price: 35000, enabled:true , selected:'btn-outline-dark' },

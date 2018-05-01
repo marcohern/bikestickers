@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {NgbModal, NgbActiveModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { OrderBehavior } from '../order-behavior';
+import { OrderBehavior } from '../behaviors/order-behavior';
 import { BikeService } from '../bike.service';
-import { Flag } from '../flag';
+import { Flag } from '../models/flag';
 
 @Component({
   selector: 'app-name-and-flag',

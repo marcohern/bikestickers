@@ -1,4 +1,4 @@
-import { Design } from "./design";
+import { Design } from "../models/design";
 
 export const designs:Design[] = [
     {id:1, code:"sticker_bardet"  , name:"Romain Bardet"   , price:0, selected:'btn-outline-dark'},

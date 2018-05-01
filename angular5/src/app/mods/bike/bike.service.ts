@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Order } from './order';
-import { Flag } from './flag';
-import { flags } from './flags';
+import { Order } from './models/order';
+import { Flag } from './models/flag';
+import { flags } from './constants/flags';
 import { environment } from '../../../environments/environment';
 
 var storage = window.sessionStorage;

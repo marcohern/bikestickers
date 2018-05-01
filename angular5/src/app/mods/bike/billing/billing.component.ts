@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BikeService } from '../bike.service';
-import { Package } from '../package';
-import { Design } from '../design';
-import { Flag } from '../flag';
-import { Order } from '../order';
-import { Billing } from '../billing';
-import { OrderBehavior } from '../order-behavior';
+import { OrderBehavior } from '../behaviors/order-behavior';
 
 @Component({
   selector: 'app-billing',

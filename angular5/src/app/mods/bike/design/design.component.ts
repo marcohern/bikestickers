@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BikeService } from '../bike.service';
-import { Design } from '../design';
-import { OrderBehavior } from '../order-behavior';
-import { designs } from '../designs';
+import { Design } from '../models/design';
+import { OrderBehavior } from '../behaviors/order-behavior';
+import { designs } from '../constants/designs';
 
 @Component({
   selector: 'app-design',

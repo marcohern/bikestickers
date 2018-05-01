@@ -1,5 +1,3 @@
-import { environment } from "../../../environments/environment";
-
 export class Flag {
     id:number = 0;
     code:string = '';

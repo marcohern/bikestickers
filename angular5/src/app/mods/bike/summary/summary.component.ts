@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderBehavior } from '../order-behavior';
+import { OrderBehavior } from '../behaviors/order-behavior';
 import { Router } from '@angular/router';
 import { BikeService } from '../bike.service';
 

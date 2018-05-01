@@ -1,9 +1,9 @@
 import { Component, OnInit, PACKAGE_ROOT_URL } from '@angular/core';
 import { Router } from '@angular/router';
 import { BikeService } from '../bike.service';
-import { Package } from '../package';
-import { OrderBehavior } from '../order-behavior';
-import { packages } from '../packages';
+import { Package } from '../models/package';
+import { OrderBehavior } from '../behaviors/order-behavior';
+import { packages } from '../constants/packages';
 
 @Component({
   selector: 'app-package',
