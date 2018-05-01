@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { NameAndFlagComponent } from '../bike/name-and-flag/name-and-flag.component';
-import { DesignComponent } from '../bike/design/design.component';
-import { PackageComponent } from '../bike/package/package.component';
-import { BillingComponent } from '../bike/billing/billing.component';
-import { SummaryComponent } from '../bike/summary/summary.component';
+import { NameAndFlagComponent } from './name-and-flag/name-and-flag.component';
+import { DesignComponent } from './design/design.component';
+import { PackageComponent } from './package/package.component';
+import { BillingComponent } from './billing/billing.component';
+import { SummaryComponent } from './summary/summary.component';
 
 const routes: Routes = [
     { path: 'name-and-flag', component: NameAndFlagComponent },
@@ -20,7 +20,7 @@ const routes: Routes = [
   imports: [ RouterModule.forChild(routes) ],
   exports: [ RouterModule ]
 })
-export class MenuRoutes { }
+export class BikeRoutes { }
 
 export const appRoutesComponents = [
   NameAndFlagComponent,

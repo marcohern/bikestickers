@@ -9,9 +9,12 @@ import { PackageComponent } from './package/package.component';
 import { BillingComponent } from './billing/billing.component';
 import { CoverComponent } from './cover/cover.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { SummaryComponent } from './summary/summary.component';
+import { MenuComponent } from './menu/menu.component';
 
 import { BikeService } from './bike.service';
-import { SummaryComponent } from './summary/summary.component';
+import { BikeRoutes } from './bike.routes';
+
 
 
 
@@ -19,11 +22,21 @@ import { SummaryComponent } from './summary/summary.component';
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule,
-    NgbModule
+    NgbModule.forRoot(),
+    BikeRoutes
   ],
-  declarations: [ NameAndFlagComponent, DesignComponent, PackageComponent, BillingComponent, CoverComponent, BreadcrumbsComponent, SummaryComponent ],
-  providers: [ BikeService ]
+  declarations: [
+    NameAndFlagComponent,
+    DesignComponent,
+    PackageComponent,
+    BillingComponent,
+    CoverComponent,
+    BreadcrumbsComponent,
+    SummaryComponent,
+    MenuComponent
+  ],
+  providers: [ BikeService ],
+  exports:[MenuComponent]
 })
 export class BikeModule { 
 
