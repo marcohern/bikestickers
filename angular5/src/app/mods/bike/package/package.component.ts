@@ -1,7 +1,6 @@
 import { Component, OnInit, PACKAGE_ROOT_URL } from '@angular/core';
 import { Router } from '@angular/router';
 import { BikeService } from '../bike.service';
-import { FlagService } from '../flag.service';
 import { Package } from '../package';
 import { OrderBehavior } from '../order-behavior';
 import { packages } from '../packages';
@@ -17,8 +16,7 @@ export class PackageComponent extends OrderBehavior implements OnInit {
 
   constructor(
     private router:Router,
-    private bs:BikeService,
-    private fs:FlagService) { 
+    private bs:BikeService) { 
       super(bs);
       this.packages = packages;
   }

@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="btn btn-dark btn-lg btn-block">
-                <img *ngIf="order.sticker.flag" [alt]="order.sticker.flag.name" [src]="fs.flagPath(order.sticker.flag)" width="64px" />
+                <img *ngIf="order.sticker.flag" [alt]="order.sticker.flag.name" [src]="bs.flagPath(order.sticker.flag)" width="64px" />
                 <span>{{order.sticker.fname}} <strong>{{order.sticker.lname}}</strong></span>
                 <span *ngIf="design" class="d-none d-md-inline">({{order.design.name}})</span>
             </div>

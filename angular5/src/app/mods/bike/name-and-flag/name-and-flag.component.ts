@@ -4,7 +4,6 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { OrderBehavior } from '../order-behavior';
 import { BikeService } from '../bike.service';
-import { FlagService } from '../flag.service';
 import { Flag } from '../flag';
 
 @Component({
@@ -19,7 +18,6 @@ export class NameAndFlagComponent extends OrderBehavior implements OnInit {
   constructor(
     private router:Router,
     private bs:BikeService,
-    private fs:FlagService,
     private ms: NgbModal) { 
       super(bs);
   }
@@ -49,7 +47,7 @@ export class NameAndFlagComponent extends OrderBehavior implements OnInit {
   }
 
   modal(flagPicker) {
-    this.flags = this.fs.getFlags();
+    this.flags = this.bs.getFlags();
     this.ms.open(flagPicker, {size:'lg', windowClass:'light-modal'}).result.then((result) => {
       console.log(`Closed with:`, result);
       this.selectFlag(result);
@@ -59,7 +57,7 @@ export class NameAndFlagComponent extends OrderBehavior implements OnInit {
   }
 
   filterFlags($event:any, q:string) {
-    this.flags = this.fs.filterFlags(q);
+    this.flags = this.bs.filterFlags(q);
   }
 
   private getDismissReason(reason: any): string {

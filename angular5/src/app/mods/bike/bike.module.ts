@@ -11,7 +11,6 @@ import { CoverComponent } from './cover/cover.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
 import { BikeService } from './bike.service';
-import { FlagService } from './flag.service';
 import { SummaryComponent } from './summary/summary.component';
 
 
@@ -24,7 +23,7 @@ import { SummaryComponent } from './summary/summary.component';
     NgbModule
   ],
   declarations: [ NameAndFlagComponent, DesignComponent, PackageComponent, BillingComponent, CoverComponent, BreadcrumbsComponent, SummaryComponent ],
-  providers: [ BikeService,FlagService ]
+  providers: [ BikeService ]
 })
 export class BikeModule { 
 
