@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, NgbActiveModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { OrderBehavior } from '../behaviors/order-behavior';
 import { BikeService } from '../bike.service';
@@ -14,6 +15,11 @@ import { Flag } from '../models/flag';
 export class NameAndFlagComponent extends OrderBehavior implements OnInit {
 
   flags:Flag[] = [];
+  nameFlagFormGroup:FormGroup = new FormGroup({
+    flag: new FormControl(),
+    fname: new FormControl(),
+    lname: new FormControl()
+  });
 
   constructor(
     private router:Router,
@@ -23,12 +29,19 @@ export class NameAndFlagComponent extends OrderBehavior implements OnInit {
   }
 
   ngOnInit() {
+
     this.loadOrder();
+    var flagname = (this.order.sticker.flag) ? this.order.sticker.flag.name : '<-- Seleccionar Bandera';
+    this.nameFlagFormGroup.setValue({
+      flag:flagname,
+      fname:this.order.sticker.fname,
+      lname:this.order.sticker.lname
+    });
   }
 
   selectFlag(flag:any) {
-    console.log(flag);
     this.order.sticker.flag = flag;
+    this.nameFlagFormGroup.controls['flag'].setValue(flag.name);
   }
 
   getFlagSelector() {
@@ -42,8 +55,15 @@ export class NameAndFlagComponent extends OrderBehavior implements OnInit {
   }
 
   next() {
-    this.saveOrder();
-    this.router.navigate(['/design']);
+    console.log("next",this.nameFlagFormGroup);
+    if (this.nameFlagFormGroup.valid) {
+      this.saveFlagName(
+        this.order.sticker.flag, 
+        this.nameFlagFormGroup.value.fname,
+        this.nameFlagFormGroup.value.lname
+      );
+      this.router.navigate(['/design']);
+    }
   }
 
   modal(flagPicker) {

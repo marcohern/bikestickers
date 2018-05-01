@@ -11,14 +11,9 @@ export class BikeService {
 
   private static storageId:string = 'com.marcohern.bikestickers.order';
 
-  containsSticker:boolean = false;;
-  containsPackage:boolean = false;
-  containsBilling:boolean = false;
-  order:Order = null;
-
   constructor() { }
 
-  loadOrder() {
+  loadOrder():Order {
     var order = JSON.parse(storage.getItem(BikeService.storageId)) as Order;
     if (order==null) {
       return new Order();
@@ -49,7 +44,12 @@ export class BikeService {
   }
 
   flagPath(flag:Flag) {
-    if (flag==null) return '';
+    if (flag==null) return environment.root + '/assets/country-flags/svg/empty.svg';
     return environment.root + '/assets/country-flags/svg/' + flag.code.toLowerCase() + '.svg';
+  }
+
+  flagName(flag:Flag) {
+    if (flag==null) return '';
+    return flag.name;
   }
 }

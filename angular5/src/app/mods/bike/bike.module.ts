@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NameAndFlagComponent } from './name-and-flag/name-and-flag.component';
@@ -22,6 +22,7 @@ import { BikeRoutes } from './bike.routes';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     NgbModule.forRoot(),
     BikeRoutes
   ],

@@ -1,40 +1,43 @@
 <proride-cover asset="cover1"></proride-cover>
 <proride-breadcrumbs [level]="0"></proride-breadcrumbs>
-<br>
-<div class="container">
-  <h2>Bandera y Nombre</h2>
-  <div class="row">
-    <div class="col-md-12">
-      <button class="btn btn-outline-dark btn-lg btn-block" (click)="modal(flagPicker)">Seleccionar Bandera</button>
-    </div>
-  </div><br>
-  <div class="row">
-    <div class="col-md-2">
-      <div *ngIf="order.sticker.flag">
-        <img [alt]="order.sticker.flag.name" [src]="bs.flagPath(order.sticker.flag)" width="64px" /> {{order.sticker.flag.name}}
+<form [formGroup]="nameFlagFormGroup" (ngSubmit)="next()" novalidate >
+  <div class="container">
+    <h2>Bandera y Nombre</h2>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="form-group">
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <button type="button" class="btn" (click)="modal(flagPicker)">
+                  <img [alt]="bs.flagName(order.sticker.flag)" [src]="bs.flagPath(order.sticker.flag)" height="64" />
+              </button>
+            </div>
+            <input type="text" class="form-control form-control-lg" placeholder="Bandera" formControlName="flag" readonly required>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="form-group">
+          <div class="input-group">
+              <input type="text" class="form-control form-control-lg" placeholder="Nombre" aria-label="Nombre" formControlName="fname" required>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" class="form-control form-control-lg" placeholder="Apellido" aria-label="Apellido" formControlName="lname" required>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-md-5">
-      <div class="input-group">
-          <input type="text" class="form-control form-control-lg" placeholder="Nombre" aria-label="Nombre" [(ngModel)]="order.sticker.fname">
-      </div>
-    </div>
-    <div class="col-md-5">
-      <div class="input-group">
-        <input type="text" class="form-control form-control-lg" placeholder="Apellido" aria-label="Apellido" [(ngModel)]="order.sticker.lname">
+    <div class="row">
+      <div class="col-md-12">
+          <button type="submit" class="btn btn-outline-dark btn-lg btn-block">Siguiente</button>
       </div>
     </div>
   </div>
-  <br><br><br>
-
-  <div class="row">
-    <div class="col-md-12">
-        <button class="btn btn-outline-dark btn-lg btn-block" (click)="next()">Siguiente</button>
-    </div>
-  </div>
-<br><br><br>
-</div>
-
+</form>
 <ng-template #flagPicker let-c="close" let-d="dismiss">
   <div class="modal-header">
     <h4 class="modal-title text-dark">Modal title</h4>

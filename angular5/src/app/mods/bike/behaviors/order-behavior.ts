@@ -1,6 +1,8 @@
 import { RootBehavior } from './root-behavior';
 import { BikeService } from '../bike.service';
 import { Order } from '../models/order';
+import { Flag } from '../models/flag';
+
 
 
 export class OrderBehavior extends RootBehavior {
@@ -18,5 +20,12 @@ export class OrderBehavior extends RootBehavior {
 
     saveOrder() {
         this.bss.saveOrder(this.order);
+    }
+
+    saveFlagName(flag:Flag, fname:string, lname:string) {
+        this.order.sticker.flag = flag;
+        this.order.sticker.fname = fname;
+        this.order.sticker.lname = lname;
+        this.saveOrder();
     }
 }

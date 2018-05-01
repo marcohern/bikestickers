@@ -39,3 +39,11 @@
     .proride-cover.cover3 { background-image: url('bg3.jpg'); }
     .proride-cover.cover4 { background-image: url('bg4.jpg'); }
 }
+
+input.ng-invalid:not(form) {
+    border: 1px solid red;
+}
+
+input.ng-valid:not(form) {
+    border: 1px solid green;
+}
