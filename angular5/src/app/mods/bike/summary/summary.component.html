@@ -45,6 +45,11 @@
           <div class="col-4">Telefono</div>
           <div class="col-8"><strong>{{order.billing.phone}}</strong></div>
         </div>
+        <hr>
+        <div class="row">
+          <div class="col-4">Precio</div>
+          <div class="col-8"><strong>{{order.package.price | currency }}</strong></div>
+        </div>
       </div>
       <div class="col-sm-3"></div>
     </div>
