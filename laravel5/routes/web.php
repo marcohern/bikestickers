@@ -11,11 +11,12 @@
 |
 */
 
-Route::get('/', function () { return view('blank'); });
+Route::get('/'             , function () { return view('blank'); });
 Route::get('/name-and-flag', function () { return view('blank'); });
-Route::get('/design', function () { return view('blank'); });
-Route::get('/package', function () { return view('blank'); });
-Route::get('/billing', function () { return view('blank'); });
+Route::get('/design'       , function () { return view('blank'); });
+Route::get('/package'      , function () { return view('blank'); });
+Route::get('/billing'      , function () { return view('blank'); });
+Route::get('/summary'      , function () { return view('blank'); });
 
 Auth::routes();
 
