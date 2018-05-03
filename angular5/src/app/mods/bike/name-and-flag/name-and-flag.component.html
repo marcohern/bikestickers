@@ -2,13 +2,30 @@
 <proride-breadcrumbs [level]="0"></proride-breadcrumbs>
 <form [formGroup]="nameFlagFormGroup" (ngSubmit)="next()" novalidate >
   <div class="container">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 405 100" enable-background="new 0 0 405 100" >
+      <defs>
+        <clipPath id="flag-clip">
+          <circle r="38" cy="50" cx="52" stroke-width="0" fill="#ffffff"/>
+        </clipPath>
+      </defs>
+      <circle id="bg-left" r="48" cy="50" cx="50" stroke-width="0" fill="#1f140f"/>
+      <circle id="bg-right" r="48" cy="50" cx="355" stroke-width="0" fill="#1f140f"/>
+      <rect id="bg-center" x="50" y="2" width="305" height="96" stroke-width="0" fill="#1f140f"/>
+      <text fill="#ffffff" font-style="italic" x="140" y="64" font-size="38" transform="scale(0.7, 1.0)">
+        <tspan>{{order.sticker.fname}}</tspan>
+        <tspan font-weight="bold">{{order.sticker.lname}}</tspan>
+      </text>
+      <g #svgflag clip-path="url(#flag-clip)">
+        <image [attr.href]="bs.flagPngPath(order.sticker.flag)" [attr.x]="flagx" y="12" width="200" height="76"/>
+      </g>
+    </svg>
     <h2>Bandera y Nombre</h2>
     <div class="row">
       <div class="col-md-12">
         <div class="form-group">
           <div class="input-group mb-2">
             <div class="input-group-prepend">
-              <button type="button" class="btn" (click)="modal(flagPicker)">
+              <button type="button" class="btn" (click)="modal(flagPicker,svgflag)">
                   <img [alt]="bs.flagName(order.sticker.flag)" [src]="bs.flagPath(order.sticker.flag)" height="64" />
               </button>
             </div>
@@ -34,8 +51,8 @@
         </div>
     </div>
     <div class="row">
-      <div class="col-md-12">
-          <button type="submit" class="btn btn-outline-dark btn-lg btn-block">Siguiente</button>
+      <div class="col-md-12 text-center">
+          <button type="submit" class="btn btn-outline-dark">Siguiente</button>
       </div>
     </div>
   </div>

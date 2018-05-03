@@ -10,9 +10,6 @@ export class Order {
     sticker:Sticker = null;
 
     constructor() {
-        this.billing = new Billing();
-        this.package = new Package();
-        this.design  = new Design();
         this.sticker = new Sticker();
     }
 }

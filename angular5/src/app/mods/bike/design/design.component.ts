@@ -12,6 +12,7 @@ import { designs } from '../constants/designs';
 })
 export class DesignComponent extends OrderBehavior implements OnInit {
 
+  showErrorMessage:boolean = false;
   designs:Design[] = [];
 
   constructor(
@@ -27,14 +28,16 @@ export class DesignComponent extends OrderBehavior implements OnInit {
 
   selectDesign(design:Design) {
    
-    this.order.design.selected = 'btn-outline-dark';
+    if (this.order.design) this.order.design.selected = 'btn-outline-dark';
     design.selected = 'btn-primary';
 
-    this.order.design = design;
-    this.saveOrder();
+    this.saveDesign(design);
   }
 
   next() {
+    if (!this.order.design) {
+      return;
+    }
     this.router.navigate(['/package']);
   }
 
