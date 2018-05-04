@@ -29,14 +29,17 @@
                 [ngClass]="getStatus(package)"
                 [disabled]="!package.enabled">
                 <img alt="{{package.name}}" src="{{root}}/assets/proride/{{package.code}}.png" width="200" height="200"/>
-            </button><br><br>
-            <div class="btn btn-dark" *ngIf="order.package">
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">    
+            <div class="bg-dark text-light" *ngIf="order.package">
                 <span>{{order.package.name}}</span>
             </div>
         </div>
     </div>
-
-    <br><br><br>
+    <br><br>
     <div class="row">
         <div class="col-md-12 text-center">
             <div class="btn-group btn-group-lg" role="group" aria-label="Siguiente o Anterior">
