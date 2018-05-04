@@ -42,19 +42,4 @@ export class BikeService {
     }
     return filteredFlags;
   }
-
-  flagPath(flag:Flag) {
-    if (flag==null) return environment.root + '/assets/country-flags/svg/empty.svg';
-    return environment.root + '/assets/country-flags/svg/' + flag.code.toLowerCase() + '.svg';
-  }
-
-  flagPngPath(flag:Flag) {
-    if (flag==null) return environment.root + '/assets/country-flags/svg/empty.svg';
-    return environment.root + '/assets/country-flags/png250px/' + flag.code.toLowerCase() + '.png';
-  }
-
-  flagName(flag:Flag) {
-    if (flag==null) return '';
-    return flag.name;
-  }
 }

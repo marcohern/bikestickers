@@ -93,6 +93,14 @@ export class NameAndFlagComponent extends OrderBehavior implements OnInit {
     
   }
 
+  onChangeName() {
+    this.saveFlagName(
+      this.order.sticker.flag, 
+      this.nameFlagFormGroup.value.fname,
+      this.nameFlagFormGroup.value.lname
+    );
+  }
+
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';

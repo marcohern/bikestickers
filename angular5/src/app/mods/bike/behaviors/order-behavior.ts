@@ -1,12 +1,11 @@
-import { RootBehavior } from './root-behavior';
+import { FlagDisplayBehavior } from './flag-display-behavior';
 import { BikeService } from '../bike.service';
 import { Order } from '../models/order';
 import { Flag } from '../models/flag';
 import { Design } from '../models/design';
 
 
-
-export class OrderBehavior extends RootBehavior {
+export class OrderBehavior extends FlagDisplayBehavior {
     bss:BikeService = null;
     order:Order = null;
 

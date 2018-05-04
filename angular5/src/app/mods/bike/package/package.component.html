@@ -6,9 +6,9 @@
     <div class="row">
         <div class="col-md-12">
             <div class="btn btn-dark btn-lg btn-block">
-                <img *ngIf="order.sticker.flag" [alt]="order.sticker.flag.name" [src]="bs.flagPath(order.sticker.flag)" width="64px" />
+                <img *ngIf="order.sticker.flag" [alt]="order.sticker.flag.name" [src]="flagPath(order.sticker.flag)" width="64px" />
                 <span>{{order.sticker.fname}} <strong>{{order.sticker.lname}}</strong></span>
-                <span *ngIf="design" class="d-none d-md-inline">({{order.design.name}})</span>
+                <span *ngIf="order.design" class="d-none d-md-inline">({{order.design.name}})</span>
             </div>
         </div>
     </div>
@@ -31,19 +31,19 @@
                 <img alt="{{package.name}}" src="{{root}}/assets/proride/{{package.code}}.png" width="200" height="200"/>
             </button><br><br>
             <div class="btn btn-dark">
-                <span>{{order.package.name}}</span>
+                <span *ngIf="order.package">{{order.package.name}}</span>
             </div>
         </div>
     </div>
 
     <br><br><br>
     <div class="row">
-      <div class="col-md-6">
-          <button class="btn btn-outline-dark btn-lg btn-block" (click)="previous()">Anterior</button>
-      </div>
-      <div class="col-md-6">
-          <button class="btn btn-outline-dark btn-lg btn-block" (click)="next()">Siguiente</button>
-      </div>
+        <div class="col-md-12 text-center">
+            <div class="btn-group btn-group-lg" role="group" aria-label="Siguiente o Anterior">
+                <button type="button" class="btn btn-secondary btn-outline-dark" (click)="previous()">Anterior</button>
+                <button type="button" class="btn btn-secondary btn-outline-dark" (click)="next()" [disabled]="!order.package">Siguiente</button>
+            </div>
+        </div>
     </div>
 </div>
 <br><br><br>

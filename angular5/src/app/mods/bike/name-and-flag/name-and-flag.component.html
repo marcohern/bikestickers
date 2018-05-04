@@ -12,21 +12,21 @@
       <circle id="bg-right" r="48" cy="50" cx="355" stroke-width="0" fill="#1f140f"/>
       <rect id="bg-center" x="50" y="2" width="305" height="96" stroke-width="0" fill="#1f140f"/>
       <text fill="#ffffff" font-style="italic" x="140" y="64" font-size="38" transform="scale(0.7, 1.0)">
-        <tspan>{{order.sticker.fname}}</tspan>
-        <tspan font-weight="bold">{{order.sticker.lname}}</tspan>
+        <tspan>{{stickerFirstName(order.sticker)}}</tspan>
+        <tspan font-weight="bold">{{stickerLastName(order.sticker)}}</tspan>
       </text>
       <g #svgflag clip-path="url(#flag-clip)">
-        <image [attr.href]="bs.flagPngPath(order.sticker.flag)" [attr.x]="flagx" y="12" width="200" height="76"/>
+        <image [attr.href]="flagPngPath(order.sticker.flag)" [attr.x]="flagX(order.sticker.flag)" y="12" height="76"/>
       </g>
     </svg>
-    <h2>Bandera y Nombre</h2>
+    <h2>País y Nombre</h2>
     <div class="row">
       <div class="col-md-12">
         <div class="form-group">
           <div class="input-group mb-2">
             <div class="input-group-prepend">
               <button type="button" class="btn" (click)="modal(flagPicker,svgflag)">
-                  <img [alt]="bs.flagName(order.sticker.flag)" [src]="bs.flagPath(order.sticker.flag)" height="64" />
+                  <img [alt]="flagName(order.sticker.flag)" [src]="flagPath(order.sticker.flag)" height="64" />
               </button>
             </div>
             <input type="text" class="form-control form-control-lg" placeholder="Bandera" formControlName="flag" readonly required>
@@ -38,21 +38,21 @@
       <div class="col-md-6">
           <div class="form-group">
             <div class="input-group">
-                <input type="text" class="form-control form-control-lg" placeholder="Nombre" aria-label="Nombre" formControlName="fname" required>
+                <input type="text" class="form-control form-control-lg" placeholder="Nombre" aria-label="Nombre" formControlName="fname" required (change)="onChangeName()">
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <div class="input-group">
-              <input type="text" class="form-control form-control-lg" placeholder="Apellido" aria-label="Apellido" formControlName="lname" required>
+              <input type="text" class="form-control form-control-lg" placeholder="Apellido" aria-label="Apellido" formControlName="lname" required (change)="onChangeName()">
             </div>
           </div>
         </div>
     </div>
     <div class="row">
       <div class="col-md-12 text-center">
-          <button type="submit" class="btn btn-outline-dark">Siguiente</button>
+          <button type="submit" class="btn btn-outline-dark btn-lg">Siguiente</button>
       </div>
     </div>
   </div>
@@ -70,7 +70,7 @@
     <div class="row">
       <div class="col-6 col-md-4 col-lg-3" *ngFor="let flag of flags">
         <div class="card" (click)="c(flag)">
-          <img class="card-img-top" [src]="bs.flagPath(flag)" [alt]="flag.name">
+          <img class="card-img-top" [src]="flagPath(flag)" [alt]="flag.name">
           <div class="card-body">
             <h5 class="card-text" style="font-size: 1em">{{flag.name}}</h5>
           </div>

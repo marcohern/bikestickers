@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BikeService } from '../bike.service';
 import { OrderBehavior } from '../behaviors/order-behavior';
+import { Billing } from '../models/billing';
 
 @Component({
   selector: 'app-billing',
@@ -19,7 +20,7 @@ export class BillingComponent extends OrderBehavior implements OnInit {
 
   ngOnInit() {
     this.loadOrder();
-    
+    if (!this.order.billing) this.order.billing = new Billing();
   }
 
   next() {
