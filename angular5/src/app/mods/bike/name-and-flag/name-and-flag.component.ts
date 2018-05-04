@@ -33,7 +33,7 @@ export class NameAndFlagComponent extends OrderBehavior implements OnInit {
   ngOnInit() {
 
     this.loadOrder();
-    var flagname = (this.order.sticker.flag) ? this.order.sticker.flag.name : '<-- Seleccionar Bandera';
+    var flagname = (this.order.sticker.flag) ? this.order.sticker.flag.name : '';
     this.nameFlagFormGroup.setValue({
       flag:flagname,
       fname:this.order.sticker.fname,
@@ -41,15 +41,9 @@ export class NameAndFlagComponent extends OrderBehavior implements OnInit {
     });
   }
 
-  selectFlag(flag:any, flagsvg:SVGGraphicsElement=null) {
+  selectFlag(flag:any) {
     this.order.sticker.flag = flag;
     this.nameFlagFormGroup.controls['flag'].setValue(flag.name);
-    if (flagsvg) {
-      console.log(flagsvg.getBBox());
-      var width = flagsvg.getBBox().width;
-      this.flagx = 52-width/2;
-      console.log("flagx",this.flagx);
-    }
   }
 
   getFlagSelector() {
@@ -74,12 +68,11 @@ export class NameAndFlagComponent extends OrderBehavior implements OnInit {
     }
   }
 
-  modal(flagPicker, svgflag:SVGGraphicsElement=null) {
-    console.log(svgflag,svgflag.getBBox());
+  modal(flagPicker) {
     this.flags = this.bs.getFlags();
     this.ms.open(flagPicker, {size:'lg', windowClass:'light-modal'}).result.then((result) => {
       console.log(`Closed with:`, result);
-      this.selectFlag(result,svgflag);
+      this.selectFlag(result);
     }, (reason) => {
       console.log(`Dismissed ${this.getDismissReason(reason)}`);
     });

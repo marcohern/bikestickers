@@ -30,8 +30,8 @@
                 [disabled]="!package.enabled">
                 <img alt="{{package.name}}" src="{{root}}/assets/proride/{{package.code}}.png" width="200" height="200"/>
             </button><br><br>
-            <div class="btn btn-dark">
-                <span *ngIf="order.package">{{order.package.name}}</span>
+            <div class="btn btn-dark" *ngIf="order.package">
+                <span>{{order.package.name}}</span>
             </div>
         </div>
     </div>

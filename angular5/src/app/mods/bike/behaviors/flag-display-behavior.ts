@@ -20,11 +20,11 @@ export class FlagDisplayBehavior extends RootBehavior {
     }
 
     stickerFirstName(sticker:Sticker) {
-        if (sticker==null || sticker.fname == '') return 'John';
+        if (sticker==null || sticker.fname == '') return '<Nombre>';
         return sticker.fname;
     }
     stickerLastName(sticker:Sticker) {
-        if (sticker==null || sticker.lname == '') return 'Jairo';
+        if (sticker==null || sticker.lname == '') return '<Apellido>';
         return sticker.lname;
     }
 
