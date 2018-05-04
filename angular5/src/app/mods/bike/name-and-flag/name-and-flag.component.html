@@ -19,7 +19,7 @@
         </text>
       </g>
       <g mask="url(#flag-clip)">
-        <image [attr.href]="flagPngPath(order.sticker.flag)" [attr.x]="flagX(order.sticker.flag)" y="12" height="76"/>
+        <image [attr.xlink:href]="flagPath(order.sticker.flag)" [attr.x]="flagX(order.sticker.flag)" y="12" height="76"/>
       </g>
     </svg>
 
@@ -40,7 +40,8 @@
         </text>
       </g>
       <g mask="url(#flag-clip2)">
-        <image [attr.href]="flagPngPath(order.sticker.flag)" [attr.x]="flagX(order.sticker.flag)" y="12" height="76"/>
+        <image [attr.href]="flagPath(order.sticker.flag)" [attr.x]="flagX(order.sticker.flag)" y="12" height="76"/>
+        
       </g>
     </svg>
 
@@ -59,7 +60,7 @@
         </text>
       </g>
       <g mask="url(#flag-clip3)">
-        <image [attr.href]="flagPngPath(order.sticker.flag)" [attr.x]="flagX(order.sticker.flag)+15" y="6" height="78" transform="skewX(-15)"/>
+        <image [attr.href]="flagPath(order.sticker.flag)" [attr.x]="flagX(order.sticker.flag)+13" y="6" height="78" transform="skewX(-15)"/>
       </g>
     </svg>
     <h2>País y Nombre</h2>
