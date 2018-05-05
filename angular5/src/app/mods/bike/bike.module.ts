@@ -14,6 +14,7 @@ import { MenuComponent } from './menu/menu.component';
 
 import { BikeService } from './bike.service';
 import { BikeRoutes } from './bike.routes';
+import { StickerComponent } from './sticker/sticker.component';
 
 
 
@@ -34,7 +35,8 @@ import { BikeRoutes } from './bike.routes';
     CoverComponent,
     BreadcrumbsComponent,
     SummaryComponent,
-    MenuComponent
+    MenuComponent,
+    StickerComponent
   ],
   providers: [ BikeService ],
   exports:[MenuComponent]
