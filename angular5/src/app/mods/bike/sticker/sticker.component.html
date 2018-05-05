@@ -1,7 +1,7 @@
-<div class="sticker sticker-bardet" [ngClass]="sticker">
-    <img alt="{{fname}} {{lname}}" src="{{root}}/assets/proride/{{bgcode}}.png" />
+<div class="sticker" [ngClass]="mapstyle(design)">
+    <img alt="{{fname}} {{lname}}" [src]="mapdesign(design)" />
     <div class="sticker-flagmask">
-        <img alt="{{flagcode}}" src="{{root}}/assets/country-flags/svg/{{flagcode}}.svg" />
+        <img alt="{{flagcode}}" [src]="mapflag(flag)" />
     </div>
     <div class="sticker-text">{{fname}} <strong>{{lname}}</strong></div>
 </div>

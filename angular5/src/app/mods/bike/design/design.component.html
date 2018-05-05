@@ -1,16 +1,18 @@
 <proride-cover asset="cover2"></proride-cover>
 <proride-breadcrumbs [level]="1"></proride-breadcrumbs>
-<br>
 <div class="container">
     <h2>Diseño</h2>
-    <div class="row">
+</div>
+<proride-sticker [fname]="order.sticker.fname" [lname]="order.sticker.lname" [flag]="order.sticker.flag" [design]="order.design"></proride-sticker>
+<div class="container">
+    <!--div class="row">
         <div class="col-md-12">
             <div class="btn btn-dark btn-lg btn-block">
                 <img *ngIf="order.sticker.flag" [alt]="order.sticker.flag.name" [src]="flagPath(order.sticker.flag)" width="64px" /> {{order.sticker.fname}} <strong>{{order.sticker.lname}}</strong>
             </div>
         </div>  
     </div>
-    <br><br><br>
+    <br><br><br-->
 
     <div class="row">
         <div class="col-md-12 text-center">

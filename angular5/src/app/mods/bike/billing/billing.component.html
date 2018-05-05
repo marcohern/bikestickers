@@ -1,9 +1,11 @@
 <proride-cover asset="cover4"></proride-cover>
 <proride-breadcrumbs [level]="3"></proride-breadcrumbs>
-<br>
 <div class="container">
     <h2>Información de Envio</h2>
-    <div class="row">
+</div>
+<proride-sticker [fname]="order.sticker.fname" [lname]="order.sticker.lname" [flag]="order.sticker.flag" [design]="order.design"></proride-sticker>
+<div class="container">
+    <!--div class="row">
         <div class="col-md-12">
             <div class="btn btn-dark btn-lg btn-block">
                 <img *ngIf="order.sticker.flag" [alt]="order.sticker.flag.name" [src]="flagPath(order.sticker.flag)" width="64px" />
@@ -12,9 +14,7 @@
             </div>
         </div>
     </div>
-    <br><br><br>
-
-
+    <br><br><br-->
     <div class="row">
         <div class="col-md-6">
             <input class="form-control" type="text" placeholder="Nombre" [(ngModel)]="order.billing.fname" /><br>
