@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs/Rx";
 import { catchError, retry } from 'rxjs/operators';
 
 export class RequestBase {

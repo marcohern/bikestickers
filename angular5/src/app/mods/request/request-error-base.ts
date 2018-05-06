@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from "@angular/common/http";
 import { RequestBase } from "./request-base";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs/Rx";
 import { ErrorObservable } from "rxjs/observable/ErrorObservable";
 import { catchError, retry } from 'rxjs/operators';
 

@@ -1,5 +1,5 @@
 import { RequestBase } from "./request-base";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs/Rx";
 import { RequestHeaderBase } from "./request-header-base";
 
 export class RequestGetBase extends RequestHeaderBase {

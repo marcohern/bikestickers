@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RequestService } from './request.service';
+import { BasicInterceptor } from './basic-interceptor';
 
 @NgModule({
   imports: [
@@ -9,6 +10,9 @@ import { RequestService } from './request.service';
     HttpClientModule
   ],
   declarations: [],
-  providers:[RequestService]
+  providers:[
+    RequestService,
+    { provide: HTTP_INTERCEPTORS, useClass: BasicInterceptor, multi:true }
+  ]
 })
 export class RequestModule { }

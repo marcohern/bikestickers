@@ -1,4 +1,4 @@
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs/Rx";
 import { RequestErrorBase } from "./request-error-base";
 
 export class RequestHeaderBase extends RequestErrorBase {
