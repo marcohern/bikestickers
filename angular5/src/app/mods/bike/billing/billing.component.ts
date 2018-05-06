@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { BikeService } from '../bike.service';
 import { OrderBehavior } from '../behaviors/order-behavior';
 import { Billing } from '../models/billing';
+import { RequestService } from '../../request/request.service';
 
 @Component({
   selector: 'app-billing',
@@ -24,7 +25,8 @@ export class BillingComponent extends OrderBehavior implements OnInit {
 
   constructor(
     private router:Router,
-    private bs:BikeService
+    private bs:BikeService,
+    private r:RequestService
   ) { 
     super(bs);
   }
@@ -47,8 +49,14 @@ export class BillingComponent extends OrderBehavior implements OnInit {
       state: '',
       zip: ''
     });
+    this.r.create('/order', this.order).subscribe(result => {
+      this.router.navigate(['/summary',1]);
+      console.log(result);
+    }, error => {
+      console.error(error);
+    });
     //this.saveOrder();
-    //this.router.navigate(['/summary']);
+    
   }
 
   previous() {

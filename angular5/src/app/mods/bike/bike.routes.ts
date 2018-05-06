@@ -11,7 +11,7 @@ const routes: Routes = [
     { path: 'design'       , component: DesignComponent },
     { path: 'package'      , component: PackageComponent },
     { path: 'billing'      , component: BillingComponent },
-    { path: 'summary'      , component: SummaryComponent },
+    { path: 'summary/:id'  , component: SummaryComponent },
     { path: ''  , redirectTo: 'name-and-flag', pathMatch: 'full' },
     { path: '**', redirectTo: 'name-and-flag', pathMatch: 'full' }
 ];

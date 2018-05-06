@@ -1,53 +1,32 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Injector } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { catchError, retry } from 'rxjs/operators';
-
+import { RequestGetBase } from './request-get-base';
 
 @Injectable()
-export class RequestService {
+export class RequestService extends RequestGetBase {
 
-  constructor(private http:HttpClient) { }
-
-  private getHeader() {
-  	return {
-  		"Accept": "application/json",
-  		"Accept-Language": "en-US"
-  	};
+  constructor(injector:Injector) { 
+	  super(injector.get(HttpClient));
   }
 
-  private getOptions() {
-  	return {
-  		headers: this.getHeader()
-  	}
+  public query<T>(url:string, query:object = {}):Observable<T> {
+	  return this.getquery(url, query);
   }
 
-  public getQueryString(query:object):string {
-  	let str = '';
-  	let i = 0;
-  	Object.keys(query).forEach(key => {
-  		str += (i>0) ? '&' : '';
-  		str += key + '=' + encodeURI(query[key]);
-  		i++;
-  	});
-  	return str;
+  public view<T>(url:string, id:number, query:object = {}, options:object = {}):Observable<T> {
+	return this.viewquery(url, id, query, options);
   }
 
-  public get<T>(url:string, query:object = {}): Observable<T> {
-  	let q = this.getQueryString(query);
-  	if (q!='') url += '?' + q;
-  	return this.http.get<T>(url, this.getOptions() );
+  public create<T>(url:string, entity:object, options:object = {}):Observable<T> {
+	return this.postheader(url, entity, options);
   }
 
-  public post<T>(url:string, data:object = {}): Observable<T> {
-  	return this.http.post<T>(url, data, this.getOptions() );
+  public update<T>(url:string, id:number, entity:object, options:object = {}):Observable<T> {
+	return this.putheader(url, id, entity, options);
   }
 
-  public put<T>(url:string, id:number, data:object = {}): Observable<T> {
-  	return this.http.put<T>(url + '/' + id, data, this.getOptions());
-  }
-
-  public delete<T>(url:string, id:number): Observable<T> {
-  	return this.http.delete<T>(url + '/' + id, this.getOptions());
+  public delete<T>(url:string, id:number, options:object = {}):Observable<T> {
+	return this.deleteheader(url, id, options);
   }
 }

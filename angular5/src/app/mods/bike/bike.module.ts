@@ -15,6 +15,7 @@ import { MenuComponent } from './menu/menu.component';
 import { BikeService } from './bike.service';
 import { BikeRoutes } from './bike.routes';
 import { StickerComponent } from './sticker/sticker.component';
+import { RequestModule } from '../request/request.module';
 
 
 
@@ -25,6 +26,7 @@ import { StickerComponent } from './sticker/sticker.component';
     FormsModule,
     ReactiveFormsModule,
     NgbModule.forRoot(),
+    RequestModule,
     BikeRoutes
   ],
   declarations: [
