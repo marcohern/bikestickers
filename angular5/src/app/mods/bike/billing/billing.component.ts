@@ -49,7 +49,7 @@ export class BillingComponent extends OrderBehavior implements OnInit {
       state: '',
       zip: ''
     });
-    this.r.create('/order', this.order).subscribe(result => {
+    this.r.create('/api/order', this.order).subscribe(result => {
       this.router.navigate(['/summary',1]);
       console.log(result);
     }, error => {
