@@ -1,0 +1,7 @@
+open www.proride.com.co
+proridec
+ClS908hsq7
+cd public_html
+cd bikestickers
+mput * 
+quit

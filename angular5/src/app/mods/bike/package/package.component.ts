@@ -36,9 +36,7 @@ export class PackageComponent extends OrderBehavior implements OnInit {
 
     if (this.order.package) this.order.package.selected = 'btn-outline-dark';
     pack.selected = 'btn-primary';
-
-    this.order.package = pack;
-    this.saveOrder();
+    this.savePackage(pack);
   }
 
   next() {

@@ -3,6 +3,8 @@ import { BikeService } from '../bike.service';
 import { Order } from '../models/order';
 import { Flag } from '../models/flag';
 import { Design } from '../models/design';
+import { Package } from '../models/package';
+import { Billing } from '../models/billing';
 
 
 export class OrderBehavior extends FlagDisplayBehavior {
@@ -31,6 +33,16 @@ export class OrderBehavior extends FlagDisplayBehavior {
 
     saveDesign(design:Design) {
         this.order.design = design;
+        this.saveOrder();
+    }
+
+    savePackage(pkg:Package) {
+        this.order.package = pkg;
+        this.saveOrder();
+    }
+
+    saveBilling(billing:Billing) {
+        this.order.billing = billing;
         this.saveOrder();
     }
 }

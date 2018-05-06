@@ -4,6 +4,7 @@
     <h2>Información de Envio</h2>
 </div>
 <proride-sticker [fname]="order.sticker.fname" [lname]="order.sticker.lname" [flag]="order.sticker.flag" [design]="order.design"></proride-sticker>
+<form [formGroup]="billingFormGroup" (ngSubmit)="next()" novalidate>
 <div class="container">
     <!--div class="row">
         <div class="col-md-12">
@@ -17,33 +18,33 @@
     <br><br><br-->
     <div class="row">
         <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="Nombre" [(ngModel)]="order.billing.fname" /><br>
+            <input class="form-control" type="text" placeholder="Nombre" formControlName="fname" required/><br>
         </div>
         <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="Apellido"  [(ngModel)]="order.billing.lname" /><br>
+            <input class="form-control" type="text" placeholder="Apellido"  formControlName="lname" required /><br>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-            <input class="form-control" type="text" placeholder="Email"  [(ngModel)]="order.billing.email"/><br>
+            <input class="form-control" type="email" placeholder="Email" formControlName="email" required/><br>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="Direccion" [(ngModel)]="order.billing.address"/><br>
+            <input class="form-control" type="text" placeholder="Direccion" formControlName="address" required/><br>
         </div>
         <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="Telefono"  [(ngModel)]="order.billing.phone"/><br>
+            <input class="form-control" type="text" placeholder="Telefono" formControlName="phone" required/><br>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="Ciudad"  [(ngModel)]="order.billing.city"/><br>
+            <input class="form-control" type="text" placeholder="Ciudad" formControlName="city" required/><br>
         </div>
         <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="Pais" [(ngModel)]="order.billing.country"/><br>
+            <input class="form-control" type="text" placeholder="Pais"  formControlName="country" required/><br>
         </div>
     </div>
 
@@ -51,8 +52,9 @@
         <div class="col-md-12 text-center">
             <div class="btn-group btn-group-lg" role="group" aria-label="Siguiente o Anterior">
                 <button type="button" class="btn btn-secondary btn-outline-dark" (click)="previous()">Anterior</button>
-                <button type="button" class="btn btn-secondary btn-outline-dark" (click)="next()">Siguiente</button>
+                <button type="submit" class="btn btn-secondary btn-outline-dark">Siguiente</button>
             </div>
         </div>
     </div>
 </div>
+</form>
