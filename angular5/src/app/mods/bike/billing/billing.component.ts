@@ -35,6 +35,15 @@ export class BillingComponent extends OrderBehavior implements OnInit {
 
   ngOnInit() {
     this.loadOrder();
+    this.billingFormGroup.setValue({
+      fname:this.order.billing.fname,
+      lname:this.order.billing.lname,
+      email:this.order.billing.email,
+      address:this.order.billing.address,
+      phone:this.order.billing.phone,
+      city:this.order.billing.city,
+      country:this.order.billing.country
+    });
     if (!this.order.billing) this.order.billing = new Billing();
   }
 

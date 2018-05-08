@@ -29,6 +29,11 @@ export class StickerComponent extends RootBehavior implements OnInit {
     return this.root + "/assets/country-flags/svg/" + flag.code.toLocaleLowerCase() + ".svg";
   }
 
+  mapflagname(flag:Flag) {
+    if (flag==null) return "Bandera";
+    return flag.name;
+  }
+
   mapdesign(design:Design) {
     if (design==null) return this.root + "/assets/proride/sticker_bg_bardet.png";
     return this.root + "/assets/proride/" + design.bg + ".png";
