@@ -6,10 +6,9 @@
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="bikestickers/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/bikestickers/assets/proride/favicon.png">
   <link rel="stylesheet" href="bikestickers/assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="bikestickers/assets/flags.css">
-  <link rel="stylesheet" href="bikestickers/assets/proride/styles.css">
+    <link rel="stylesheet" href="bikestickers/assets/proride/styles.css">
 </head>
 <body>
   <app-root></app-root>
