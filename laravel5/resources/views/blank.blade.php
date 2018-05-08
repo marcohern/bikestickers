@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Bikestickers</title>
+  <title>Proride</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">

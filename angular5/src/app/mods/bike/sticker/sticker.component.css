@@ -3,7 +3,7 @@
     padding: 0;
     font-family: 'Roboto Condensed', sans-serif;
     font-style: italic;
-    font-size: 6vw;
+    font-size: 5vw;
     color:white;
     background-size: cover;display: block;
     position: relative;
@@ -27,3 +27,9 @@
 .sticker.sticker-bardet   .sticker-flagmask { clip-path: polygon(18% 22%, 40% 22%, 36% 73%, 14% 73%); }
 .sticker.sticker-landa    .sticker-flagmask { clip-path: polygon(25% 20%, 40% 20%, 40% 70%, 25% 70%, 24% 69.63%, 23% 68.57%, 22% 66.651%, 21% 63.634%, 20% 58.819%, 19.5% 54.991%, 19.25% 52.141%, 19% 45%, 19.25% 37.859%, 19.5% 35.009%, 20% 31.181%, 21% 26.336%, 22% 23.349%, 23% 21.45%, 24% 20.35%); }
 .sticker.sticker-quintana .sticker-flagmask { clip-path: circle(10% at 28% 47%); }
+
+
+@media (min-width: 576px) { 
+    .sticker { font-size:28px;width: 576px;left:50%;margin-left: -278px; }
+    .sticker img { width: 559px; }
+}
