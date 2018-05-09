@@ -1,10 +1,9 @@
 .proride-cover { 
-    background-size: contain;
     width: 100%;
-    background-position: center 0;
     background-attachment: fixed;
     background-repeat: no-repeat;
-
+    background-position: center 0;
+    background-position: 90% -80%;
 }
 
 .proride-bg-dark { background-color: black; }
@@ -14,7 +13,7 @@
 .proride-cover.cover1 { background-image: url('bg1_4x3.jpg'); }
 .proride-cover.cover2 { background-image: url('bg2_4x3.jpg'); }
 .proride-cover.cover3 { background-image: url('bg3_4x3.jpg'); }
-.proride-cover.cover4 { background-image: url('bg4_4x3.jpg'); }
+.proride-cover.cover4 { background-image: url('bg4_4x3.jpg');background-position: center 0; }
 
 @media (min-width: 576px) { 
     .proride-cover { height: 150px; }

@@ -11,5 +11,6 @@ export class Order {
 
     constructor() {
         this.sticker = new Sticker();
+        this.billing = new Billing();
     }
 }
