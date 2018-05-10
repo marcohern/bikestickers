@@ -16,8 +16,8 @@ export class BreadcrumbsComponent implements OnInit {
     {num:1, name:'País/Nombre', route:'/name-and-flag', level:0, cls:[], enabled:true },
     {num:2, name:'Diseño'     , route:'/design'       , level:1, cls:[], enabled:true },
     {num:3, name:'Paquete'    , route:'/package'      , level:2, cls:[], enabled:true },
-    {num:4, name:'Envio'      , route:'/billing'      , level:3, cls:[], enabled:true },
-    {num:5, name:'Resumen'    , route:'/summary'      , level:4, cls:[], enabled:true }
+    {num:4, name:'Envío'      , route:'/billing'      , level:3, cls:[], enabled:true },
+    {num:5, name:'Pago'       , route:'/summary'      , level:4, cls:[], enabled:true }
   ]
 
   private _level:number = 0;

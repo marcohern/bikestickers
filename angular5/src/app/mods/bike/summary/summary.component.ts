@@ -20,4 +20,8 @@ export class SummaryComponent extends OrderBehavior implements OnInit {
     this.loadOrder();
   }
 
+  adjustOrder() {
+    this.router.navigate(['/name-and-flag']);
+  }
+
 }

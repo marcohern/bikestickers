@@ -1,7 +1,7 @@
 <proride-cover asset="cover4"></proride-cover>
 <proride-breadcrumbs [level]="3"></proride-breadcrumbs>
 <div class="container">
-    <h2>Información de Envio</h2>
+    <h2>Información de Envío</h2>
 </div>
 <proride-sticker [fname]="order.sticker.fname" [lname]="order.sticker.lname" [flag]="order.sticker.flag" [design]="order.design"></proride-sticker>
 <form [formGroup]="billingFormGroup" (ngSubmit)="next()" novalidate>
@@ -32,10 +32,10 @@
 
     <div class="row">
         <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="*Direccion" formControlName="address" required/><br>
+            <input class="form-control" type="text" placeholder="*Dirección" formControlName="address" required/><br>
         </div>
         <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="*Telefono" formControlName="phone" required/><br>
+            <input class="form-control" type="text" placeholder="*Teléfono" formControlName="phone" required/><br>
         </div>
     </div>
 
@@ -44,7 +44,7 @@
             <input class="form-control" type="text" placeholder="*Ciudad" formControlName="city" required/><br>
         </div>
         <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="*Pais"  formControlName="country" required/><br>
+            <input class="form-control" type="text" placeholder="*País"  formControlName="country" required/><br>
         </div>
     </div>
 
@@ -52,7 +52,7 @@
         <div class="col-md-12 text-center">
             <div class="btn-group btn-group-lg" role="group" aria-label="Siguiente o Anterior">
                 <button type="button" class="btn btn-secondary btn-outline-dark" (click)="previous()">Anterior</button>
-                <button type="submit" class="btn btn-secondary btn-outline-dark">Siguiente</button>
+                <button type="submit" class="btn btn-secondary btn-outline-dark">Pagar</button>
             </div>
         </div>
     </div>

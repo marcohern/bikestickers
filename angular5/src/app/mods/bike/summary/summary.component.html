@@ -1,7 +1,7 @@
 <proride-cover asset="cover4"></proride-cover>
 <proride-breadcrumbs [level]="4"></proride-breadcrumbs>
 <div class="container">
-    <h2>Resumen</h2>
+    <h2>Pago</h2>
 </div>
 <proride-sticker [fname]="order.sticker.fname" [lname]="order.sticker.lname" [flag]="order.sticker.flag" [design]="order.design"></proride-sticker>
 <div class="container">
@@ -55,9 +55,26 @@
       </div>
       <div class="col-sm-3"></div>
     </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div class="btn-group btn-group-lg" role="group" aria-label="Siguiente o Anterior">
+                <button type="button" class="btn btn-secondary btn-outline-dark" (click)="adjustOrder()">Ajustar la Orden</button>
+            </div>
+        </div>
+    </div>
 </div>
 <br>
 <div class="container text-right">
+    <div>
+        <div class="btn btn-primary text-light">Consignacion por Banco</div>
+        <p>
+          <strong>Cuenta de Ahorros Bancolombia</strong><br>
+          <strong>No:</strong> XXXXXXXX<br>
+          <strong>Referencia:</strong> PRO00001
+        </p>
+    </div>  
+  
     <a href="https://biz.payulatam.com/B0893dc26C6FAE1"><img src="http://www.payulatam.com/img-secure-2015/boton_pagar_grande.png"></a><br><br>
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
         <input type="hidden" name="cmd" value="_s-xclick">

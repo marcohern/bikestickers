@@ -1,3 +1,17 @@
+.proride-whatsapp {
+    text-align: right;
+    background-color: white;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0 8px;
+}
+
+.proride-whatsappicon {
+    height: 1em;
+    width: auto;
+    background-image: url(wassap_64x64.png);
+}
+
 .proride-cover { 
     width: 100%;
     background-attachment: fixed;
@@ -92,4 +106,9 @@ input.ng-valid:not(form) {
 @media (min-width: 576px) { 
     .sticker { font-size:28px;width: 576px;left:50%;margin-left: -278px; }
     .sticker img { width: 559px; }
+}
+
+.proride-copy {
+    font-size: 0.8em;
+    color:gray;
 }
