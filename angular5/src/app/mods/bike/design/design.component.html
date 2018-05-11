@@ -13,12 +13,18 @@
         </div>  
     </div>
     <br><br><br-->
-
+    <div class="proride-btpanel">
+        <div class="row">
+            <div class="col-md-4 text-center" *ngFor="let design of designs">
+                <button class="btn btn-lg" (click)="selectDesign(design)" [ngClass]="design.selected">
+                    <img alt="{{design.name}}" class="img-fluid" src="{{root}}/assets/proride/{{design.code}}.jpg" width="200" height="200" />
+                    <span class="proride-bttext">{{design.name}}</span>
+                </button><br><br>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-12 text-center">
-            <button *ngFor="let design of designs" class="btn btn-lg" (click)="selectDesign(design)" [ngClass]="design.selected">
-                <img alt="{{design.name}}" class="img-fluid" src="{{root}}/assets/proride/{{design.code}}.jpg" width="200" height="200" />
-            </button><br><br>
             <div *ngIf="order.design"> Seleccionaste <span class="btn btn-dark">{{order.design.name}}</span></div>
             <div *ngIf="showErrorMessage" class="alert alert-error">Por favor selecciona un diseño</div>
         </div>

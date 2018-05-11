@@ -24,6 +24,19 @@ export class DesignComponent extends OrderBehavior implements OnInit {
 
   ngOnInit() {
     this.loadOrder();
+    if (this.order.design) {
+      this.order.design = this.getSelectedDesign();
+      this.order.design.selected = 'btn-primary';
+    }
+  }
+
+  getSelectedDesign() {
+    for (let d of this.designs) {
+      if (this.order.design.id == d.id) {
+        return d;
+      }
+    }
+    return null;
   }
 
   selectDesign(design:Design) {

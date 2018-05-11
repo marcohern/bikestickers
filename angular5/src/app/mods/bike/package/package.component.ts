@@ -23,6 +23,10 @@ export class PackageComponent extends OrderBehavior implements OnInit {
 
   ngOnInit() {
     this.loadOrder();
+    if (this.order.package) {
+      this.order.package = this.getSelectedPackage();
+      this.order.package.selected = 'btn-primary';
+    }
   }
 
   getStatus(pack:Package) {
@@ -37,6 +41,14 @@ export class PackageComponent extends OrderBehavior implements OnInit {
     if (this.order.package) this.order.package.selected = 'btn-outline-dark';
     pack.selected = 'btn-primary';
     this.savePackage(pack);
+  }
+  getSelectedPackage() {
+    for (let p of this.packages) {
+      if (this.order.package.id == p.id) {
+        return p;
+      }
+    }
+    return null;
   }
 
   next() {
