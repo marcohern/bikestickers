@@ -17,13 +17,16 @@
     </ul>
     <ul class="navbar-nav my-2 my-lg-0">
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/about">NOSOTROS</a>
+        <a class="nav-link" routerLink="/name-and-flag" (click)="toggleMenu()">INICIO</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/news">NEWS</a>
+        <a class="nav-link" routerLink="/about" (click)="toggleMenu()">NOSOTROS</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/contact">CONTACTO</a>
+        <a class="nav-link" routerLink="/news" (click)="toggleMenu()">NEWS</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/contact" (click)="toggleMenu()">CONTACTO</a>
       </li>
       <!--li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/en">English</a>
