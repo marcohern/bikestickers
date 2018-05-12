@@ -3,6 +3,7 @@ export class Package {
     code:string = '';
     name:string = '';
     price:number = 0;
+    detail:string = '';
     enabled:boolean = true;
     selected:string = '';
 }

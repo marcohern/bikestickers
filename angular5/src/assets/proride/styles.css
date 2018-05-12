@@ -172,3 +172,15 @@ input.ng-valid:not(form) {
     background-color: white;
     height: 2px;
 }
+
+.proride-btpanel-text {
+    font-weight: normal;
+}
+
+.proride-btpanel-text .proride-btpanel-header {
+    font-size: 1.5em;
+}
+
+.proride-btpanel-text .proride-btpanel-body {
+    
+}
