@@ -13,6 +13,9 @@ export class CoverComponent implements OnInit {
   @Input()
   display: boolean = true;
 
+  @Input()
+  label: string = '';
+
   constructor() { }
 
   ngOnInit() {

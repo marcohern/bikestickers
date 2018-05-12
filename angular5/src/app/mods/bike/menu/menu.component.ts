@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { RootBehavior } from '../behaviors/root-behavior';
 
 @Component({
   selector: 'mrc-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent extends RootBehavior implements OnInit {
   
   public isCollapsed = true;
 
-  constructor() { }
+  constructor() { 
+    super();
+  }
 
   ngOnInit() {
     console.log("menu");

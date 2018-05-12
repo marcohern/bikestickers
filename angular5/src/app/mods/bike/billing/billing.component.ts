@@ -6,6 +6,7 @@ import { OrderBehavior } from '../behaviors/order-behavior';
 import { Billing } from '../models/billing';
 import { RequestService } from '../../request/request.service';
 import { HttpClient } from '@angular/common/http';
+import { IdResult } from '../models/id-result';
 
 @Component({
   selector: 'app-billing',
@@ -60,9 +61,10 @@ export class BillingComponent extends OrderBehavior implements OnInit {
       state: '',
       zip: ''
     });
-    this.http.post('/api/order', this.order).subscribe(result => {
+
+    this.http.post<IdResult>('/api/order', this.order).subscribe(result => {
       console.log(result);
-      this.router.navigate(['/summary',1]);
+      this.router.navigate(['/summary',result.id]);
     }, error => {
       console.error(error);
     });
