@@ -33,12 +33,31 @@ export class NameAndFlagComponent extends OrderBehavior implements OnInit {
   ngOnInit() {
 
     this.loadOrder();
+    
+    this.flags = this.bs.getFlags();
+    this.setBrowserFlag();
+
     var flagname = (this.order.sticker.flag) ? this.order.sticker.flag.name : '';
     this.nameFlagFormGroup.setValue({
       flag:flagname,
       fname:this.order.sticker.fname,
       lname:this.order.sticker.lname
     });
+  }
+
+  setBrowserFlag() {
+    if (this.order.sticker.flag != null) return;
+    var lang = navigator.language;
+    var arr = lang.split('-');
+    if (arr.length <= 1) return;
+    var co = arr[1];
+    for (var flag of this.flags) {
+      if (flag.code == co) {
+        this.order.sticker.flag = flag;
+        return;
+      }
+    }
+    this.order.sticker.flag = this.flags[0];
   }
 
   selectFlag(flag:any) {
@@ -69,7 +88,6 @@ export class NameAndFlagComponent extends OrderBehavior implements OnInit {
   }
 
   modal(flagPicker) {
-    this.flags = this.bs.getFlags();
     this.ms.open(flagPicker, {size:'lg', windowClass:'light-modal'}).result.then((result) => {
       console.log(`Closed with:`, result);
       this.selectFlag(result);
