@@ -47,12 +47,30 @@
             <input class="form-control" type="text" placeholder="*País"  formControlName="country" required/><br>
         </div>
     </div>
-
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="g-recaptcha" language="es-419" data-sitekey="6Lcq4FgUAAAAAMxUzKSM9QVuFa8a6Fzsfg5ysr8G"></div>
+            <p *ngIf="captchaError" class="proride-error">Debes responder el Captcha</p>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+            <div class="col-md-12">
+                <p>
+                    Puedes hacer click sobre 'Guardar' si deseas guardar detalles en tu maquina, pero no 
+                    quieres confirmar la orden aun. Mientras no la confirmes, podras hacer ajustes.
+                    Una vez la orden es confirmada, se enviara un email a tu correo con los detalles de la orden.
+                </p>
+                <ngb-alert type="success" *ngIf="savedAlert" (close)="savedAlert=false;">La informacion de Envío guardada!</ngb-alert>
+            </div>
+        </div>
     <div class="row">
         <div class="col-md-12 text-center">
             <div class="btn-group btn-group-lg" role="group" aria-label="Siguiente o Anterior">
                 <button type="button" class="btn btn-secondary btn-outline-dark" (click)="previous()">Anterior</button>
-                <button type="submit" class="btn btn-secondary btn-outline-dark">Pagar</button>
+                <button type="button" class="btn btn-secondary btn-outline-dark" (click)="save()">Guardar</button>
+                <button type="submit" class="btn btn-secondary btn-outline-dark">Confirmar Orden</button>
             </div>
         </div>
     </div>

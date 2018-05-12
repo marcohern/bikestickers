@@ -190,3 +190,7 @@ input.ng-valid:not(form) {
 .proride-btpanel-text .proride-btpanel-body {
     font-weight: normal;
 }
+
+.proride-error {
+    color:red;
+}

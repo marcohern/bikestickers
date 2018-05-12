@@ -8,6 +8,8 @@ import { RequestService } from '../../request/request.service';
 import { HttpClient } from '@angular/common/http';
 import { IdResult } from '../models/id-result';
 
+declare var grecaptcha: any;
+
 @Component({
   selector: 'app-billing',
   templateUrl: './billing.component.html',
@@ -24,6 +26,9 @@ export class BillingComponent extends OrderBehavior implements OnInit {
     city: new FormControl(),
     country: new FormControl(),
   });
+
+  captchaError = false;
+  savedAlert = false;
 
   constructor(
     private router:Router,
@@ -47,9 +52,7 @@ export class BillingComponent extends OrderBehavior implements OnInit {
     });
     if (!this.order.billing) this.order.billing = new Billing();
   }
-
-  next() {
-    console.log(this.billingFormGroup.value);
+  save() {
     this.saveBilling({
       fname: this.billingFormGroup.value.fname,
       lname: this.billingFormGroup.value.lname,
@@ -61,15 +64,41 @@ export class BillingComponent extends OrderBehavior implements OnInit {
       state: '',
       zip: ''
     });
+    this.savedAlert = true;
+    setTimeout(() => {
+      this.savedAlert = false;
+    }, 5000);
+  }
 
-    this.http.post<IdResult>('/api/order', this.order).subscribe(result => {
-      console.log(result);
-      this.router.navigate(['/summary',result.id]);
-    }, error => {
-      console.error(error);
-    });
-    //this.saveOrder();
+  next() {
+    var token = grecaptcha.getResponse();
+    this.order.token = token;
+    if (this.billingFormGroup.valid) {
+      if (token == '') {
+        this.captchaError = true;
+      } else {
+        this.captchaError = false;
+        
+        this.saveBilling({
+          fname: this.billingFormGroup.value.fname,
+          lname: this.billingFormGroup.value.lname,
+          email: this.billingFormGroup.value.email,
+          address: this.billingFormGroup.value.address,
+          phone: this.billingFormGroup.value.phone,
+          city: this.billingFormGroup.value.city,
+          country: this.billingFormGroup.value.country,
+          state: '',
+          zip: ''
+        });
     
+        this.http.post<IdResult>('/api/order', this.order).subscribe(result => {
+          console.log(result);
+          this.router.navigate(['/summary',result.id]);
+        }, error => {
+          console.error(error);
+        });
+      }
+    }
   }
 
   previous() {

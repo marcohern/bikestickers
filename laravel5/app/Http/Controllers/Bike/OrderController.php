@@ -35,9 +35,31 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $r)
     {
+        
+        //*
+        $post_data = http_build_query(
+            array(
+                'secret' => '6Lcq4FgUAAAAANEYwYKdRUnM9bn426VyWPrpaT6F',
+                'response' => $r->input('token'),
+                'remoteip' => $_SERVER['REMOTE_ADDR']
+            )
+        );
+        $opts = array('http' =>
+            array(
+                'method'  => 'POST',
+                'header'  => 'Content-type: application/x-www-form-urlencoded',
+                'content' => $post_data
+            )
+        );
+        $context  = stream_context_create($opts);
+        $response = file_get_contents('https://www.google.com/recaptcha/api/siteverify', false, $context);
+        $result = json_decode($response);
+        /* */
         return [
+            'req' => $r->all(),
+            'captcha' => $result,
             'success' => true,
             'id' => rand(1000,9999)
     	];
