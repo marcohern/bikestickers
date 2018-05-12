@@ -1,3 +1,4 @@
+
 .proride-whatsapp {
     text-align: right;
     background-color: white;
@@ -111,8 +112,13 @@ input.ng-valid:not(form) {
 
 .proride-copy {
     font-size: 0.8em;
+}
+.proride-copy,
+.proride-copy a,
+.proride-copy a:hover {
     color:gray;
 }
+
 /*
 .proride-btpanel img {
     width:64px;
@@ -182,5 +188,5 @@ input.ng-valid:not(form) {
 }
 
 .proride-btpanel-text .proride-btpanel-body {
-    
+    font-weight: normal;
 }

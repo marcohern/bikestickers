@@ -16,6 +16,11 @@ import { BikeService } from './bike.service';
 import { BikeRoutes } from './bike.routes';
 import { StickerComponent } from './sticker/sticker.component';
 import { RequestModule } from '../request/request.module';
+import { AboutComponent } from './about/about.component';
+import { NewsComponent } from './news/news.component';
+import { ContactComponent } from './contact/contact.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { ShippingComponent } from './shipping/shipping.component';
 
 
 
@@ -38,7 +43,12 @@ import { RequestModule } from '../request/request.module';
     BreadcrumbsComponent,
     SummaryComponent,
     MenuComponent,
-    StickerComponent
+    StickerComponent,
+    AboutComponent,
+    NewsComponent,
+    ContactComponent,
+    PrivacyComponent,
+    ShippingComponent
   ],
   providers: [ BikeService ],
   exports:[MenuComponent]

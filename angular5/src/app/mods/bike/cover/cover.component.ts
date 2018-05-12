@@ -10,6 +10,9 @@ export class CoverComponent implements OnInit {
   @Input()
   asset: string = 'cover1';
 
+  @Input()
+  display: boolean = true;
+
   constructor() { }
 
   ngOnInit() {
