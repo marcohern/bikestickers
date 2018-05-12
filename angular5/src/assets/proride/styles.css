@@ -112,7 +112,7 @@ input.ng-valid:not(form) {
     font-size: 0.8em;
     color:gray;
 }
-
+/*
 .proride-btpanel img {
     width:64px;
     height:64px;
@@ -132,4 +132,4 @@ input.ng-valid:not(form) {
         display: none;
     }
     
-}
+}*/

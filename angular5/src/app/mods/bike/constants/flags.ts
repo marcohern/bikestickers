@@ -1,7 +1,7 @@
 import { Flag } from '../models/flag';
 
 export const flags:Flag[] = [
-    {id:1002,code:"AE",name:"Emiratos Árabes Unidos",x:0},
+    {id:1002,code:"AE",name:"Emiratos Árabes Unidos",x:0},
     {id:1003,code:"AF",name:"Afganistán",x:0},
     {id:1004,code:"AG",name:"Antigua y Barbuda",x:-5},
     {id:1005,code:"AI",name:"Anguila",x:-5},
