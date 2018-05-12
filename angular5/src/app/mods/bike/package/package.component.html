@@ -5,16 +5,6 @@
 </div>
 <proride-sticker [fname]="order.sticker.fname" [lname]="order.sticker.lname" [flag]="order.sticker.flag" [design]="order.design"></proride-sticker>
 <div class="container">
-    <!--div class="row">
-        <div class="col-md-12">
-            <div class="btn btn-dark btn-lg btn-block">
-                <img *ngIf="order.sticker.flag" [alt]="order.sticker.flag.name" [src]="flagPath(order.sticker.flag)" width="64px" />
-                <span>{{order.sticker.fname}} <strong>{{order.sticker.lname}}</strong></span>
-                <span *ngIf="order.design" class="d-none d-md-inline">({{order.design.name}})</span>
-            </div>
-        </div>
-    </div>
-    <br><br><br-->
 
     <div class="row">
         <div class="col-md-12 text-center" *ngIf="order.package">
@@ -30,8 +20,8 @@
                     (click)="selectPackageOption(package)"
                     [ngClass]="getStatus(package)"
                     [disabled]="!package.enabled">
-                    <img alt="{{package.name}}" src="{{root}}/assets/proride/{{package.code}}.png" width="200" height="200"/>
-                    <span class="proride-bttext">{{package.name}}</span>
+                    <img alt="{{package.name}}" *ngIf="package.enabled" src="{{root}}/assets/proride/{{order.design.code}}.png" width="200" height="200"/>
+                    <img alt="{{package.name}}" *ngIf="!package.enabled" src="{{root}}/assets/proride/{{package.code}}.png" width="200" height="200"/>
                 </button>
             </div>
         </div>
