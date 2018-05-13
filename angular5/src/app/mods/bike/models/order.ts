@@ -8,7 +8,10 @@ export class Order {
     package:Package = null;
     design:Design = null;
     sticker:Sticker = null;
+    
     token:string = '';
+    number:string = null;
+    date:Date = null;
 
     constructor() {
         this.sticker = new Sticker();
