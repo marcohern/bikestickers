@@ -23,6 +23,7 @@ import { NewsComponent } from './news/news.component';
 import { ContactComponent } from './contact/contact.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ShippingComponent } from './shipping/shipping.component';
+import { SearchOrdersComponent } from './search-orders/search-orders.component';
 
 
 
@@ -51,7 +52,8 @@ import { ShippingComponent } from './shipping/shipping.component';
     NewsComponent,
     ContactComponent,
     PrivacyComponent,
-    ShippingComponent
+    ShippingComponent,
+    SearchOrdersComponent
   ],
   providers: [ BikeService ],
   exports:[MenuComponent]

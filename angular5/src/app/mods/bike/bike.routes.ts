@@ -10,6 +10,7 @@ import { NewsComponent } from './news/news.component';
 import { ContactComponent } from './contact/contact.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ShippingComponent } from './shipping/shipping.component';
+import { SearchOrdersComponent } from './search-orders/search-orders.component';
 
 const routes: Routes = [
     { path: 'name-and-flag', component: NameAndFlagComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
     { path: 'package'      , component: PackageComponent },
     { path: 'billing'      , component: BillingComponent },
     { path: 'summary/:id'  , component: SummaryComponent },
+    { path: 'searchorders' , component: SearchOrdersComponent },
     { path: 'about'        , component: AboutComponent   },
     { path: 'news'         , component: NewsComponent    },
     { path: 'contact'      , component: ContactComponent },
