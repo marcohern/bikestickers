@@ -1,7 +1,7 @@
 import { Component, OnInit, PACKAGE_ROOT_URL } from '@angular/core';
 import { Router } from '@angular/router';
 import { BikeService } from '../bike.service';
-import { Package } from '../models/package';
+import { VisualPackage } from '../models/visual-package';
 import { OrderBehavior } from '../behaviors/order-behavior';
 import { packages } from '../constants/packages';
 
@@ -12,7 +12,7 @@ import { packages } from '../constants/packages';
 })
 export class PackageComponent extends OrderBehavior implements OnInit {
 
-  packages:Package[] = [];
+  packages:VisualPackage[] = [];
 
   constructor(
     private router:Router,
@@ -29,14 +29,14 @@ export class PackageComponent extends OrderBehavior implements OnInit {
     }
   }
 
-  getStatus(pack:Package) {
+  getStatus(pack:VisualPackage) {
     var c:string[] = [];
     if (!pack.enabled) c.push('occlude');
     c.push(pack.selected);
     return c;
   }
 
-  selectPackageOption(pack:Package) {
+  selectPackageOption(pack:VisualPackage) {
 
     if (this.order.package) this.order.package.selected = 'btn-outline-dark';
     pack.selected = 'btn-primary';

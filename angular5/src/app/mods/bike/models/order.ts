@@ -1,11 +1,11 @@
 import { Billing } from './billing';
 import { VisualDesign } from './visual-design';
-import { Package } from './package';
+import { VisualPackage } from './visual-package';
 import { VisualSticker } from './visual-sticker';
 
 export class Order {
     billing:Billing = null;
-    package:Package = null;
+    package:VisualPackage = null;
     design:VisualDesign = null;
     sticker:VisualSticker = null;
     

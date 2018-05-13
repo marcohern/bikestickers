@@ -3,7 +3,7 @@ import { BikeService } from '../bike.service';
 import { Order } from '../models/order';
 import { VisualFlag } from '../models/visual-flag';
 import { VisualDesign } from '../models/visual-design';
-import { Package } from '../models/package';
+import { VisualPackage } from '../models/visual-package';
 import { Billing } from '../models/billing';
 import { Flag } from '../models/flag';
 
@@ -42,7 +42,7 @@ export class OrderBehavior extends FlagDisplayBehavior {
         this.saveOrder();
     }
 
-    savePackage(pkg:Package) {
+    savePackage(pkg:VisualPackage) {
         this.order.package = pkg;
         this.saveOrder();
     }
