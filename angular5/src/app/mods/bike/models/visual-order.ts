@@ -21,17 +21,4 @@ export class VisualOrder {
         this.sticker = new VisualSticker();
         this.billing = new Billing();
     }
-
-    toOrder() : Order {
-        return {
-            billing: this.billing,
-            package: this.package as Package,
-            design: this.design as Design,
-            sticker: this.sticker as Sticker,
-
-            token: this.token,
-            number: this.number,
-            date: this.date
-        } as Order;
-    }
 }

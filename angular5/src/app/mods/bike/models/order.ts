@@ -1,20 +1,15 @@
 import { Billing } from './billing';
-import { VisualDesign } from './visual-design';
-import { VisualPackage } from './visual-package';
-import { VisualSticker } from './visual-sticker';
+import { Sticker } from './sticker';
+import { Package } from './package';
+import { Design } from './design';
 
 export class Order {
     billing:Billing = null;
-    package:VisualPackage = null;
-    design:VisualDesign = null;
-    sticker:VisualSticker = null;
+    package:Package = null;
+    design:Design = null;
+    sticker:Sticker = null;
     
     token:string = '';
     number:string = null;
     date:Date = null;
-
-    constructor() {
-        this.sticker = new VisualSticker();
-        this.billing = new Billing();
-    }
 }

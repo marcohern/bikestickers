@@ -1,6 +1,6 @@
 import { FlagDisplayBehavior } from './flag-display-behavior';
 import { BikeService } from '../bike.service';
-import { Order } from '../models/order';
+import { VisualOrder } from '../models/visual-order';
 import { VisualFlag } from '../models/visual-flag';
 import { VisualDesign } from '../models/visual-design';
 import { VisualPackage } from '../models/visual-package';
@@ -9,7 +9,7 @@ import { Flag } from '../models/flag';
 
 export class OrderBehavior extends FlagDisplayBehavior {
     bss:BikeService = null;
-    order:Order = null;
+    order:VisualOrder = null;
 
     constructor(bs:BikeService) {
         super();
