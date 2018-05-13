@@ -8,8 +8,6 @@ import { RequestService } from '../../request/request.service';
 import { HttpClient } from '@angular/common/http';
 import { IdResult } from '../models/id-result';
 
-declare var grecaptcha: any;
-
 @Component({
   selector: 'app-billing',
   templateUrl: './billing.component.html',
@@ -29,6 +27,7 @@ export class BillingComponent extends OrderBehavior implements OnInit {
 
   captchaError = false;
   savedAlert = false;
+  captchaToken = '';
 
   constructor(
     private router:Router,
@@ -70,11 +69,18 @@ export class BillingComponent extends OrderBehavior implements OnInit {
     }, 5000);
   }
 
+  handleCorrectCaptcha($event) {
+    this.captchaToken = $event;
+  }
+
+  handleCaptchaExpired($event) {
+    this.captchaToken = '';
+  }
+
   next() {
-    var token = grecaptcha.getResponse();
-    this.order.token = token;
+    this.order.token = this.captchaToken;
     if (this.billingFormGroup.valid) {
-      if (token == '') {
+      if (this.captchaToken == '') {
         this.captchaError = true;
       } else {
         this.captchaError = false;

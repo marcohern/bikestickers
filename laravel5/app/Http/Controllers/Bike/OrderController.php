@@ -56,6 +56,9 @@ class OrderController extends Controller
         $context  = stream_context_create($opts);
         $response = file_get_contents('https://www.google.com/recaptcha/api/siteverify', false, $context);
         $result = json_decode($response);
+        if (!$result->success) {
+            throw new Exception('Gah! CAPTCHA verification failed.', 1);
+        }
         /* */
         return [
             'req' => $r->all(),
