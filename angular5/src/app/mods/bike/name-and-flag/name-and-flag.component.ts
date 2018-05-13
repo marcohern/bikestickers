@@ -38,7 +38,7 @@ export class NameAndFlagComponent extends OrderBehavior implements OnInit {
     this.flags = this.bs.getFlags();
     this.setBrowserFlag();
 
-    var flagname = (this.order.sticker.flag) ? this.order.sticker.flag.name : '';
+    var flagname = (this.order.sticker.vflag) ? this.order.sticker.vflag.name : '';
     this.nameFlagFormGroup.setValue({
       flag:flagname,
       fname:this.order.sticker.fname,
@@ -47,40 +47,40 @@ export class NameAndFlagComponent extends OrderBehavior implements OnInit {
   }
 
   setBrowserFlag() {
-    if (this.order.sticker.flag != null) return;
+    if (this.order.sticker.vflag != null) return;
     var lang = navigator.language;
     var arr = lang.split('-');
     if (arr.length <= 1) return;
     var co = arr[1];
     for (var flag of this.flags) {
       if (flag.code == co) {
-        this.order.sticker.flag = flag;
+        this.order.sticker.vflag = flag;
         return;
       }
     }
-    this.order.sticker.flag = this.flags[0];
+    this.order.sticker.vflag = this.flags[0];
   }
 
-  selectFlag(flag:any) {
-    this.order.sticker.flag = flag;
+  selectFlag(flag:VisualFlag) {
+    this.order.sticker.vflag = flag;
     this.nameFlagFormGroup.controls['flag'].setValue(flag.name);
   }
 
   getFlagSelector() {
-    if (this.order.sticker.flag==null) return '';
-    return this.order.sticker.flag.code;
+    if (this.order.sticker.vflag==null) return '';
+    return this.order.sticker.vflag.code;
   }
 
   getFlagName() {
-    if (this.order.sticker.flag==null || this.order.sticker.flag.name == '') return '- Bandera -';
-    return this.order.sticker.flag.name;
+    if (this.order.sticker.vflag==null || this.order.sticker.vflag.name == '') return '- Bandera -';
+    return this.order.sticker.vflag.name;
   }
 
   next() {
     console.log("next",this.nameFlagFormGroup);
     if (this.nameFlagFormGroup.valid) {
       this.saveFlagName(
-        this.order.sticker.flag, 
+        this.order.sticker.vflag, 
         this.nameFlagFormGroup.value.fname,
         this.nameFlagFormGroup.value.lname
       );
@@ -107,7 +107,7 @@ export class NameAndFlagComponent extends OrderBehavior implements OnInit {
 
   onChangeName() {
     this.saveFlagName(
-      this.order.sticker.flag, 
+      this.order.sticker.vflag, 
       this.nameFlagFormGroup.value.fname,
       this.nameFlagFormGroup.value.lname
     );

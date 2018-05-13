@@ -2,7 +2,7 @@
 <div class="container">
     <h2>Orden</h2>
 </div>
-<proride-sticker [fname]="order.sticker.fname" [lname]="order.sticker.lname" [flag]="order.sticker.flag" [design]="order.design"></proride-sticker>
+<proride-sticker [fname]="order.sticker.fname" [lname]="order.sticker.lname" [flag]="order.sticker.vflag" [design]="order.design"></proride-sticker>
 <div class="container">
     <div class="row">
       <div class="col-sm-3"></div>
@@ -14,7 +14,7 @@
         <hr>
         <div class="row">
           <div class="col-4">Bandera</div>
-          <div class="col-8"><img alt="Bandera" [src]="flagPath(order.sticker.flag)" height="48" /></div>
+          <div class="col-8"><img alt="Bandera" [src]="flagPath(order.sticker.vflag)" height="48" /></div>
         </div>
         <hr>
         <div class="row">

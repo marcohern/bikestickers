@@ -1,7 +1,7 @@
-import { VisualFlag } from './visual-flag';
+import { Flag } from './flag';
 
 export class Sticker {
-    flag:VisualFlag = null;
+    flag:Flag = null;
     fname:string = '';
     lname:string = '';
 

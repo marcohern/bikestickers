@@ -5,6 +5,7 @@ import { VisualFlag } from '../models/visual-flag';
 import { VisualDesign } from '../models/visual-design';
 import { Package } from '../models/package';
 import { Billing } from '../models/billing';
+import { Flag } from '../models/flag';
 
 export class OrderBehavior extends FlagDisplayBehavior {
     bss:BikeService = null;
@@ -29,7 +30,8 @@ export class OrderBehavior extends FlagDisplayBehavior {
     }
 
     saveFlagName(flag:VisualFlag, fname:string, lname:string) {
-        this.order.sticker.flag = flag;
+        this.order.sticker.flag = flag as Flag;
+        this.order.sticker.vflag = flag;
         this.order.sticker.fname = fname;
         this.order.sticker.lname = lname;
         this.saveOrder();
