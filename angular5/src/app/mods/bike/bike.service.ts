@@ -11,6 +11,8 @@ import { Flag } from './models/flag';
 import { VisualSticker } from './models/visual-sticker';
 import { VisualDesign } from './models/visual-design';
 import { VisualPackage } from './models/visual-package';
+import { designs } from './constants/designs';
+import { packages } from './constants/packages';
 
 var storage = window.sessionStorage;
 
@@ -53,6 +55,36 @@ export class BikeService {
       }
     }
     return filteredFlags;
+  }
+
+  findFlag(code:string) : VisualFlag {
+    if (code=='') return null;
+    for (let flag of flags) {
+      if (flag.code == code) {
+        return flag;
+      }
+    }
+    return null;
+  }
+
+  findDesign(code:string):VisualDesign {
+    if (code=='') return null;
+    for (let design of designs) {
+      if (design.code == code) {
+        return design;
+      }
+    }
+    return null;
+  }
+
+  findPackage(code:string):VisualPackage {
+    if (code=='') return null;
+    for (let pack of packages) {
+      if (pack.code == code) {
+        return pack;
+      }
+    }
+    return null;
   }
 
   toOrder(order:VisualOrder) : Order {

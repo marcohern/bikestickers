@@ -15,8 +15,16 @@ class CreateOrderTable extends Migration
     {
         Schema::create('order', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('sticker_id', 32);
-            $table->string('package', 32);
+            $table->string('reference', 32)->unique();
+            $table->string('sticker_flag' , 6);
+            $table->string('sticker_fname', 128);
+            $table->string('sticker_lname', 128);
+            $table->string('design_code', 32);
+            $table->string('design_name', 128);
+            $table->string('package_code', 32);
+            $table->string('package_name', 128);
+            $table->decimal('price', 18, 2);
+            $table->enum('status', ['CREATED','VOID','PAYED'])->default('CREATED');
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Bike;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\OrderReference;
 
 class OrderController extends Controller
 {
@@ -57,15 +58,24 @@ class OrderController extends Controller
         $response = file_get_contents('https://www.google.com/recaptcha/api/siteverify', false, $context);
         $result = json_decode($response);
         if (!$result->success) {
-            throw new Exception('Gah! CAPTCHA verification failed.', 1);
+            throw new \Exception('Gah! CAPTCHA verification failed.', 1);
         }
         /* */
-        return [
-            'req' => $r->all(),
+        
+        $ref = OrderReference::where('id', 1)->firstOrFail();
+        $value = ++$ref->order_ref;
+        $id = $ref->id;
+        $ref->updated_at = new \DateTime("now");
+        $ref->save();
+
+        return response()->json([
+            //'req' => $r->all(),
+
             'captcha' => $result,
             'success' => true,
-            'id' => rand(1000,9999)
-    	];
+            'id' => $id,
+            'ref' => $value
+    	]);
     }
 
     /**
