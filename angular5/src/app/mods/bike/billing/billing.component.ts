@@ -98,7 +98,7 @@ export class BillingComponent extends OrderBehavior implements OnInit {
         });
         this.order.date = new Date();
         this.http.post<IdResult>('/api/order', this.bs.toOrder(this.order)).subscribe(result => {
-          //this.clearOrder();
+          this.clearOrder();
           this.router.navigate(['/summary',result.ref]);
         }, error => {
           console.error(error);

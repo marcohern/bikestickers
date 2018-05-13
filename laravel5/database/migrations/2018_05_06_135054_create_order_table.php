@@ -28,7 +28,7 @@ class CreateOrderTable extends Migration
 
             $table->string('bill_fname', 128);
             $table->string('bill_lname', 128);
-            $table->string('email', 128)->unique();
+            $table->string('email', 128);
             $table->string('address', 128);
             $table->string('phone', 64);
             $table->string('city', 128);
