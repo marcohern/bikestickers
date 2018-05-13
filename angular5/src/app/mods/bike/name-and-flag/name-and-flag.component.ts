@@ -5,8 +5,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { OrderBehavior } from '../behaviors/order-behavior';
 import { BikeService } from '../bike.service';
-import { Flag } from '../models/flag';
+import { VisualFlag } from '../models/visual-flag';
 import { Sticker } from '../models/sticker';
+
 
 @Component({
   selector: 'app-name-and-flag',
@@ -15,7 +16,7 @@ import { Sticker } from '../models/sticker';
 })
 export class NameAndFlagComponent extends OrderBehavior implements OnInit {
 
-  flags:Flag[] = [];
+  flags:VisualFlag[] = [];
   
   nameFlagFormGroup:FormGroup = new FormGroup({
     flag: new FormControl(),

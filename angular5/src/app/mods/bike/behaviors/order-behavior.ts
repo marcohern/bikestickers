@@ -1,7 +1,7 @@
 import { FlagDisplayBehavior } from './flag-display-behavior';
 import { BikeService } from '../bike.service';
 import { Order } from '../models/order';
-import { Flag } from '../models/flag';
+import { VisualFlag } from '../models/visual-flag';
 import { Design } from '../models/design';
 import { Package } from '../models/package';
 import { Billing } from '../models/billing';
@@ -29,7 +29,7 @@ export class OrderBehavior extends FlagDisplayBehavior {
         this.order = null;
     }
 
-    saveFlagName(flag:Flag, fname:string, lname:string) {
+    saveFlagName(flag:VisualFlag, fname:string, lname:string) {
         this.order.sticker.flag = flag;
         this.order.sticker.fname = fname;
         this.order.sticker.lname = lname;

@@ -96,7 +96,7 @@ export class BillingComponent extends OrderBehavior implements OnInit {
           state: '',
           zip: ''
         });
-    
+        this.order.date = new Date();
         this.http.post<IdResult>('/api/order', this.order).subscribe(result => {
           //this.clearOrder();
           this.router.navigate(['/summary',result.id]);

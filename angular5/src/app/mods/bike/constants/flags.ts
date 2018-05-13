@@ -1,6 +1,6 @@
-import { Flag } from '../models/flag';
+import { VisualFlag } from '../models/visual-flag';
 
-export const flags:Flag[] = [
+export const flags:VisualFlag[] = [
     {id:1001,code:"AD",name:"Andorra",x:0},
     {id:1002,code:"AE",name:"Emiratos Árabes Unidos",x:0},
     {id:1003,code:"AF",name:"Afganistán",x:0},

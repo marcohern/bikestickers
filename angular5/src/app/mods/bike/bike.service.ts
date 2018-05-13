@@ -3,6 +3,7 @@ import { Order } from './models/order';
 import { Flag } from './models/flag';
 import { flags } from './constants/flags';
 import { environment } from '../../../environments/environment';
+import { VisualFlag } from './models/visual-flag';
 
 var storage = window.sessionStorage;
 
@@ -29,15 +30,15 @@ export class BikeService {
     storage.removeItem(BikeService.storageId);
   }
 
-  public getFlags() {
+  public getFlags():VisualFlag[] {
     return flags;
   }
 
-  filterFlags(query:string = null) {
+  filterFlags(query:string = null) : VisualFlag[] {
     var q = query.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
     var flags = this.getFlags();
     if (q==null || q=='') return flags;
-    var filteredFlags:Flag[] = [];
+    var filteredFlags:VisualFlag[] = [];
     for(let flag of flags) {
       var flagname = flag.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
       if (flagname.includes(q)) {
