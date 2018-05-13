@@ -75,16 +75,25 @@ class OrderController extends Controller
 
         $rorder = $r->all();
         $order = new Order();
-        $order->reference = $reference;
-        $order->sticker_flag = $rorder['sticker']['flag']['code'];
+        $order->reference     = $reference;
+        $order->sticker_flag  = $rorder['sticker']['flag']['code'];
         $order->sticker_fname = $rorder['sticker']['fname'];
         $order->sticker_lname = $rorder['sticker']['lname'];
-        $order->design_code = $rorder['design']['code'];
-        $order->design_name = $rorder['design']['name'];
-        $order->package_code = $rorder['package']['code'];
-        $order->package_name = $rorder['package']['name'];
-        $order->price = $rorder['package']['price'];
-        $order->status = 'CREATED';
+        $order->design_code   = $rorder['design']['code'];
+        $order->design_name   = $rorder['design']['name'];
+        $order->package_code  = $rorder['package']['code'];
+        $order->package_name  = $rorder['package']['name'];
+        $order->price         = $rorder['package']['price'];
+        $order->bill_fname    = $rorder['billing']['fname'];
+        $order->bill_lname    = $rorder['billing']['lname'];
+        $order->email         = $rorder['billing']['email'];
+        $order->address       = $rorder['billing']['address'];
+        $order->phone         = $rorder['billing']['phone'];
+        $order->city          = $rorder['billing']['city'];
+        $order->state         = '';//$rorder['billing']['state'];
+        $order->country       = $rorder['billing']['country'];
+        $order->zip           = '';//$rorder['billing']['zip'];
+        $order->status        = 'CREATED';
         $order->created_at = new \DateTime("now");
 
         $order->save();

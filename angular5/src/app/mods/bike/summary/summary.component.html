@@ -1,6 +1,6 @@
 <proride-cover [display]="false"></proride-cover>
 <div class="container">
-    <h2>Orden</h2>
+    <h2>Orden No.{{reference}}</h2>
 </div>
 <proride-sticker *ngIf="sticker && design" [fname]="sticker.fname" [lname]="sticker.lname" [flag]="sticker.vflag" [design]="design"></proride-sticker>
 <div class="container">
@@ -30,6 +30,11 @@
         <div class="row">
           <div class="col-4">Paquete</div>
           <div class="col-8" *ngIf="pack"><strong>{{pack.name}}</strong></div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-4">Contacto</div>
+          <div class="col-8" *ngIf="billing"><strong>{{billing.fname}} {{billing.lname}}</strong></div>
         </div>
         <hr>
         <div class="row">

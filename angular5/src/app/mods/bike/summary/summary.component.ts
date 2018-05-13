@@ -16,7 +16,7 @@ import { Flag } from '../models/flag';
   templateUrl: './summary.component.html',
   styleUrls: ['./summary.component.css']
 })
-export class SummaryComponent implements OnInit {
+export class SummaryComponent extends OrderBehavior implements OnInit {
 
   sticker:VisualSticker = null;
   design:VisualDesign = null;
@@ -29,7 +29,7 @@ export class SummaryComponent implements OnInit {
     private route:ActivatedRoute,
     private bs:BikeService,
     private http:HttpClient) { 
-      
+      super(bs);
     }
 
   ngOnInit() {
@@ -48,7 +48,15 @@ export class SummaryComponent implements OnInit {
         lname: order.sticker_lname
       };
       this.billing = <Billing>{
-
+        fname: order.bill_fname,
+        lname: order.bill_lname,
+        email: order.email,
+        address: order.address,
+        city: order.city,
+        state: order.state,
+        country: order.country,
+        zip: order.zip,
+        phone: order.phone
       };
       
     }, (error) => {

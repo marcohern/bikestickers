@@ -25,6 +25,17 @@ class CreateOrderTable extends Migration
             $table->string('package_name', 128);
             $table->decimal('price', 18, 2);
             $table->enum('status', ['CREATED','VOID','PAYED'])->default('CREATED');
+
+            $table->string('bill_fname', 128);
+            $table->string('bill_lname', 128);
+            $table->string('email', 128)->unique();
+            $table->string('address', 128);
+            $table->string('phone', 64);
+            $table->string('city', 128);
+            $table->string('state', 128);
+            $table->string('country', 128);
+            $table->string('zip', 8);
+            
             $table->timestamps();
         });
     }

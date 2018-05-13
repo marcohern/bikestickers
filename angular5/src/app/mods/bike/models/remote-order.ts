@@ -12,4 +12,14 @@ export class RemoteOrder {
     status:string = '';
     created_at:Date = null;
     updated_at:Date = null;
+
+    bill_fname:string = '';
+    bill_lname:string = '';
+    email:string = ''; 
+    address:string = ''; 
+    phone:string = ''; 
+    city:string = ''; 
+    state:string = ''; 
+    country:string = ''; 
+    zip:string = '';
 }
