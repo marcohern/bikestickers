@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-4 text-center" *ngFor="let design of designs">
                 <button class="btn btn-lg" (click)="selectDesign(design)" [ngClass]="design.selected">
-                    <img alt="{{design.name}}" class="img-fluid" src="{{root}}/assets/proride/{{design.code}}.png" width="200" height="200" />
+                    <img alt="{{design.name}}" class="img-fluid" src="{{root}}/assets/proride/disenos_{{design.code}}.png" width="200" height="200" />
                 </button><br><br>
             </div>
         </div>

@@ -21,7 +21,7 @@
                     (click)="selectPackageOption(package)"
                     [ngClass]="getStatus(package)"
                     [disabled]="!package.enabled">
-                    <img alt="{{package.name}}" *ngIf="package.enabled" src="{{root}}/assets/proride/{{order.design.code}}.png" width="200" height="200"/>
+                    <img alt="{{package.name}}" *ngIf="package.enabled" src="{{root}}/assets/proride/disenos_{{order.design.code}}.png" width="200" height="200"/>
                     <img alt="{{package.name}}" *ngIf="!package.enabled" src="{{root}}/assets/proride/{{package.code}}.png" width="200" height="200"/>
                     <div class="proride-btpanel-text">
                         <div class="proride-btpanel-header">{{package.name}}</div>
