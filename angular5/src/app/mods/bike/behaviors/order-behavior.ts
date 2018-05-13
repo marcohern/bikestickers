@@ -2,10 +2,9 @@ import { FlagDisplayBehavior } from './flag-display-behavior';
 import { BikeService } from '../bike.service';
 import { Order } from '../models/order';
 import { VisualFlag } from '../models/visual-flag';
-import { Design } from '../models/design';
+import { VisualDesign } from '../models/visual-design';
 import { Package } from '../models/package';
 import { Billing } from '../models/billing';
-
 
 export class OrderBehavior extends FlagDisplayBehavior {
     bss:BikeService = null;
@@ -36,7 +35,7 @@ export class OrderBehavior extends FlagDisplayBehavior {
         this.saveOrder();
     }
 
-    saveDesign(design:Design) {
+    saveDesign(design:VisualDesign) {
         this.order.design = design;
         this.saveOrder();
     }

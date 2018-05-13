@@ -3,7 +3,4 @@ export class Design {
     code:string = '';
     name:string = '';
     price:number = 0;
-    selected:string = '';
-    bg:string = '';
-    style:string = '';
 }

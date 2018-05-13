@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BikeService } from '../bike.service';
-import { Design } from '../models/design';
+import { VisualDesign } from '../models/visual-design';
 import { OrderBehavior } from '../behaviors/order-behavior';
 import { designs } from '../constants/designs';
+
 
 @Component({
   selector: 'app-design',
@@ -13,7 +14,7 @@ import { designs } from '../constants/designs';
 export class DesignComponent extends OrderBehavior implements OnInit {
 
   showErrorMessage:boolean = false;
-  designs:Design[] = [];
+  designs:VisualDesign[] = [];
 
   constructor(
     private router:Router,
@@ -39,7 +40,7 @@ export class DesignComponent extends OrderBehavior implements OnInit {
     return null;
   }
 
-  selectDesign(design:Design) {
+  selectDesign(design:VisualDesign) {
    
     if (this.order.design) this.order.design.selected = 'btn-outline-dark';
     design.selected = 'btn-primary';

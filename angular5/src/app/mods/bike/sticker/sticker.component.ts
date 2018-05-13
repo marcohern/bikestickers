@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { RootBehavior } from '../behaviors/root-behavior';
-import { Flag } from '../models/flag';
-import { Design } from '../models/design';
+import { VisualFlag } from '../models/visual-flag';
+import { VisualDesign } from '../models/visual-design';
 import { designs } from '../constants/designs';
 
 @Component({
@@ -14,8 +14,8 @@ export class StickerComponent extends RootBehavior implements OnInit {
   bgcode :string = 'sticker_bg_bardet';
   @Input() sticker:string = 'bardet';
   
-  @Input() flag   :Flag   = null;
-  @Input() design :Design = null;
+  @Input() flag   :VisualFlag   = null;
+  @Input() design :VisualDesign = null;
   @Input() fname  :string = '<Nombre>';
   @Input() lname  :string = '<Apellido>';
 
@@ -24,22 +24,22 @@ export class StickerComponent extends RootBehavior implements OnInit {
     this.design = designs[0];
   }
 
-  mapflag(flag:Flag) {
+  mapflag(flag:VisualFlag):string {
     if (flag==null) return this.root + "/assets/country-flags/svg/empty.svg";
     return this.root + "/assets/country-flags/svg/" + flag.code.toLocaleLowerCase() + ".svg";
   }
 
-  mapflagname(flag:Flag) {
+  mapflagname(flag:VisualFlag):string {
     if (flag==null) return "Bandera";
     return flag.name;
   }
 
-  mapdesign(design:Design) {
+  mapdesign(design:VisualDesign):string {
     if (design==null) return this.root + "/assets/proride/sticker_bg_bardet.png";
     return this.root + "/assets/proride/" + design.bg + ".png";
   }
 
-  mapstyle(design:Design):string {
+  mapstyle(design:VisualDesign):string {
     if (design==null) return 'sticker-bardet';
     return design.style;
   }

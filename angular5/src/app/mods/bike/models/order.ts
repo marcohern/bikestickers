@@ -1,12 +1,12 @@
 import { Billing } from './billing';
-import { Design } from './design';
+import { VisualDesign } from './visual-design';
 import { Package } from './package';
 import { Sticker } from './sticker';
 
 export class Order {
     billing:Billing = null;
     package:Package = null;
-    design:Design = null;
+    design:VisualDesign = null;
     sticker:Sticker = null;
     
     token:string = '';
