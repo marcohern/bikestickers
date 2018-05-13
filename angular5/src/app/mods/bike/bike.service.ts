@@ -25,6 +25,10 @@ export class BikeService {
     storage.setItem(BikeService.storageId, JSON.stringify(order));
   }
 
+  clearOrder() {
+    storage.removeItem(BikeService.storageId);
+  }
+
   public getFlags() {
     return flags;
   }

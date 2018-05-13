@@ -24,6 +24,11 @@ export class OrderBehavior extends FlagDisplayBehavior {
         this.bss.saveOrder(this.order);
     }
 
+    clearOrder() {
+        this.bss.clearOrder();
+        this.order = null;
+    }
+
     saveFlagName(flag:Flag, fname:string, lname:string) {
         this.order.sticker.flag = flag;
         this.order.sticker.fname = fname;

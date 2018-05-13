@@ -51,8 +51,8 @@
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <!--div class="g-recaptcha" (captchaResponse)="handleCorrectCaptcha($event)" (captchaExpired)="handleCaptchaExpired($event)"  language="es-419" data-sitekey="6Lcq4FgUAAAAAMxUzKSM9QVuFa8a6Fzsfg5ysr8G"></div-->
-            <jhi-re-captcha  (captchaResponse)="handleCorrectCaptcha($event)" (captchaExpired)="handleCaptchaExpired($event)" site_key="6Lcq4FgUAAAAAMxUzKSM9QVuFa8a6Fzsfg5ysr8G"></jhi-re-captcha>
-            <p *ngIf="captchaError" class="proride-error">Debes responder el Captcha</p>
+            <jhi-re-captcha language="es" (captchaResponse)="handleCorrectCaptcha($event)" (captchaExpired)="handleCaptchaExpired($event)" site_key="6Lcq4FgUAAAAAMxUzKSM9QVuFa8a6Fzsfg5ysr8G"></jhi-re-captcha>
+            <p *ngIf="captchaError" class="proride-error">Es obligatorio que establezcas que no eres un robot</p>
         </div>
         <div class="col-md-4"></div>
     </div>
