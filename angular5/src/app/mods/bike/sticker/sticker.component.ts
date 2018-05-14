@@ -18,6 +18,7 @@ export class StickerComponent extends RootBehavior implements OnInit {
   @Input() design :VisualDesign = null;
   @Input() fname  :string = '<Nombre>';
   @Input() lname  :string = '<Apellido>';
+  @Input() mode   :string = '';
 
   constructor() { 
     super();

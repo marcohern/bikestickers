@@ -10,10 +10,18 @@ import { Flag } from '../models/flag';
 export class OrderBehavior extends FlagDisplayBehavior {
     bss:BikeService = null;
     order:VisualOrder = null;
+    stickerMode = 'simple';
 
     constructor(bs:BikeService) {
         super();
         this.bss = bs;
+
+        if (
+            window.navigator.userAgent.match(/Safari/) ||
+            window.navigator.userAgent.match(/Opera/)
+        ) {
+            this.stickerMode = '';
+        }
     }
 
     loadOrder() {

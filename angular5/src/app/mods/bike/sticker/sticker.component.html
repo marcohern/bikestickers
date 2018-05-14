@@ -1,7 +1,21 @@
-<div class="sticker" [ngClass]="mapstyle(design)">
+<div class="sticker" [ngClass]="mapstyle(design)" *ngIf="mode=='' || mode=='default'">
     <img alt="{{fname}} {{lname}}" [src]="mapdesign(design)" />
     <div class="sticker-flagmask">
         <img alt="mapflagname(flag)" [src]="mapflag(flag)" />
     </div>
     <div class="sticker-text">{{fname}} <strong>{{lname}}</strong></div>
 </div>
+<div class="container" *ngIf="mode=='simple'">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 text-center" >
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-dark"><img alt="{{fname}} {{lname}}" [src]="mapflag(flag)" height="48px" /></button>
+                <button type="button" class="btn btn-dark">{{fname}}</button>
+                <button type="button" class="btn btn-dark"><strong>{{lname}}</strong></button>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+<br>
