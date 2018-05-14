@@ -15,13 +15,6 @@ export class OrderBehavior extends FlagDisplayBehavior {
     constructor(bs:BikeService) {
         super();
         this.bss = bs;
-
-        if (
-            window.navigator.userAgent.match(/Safari/) ||
-            window.navigator.userAgent.match(/Opera/)
-        ) {
-            this.stickerMode = '';
-        }
     }
 
     loadOrder() {

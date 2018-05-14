@@ -40,6 +40,12 @@ export class StickerComponent extends RootBehavior implements OnInit {
     return this.root + "/assets/proride/" + design.bg + ".png";
   }
 
+
+  mapsample(design:VisualDesign):string {
+    if (design==null) return this.root + "/assets/proride/sample_bardet.png";
+    return this.root + "/assets/proride/sample_" + design.code + ".png";
+  }
+
   mapstyle(design:VisualDesign):string {
     if (design==null) return 'sticker-bardet';
     return design.style;

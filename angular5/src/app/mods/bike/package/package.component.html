@@ -5,15 +5,12 @@
 </div>
 <proride-sticker [fname]="order.sticker.fname" [lname]="order.sticker.lname" [flag]="order.sticker.vflag" [design]="order.design" [mode]="stickerMode"></proride-sticker>
 <div class="container">
-
     <div class="row">
         <div class="col-md-12 text-center" *ngIf="order.package">
-            <p>{{order.package.name}}</p>
             <h3 style="color:red;font-style: italic;">{{order.package.price | currency:'COP':'':'1.0-0'}}</h3>
             <p style="color:red;">Mas Envio Gratis</p>
         </div>
     </div>
-
     <div class="proride-btpanel">
         <div class="row">
             <div class="col-md-4 text-center" *ngFor="let package of packages">

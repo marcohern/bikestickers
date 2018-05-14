@@ -3,7 +3,7 @@
 <div class="container">
     <h2>Información de Envío</h2>
 </div>
-<proride-sticker [fname]="order.sticker.fname" [lname]="order.sticker.lname" [flag]="order.sticker.vflag" [design]="order.design" mode="simple"></proride-sticker>
+<proride-sticker [fname]="order.sticker.fname" [lname]="order.sticker.lname" [flag]="order.sticker.vflag" [design]="order.design" [mode]="stickerMode"></proride-sticker>
 <form [formGroup]="billingFormGroup" (ngSubmit)="next()" novalidate>
 <div class="container">
     <div class="row">
