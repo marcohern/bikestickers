@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <img alt="{{design.name}}" [src]="mapbg(design)">
+            <img *ngIf="design" alt="{{design.name}}" [src]="mapbg(design)">
             <div class="proride-bgsticker bg-{{design.code}}">
                 <div class="proride-bgsticker-bg">
-                    <span>John <strong>Doe</strong></span>
+                    <span>{{fname}} <strong>{{lname}}</strong></span>
                 </div>
             </div>
         </div>

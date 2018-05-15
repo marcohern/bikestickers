@@ -6,7 +6,6 @@ import { RequestModule } from './mods/request/request.module';
 import { BikeModule } from './mods/bike/bike.module';
 
 import { AppComponent } from './app.component';
-import { ReCaptchaModule } from 'angular5-recaptcha';
 
 
 @NgModule({
@@ -17,8 +16,7 @@ import { ReCaptchaModule } from 'angular5-recaptcha';
     BrowserModule,
     BikeModule,
     AppRoutes,
-    RequestModule,
-    ReCaptchaModule
+    RequestModule
   ],
   providers: [],
   bootstrap: [AppComponent]

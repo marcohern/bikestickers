@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import { ReCaptchaModule } from 'angular5-recaptcha';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NameAndFlagComponent } from './name-and-flag/name-and-flag.component';
@@ -35,7 +34,6 @@ import { SearchOrdersComponent } from './search-orders/search-orders.component';
     ReactiveFormsModule,
     NgbModule.forRoot(),
     RequestModule,
-    ReCaptchaModule,
     BikeRoutes
   ],
   declarations: [
