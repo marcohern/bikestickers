@@ -194,3 +194,30 @@ input.ng-valid:not(form) {
 .proride-error {
     color:red;
 }
+
+.proride-bgsticker {
+    position:relative;
+    font-size:38px;
+    font-style: italic;
+    color:white;
+    top:-77px;
+}
+
+.proride-bgsticker-bg {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 245px;
+    height: 40px;
+}
+
+.proride-bgsticker.bg-bardet { 
+    left:140px;
+}
+
+.proride-bgsticker.bg-landa { 
+    left:130px;
+}
+
+.proride-bgsticker.bg-quintana { 
+    left:110px;
+}

@@ -46,7 +46,6 @@ export class NameAndFlagComponent extends OrderBehavior implements OnInit {
       fname:this.order.sticker.fname,
       lname:this.order.sticker.lname
     });
-    this.onChangeName(null,null);
   }
 
   setBrowserFlag() {
@@ -108,27 +107,15 @@ export class NameAndFlagComponent extends OrderBehavior implements OnInit {
     
   }
 
-  onChangeName(container, title) {
+  onChangeName() {
     this.fname = this.nameFlagFormGroup.value.fname;
     this.lname = this.nameFlagFormGroup.value.lname;
-    var s = 4;
-    if (container && title) {
-      var wc = container.getBoundingClientRect().width - 20;
-      var wt = title.getBoundingClientRect().width;
-      
-      if (wt > wc) {
-        s = 31*wc/wt;
-        container.style.fontSize = s + "px";
-      }
 
-    }
-    
-    /*
     this.saveFlagName(
       this.order.sticker.vflag, 
       this.nameFlagFormGroup.value.fname,
       this.nameFlagFormGroup.value.lname
-    );*/
+    );
   }
 
   private getDismissReason(reason: any): string {

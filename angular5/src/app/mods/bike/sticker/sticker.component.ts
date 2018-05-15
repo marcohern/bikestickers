@@ -43,12 +43,17 @@ export class StickerComponent extends RootBehavior implements OnInit {
 
   mapsample(design:VisualDesign):string {
     if (design==null) return this.root + "/assets/proride/sample_bardet.png";
-    return this.root + "/assets/proride/sample_" + design.code + ".png";
+    return this.root + "/assets/proride/sample_" + design.code.toLocaleLowerCase() + ".png";
   }
 
   mapstyle(design:VisualDesign):string {
     if (design==null) return 'sticker-bardet';
     return design.style;
+  }
+
+  mapbg(design:VisualDesign):string {
+    if (design==null) return this.root + "/assets/sticker-flags/de_bardet.png";
+    return this.root + "/assets/sticker-flags/de_"+ design.code.toLocaleLowerCase() +".png";
   }
 
   ngOnInit() {

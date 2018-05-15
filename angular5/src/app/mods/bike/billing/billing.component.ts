@@ -25,9 +25,7 @@ export class BillingComponent extends OrderBehavior implements OnInit {
     country: new FormControl(),
   });
 
-  captchaError = false;
   savedAlert = false;
-  captchaToken = '';
 
   constructor(
     private router:Router,
@@ -69,41 +67,26 @@ export class BillingComponent extends OrderBehavior implements OnInit {
     }, 5000);
   }
 
-  handleCorrectCaptcha($event) {
-    this.captchaToken = $event;
-  }
-
-  handleCaptchaExpired($event) {
-    this.captchaToken = '';
-  }
-
   next() {
-    this.order.token = this.captchaToken;
     if (this.billingFormGroup.valid) {
-      if (this.captchaToken == '') {
-        this.captchaError = true;
-      } else {
-        this.captchaError = false;
-        
-        this.saveBilling({
-          fname: this.billingFormGroup.value.fname,
-          lname: this.billingFormGroup.value.lname,
-          email: this.billingFormGroup.value.email,
-          address: this.billingFormGroup.value.address,
-          phone: this.billingFormGroup.value.phone,
-          city: this.billingFormGroup.value.city,
-          country: this.billingFormGroup.value.country,
-          state: '',
-          zip: ''
-        });
-        this.order.date = new Date();
-        this.http.post<IdResult>('/api/order', this.bs.toOrder(this.order)).subscribe(result => {
-          this.clearOrder();
-          this.router.navigate(['/summary',result.ref]);
-        }, error => {
-          console.error(error);
-        });
-      }
+      this.saveBilling({
+        fname: this.billingFormGroup.value.fname,
+        lname: this.billingFormGroup.value.lname,
+        email: this.billingFormGroup.value.email,
+        address: this.billingFormGroup.value.address,
+        phone: this.billingFormGroup.value.phone,
+        city: this.billingFormGroup.value.city,
+        country: this.billingFormGroup.value.country,
+        state: '',
+        zip: ''
+      });
+      this.order.date = new Date();
+      this.http.post<IdResult>('/api/order', this.bs.toOrder(this.order)).subscribe(result => {
+        this.clearOrder();
+        this.router.navigate(['/summary',result.ref]);
+      }, error => {
+        console.error(error);
+      });
     }
   }
 
