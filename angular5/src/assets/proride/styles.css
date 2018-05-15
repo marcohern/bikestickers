@@ -207,7 +207,7 @@ input.ng-valid:not(form) {
     overflow: hidden;
     white-space: nowrap;
     width: 245px;
-    height: 42px;
+    height: 64px;
 }
 
 .proride-bgsticker.bg-bardet { 
