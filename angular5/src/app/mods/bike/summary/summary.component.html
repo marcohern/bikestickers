@@ -40,7 +40,7 @@
         </div>
         <hr>
         <div class="row">
-          <div class="col-4">Direccion</div>
+          <div class="col-4">Dirección</div>
           <div class="col-8" *ngIf="billing"><strong>{{billing.address}}</strong></div>
         </div>
         <hr>
@@ -50,12 +50,12 @@
         </div>
         <hr>
         <div class="row">
-          <div class="col-4">Pais</div>
+          <div class="col-4">País</div>
           <div class="col-8" *ngIf="billing"><strong>{{billing.country}}</strong></div>
         </div>
         <hr>
         <div class="row">
-          <div class="col-4">Telefono</div>
+          <div class="col-4">Teléfono</div>
           <div class="col-8" *ngIf="billing"><strong>{{billing.phone}}</strong></div>
         </div>
         <hr>
@@ -63,8 +63,16 @@
           <div class="col-4">Precio</div>
           <div class="col-8" *ngIf="pack"><strong>{{pack.price | currency }}</strong></div>
         </div>
+        <br><br>
+        <div class="row">
+          <div class="col-md-12 text-center">
+              <div class="btn-group btn-group-lg" role="group" aria-label="Siguiente o Anterior">
+                  <button type="button" class="btn btn-secondary btn-outline-dark" (click)="restart()">Nuevo Pedido</button>
+              </div>
+              <br><br>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-3"></div>
     </div>
 </div>
 <br>

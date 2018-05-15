@@ -64,7 +64,7 @@ export class SummaryComponent extends OrderBehavior implements OnInit {
     });
   }
 
-  adjustOrder() {
+  restart() {
     this.router.navigate(['/name-and-flag']);
   }
 
