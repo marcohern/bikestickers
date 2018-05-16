@@ -7,8 +7,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-center" *ngIf="order.package">
-            <h3 style="color:red;font-style: italic;">{{order.package.price | currency:'COP':'':'1.0-0'}}</h3>
-            <p style="color:red;"><img alt="Envio Gratis" src="{{root}}/assets/proride/transporte.png" class="img-fluid"> Incluido envío gratis</p>
+            <h3 class="text-primary" style="font-style: italic;">{{order.package.price | currency:'COP':'':'1.0-0'}}</h3>
+            <p class="text-primary"><img alt="Envio Gratis" src="{{root}}/assets/proride/transporte.png" class="img-fluid"> Incluido envío gratis</p>
         </div>
     </div>
     <div class="proride-btpanel">

@@ -15,6 +15,6 @@
   <app-root></app-root>
   <script type="text/javascript" src="bikestickers/inline.318b50c57b4eba3d437b.bundle.js"></script>
   <script type="text/javascript" src="bikestickers/polyfills.fa62713060e7012f88ea.bundle.js"></script>
-  <script type="text/javascript" src="bikestickers/main.5c150c7972f0253f1633.bundle.js"></script>
+  <script type="text/javascript" src="bikestickers/main.0517a23087e061f244ec.bundle.js"></script>
 </body>
 </html>
