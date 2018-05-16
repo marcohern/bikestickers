@@ -25,35 +25,14 @@ export class StickerComponent extends RootBehavior implements OnInit {
     this.design = designs[0];
   }
 
-  mapflag(flag:VisualFlag):string {
-    if (flag==null) return this.root + "/assets/country-flags/svg/empty.svg";
-    return this.root + "/assets/country-flags/svg/" + flag.code.toLocaleLowerCase() + ".svg";
+   mapbg():string {
+    if (this.design==null || this.flag == null) return this.root + "/assets/sticker-flags/de_bardet.png";
+    return this.root + "/assets/sticker-flags/" + this.flag.code.toLocaleLowerCase() + "_"+ this.design.code +".png";
   }
 
-  mapflagname(flag:VisualFlag):string {
-    if (flag==null) return "Bandera";
-    return flag.name;
-  }
-
-  mapdesign(design:VisualDesign):string {
-    if (design==null) return this.root + "/assets/proride/sticker_bg_bardet.png";
-    return this.root + "/assets/proride/" + design.bg + ".png";
-  }
-
-
-  mapsample(design:VisualDesign):string {
-    if (design==null) return this.root + "/assets/proride/sample_bardet.png";
-    return this.root + "/assets/proride/sample_" + design.code.toLocaleLowerCase() + ".png";
-  }
-
-  mapstyle(design:VisualDesign):string {
-    if (design==null) return 'sticker-bardet';
-    return design.style;
-  }
-
-  mapbg(design:VisualDesign):string {
-    if (design==null || this.flag == null) return this.root + "/assets/sticker-flags/de_bardet.png";
-    return this.root + "/assets/sticker-flags/" + this.flag.code.toLocaleLowerCase() + "_"+ design.code +".png";
+  mapcode() {
+    if (this.design==null) return 'bardet';
+    return this.design.code;
   }
 
   ngOnInit() {

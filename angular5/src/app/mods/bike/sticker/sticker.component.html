@@ -1,13 +1,13 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <img *ngIf="design" alt="{{design.name}}" [src]="mapbg(design)">
-            <div class="proride-bgsticker bg-{{design.code}}">
-                <div class="proride-bgsticker-bg">
-                    <span>{{fname}} <strong>{{lname}}</strong></span>
-                </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-5">
+            <div class="proride-bgsticker proride-bgsticker-{{mapcode()}}">
+                <img alt="{{fname}} {{lname}}" class="img-fluid" [src]="mapbg()">
+                <div>{{fname}} <strong>{{lname}}</strong></div>
             </div>
         </div>
+        <div class="col-md-4"></div>
     </div>
 </div>
 <br>

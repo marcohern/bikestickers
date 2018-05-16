@@ -30,6 +30,10 @@
 .proride-cover.cover2 { background-image: url('bg2_33.jpg');background-position: center 50px; }
 .proride-cover.cover3 { background-image: url('bg3_33.jpg'); }
 .proride-cover.cover4 { background-image: url('bg4_33.jpg'); }
+.proride-cover.cover5 { background-image: url('bg4_33.jpg'); }
+.proride-cover.cover6 { background-image: url('bg4_33.jpg'); }
+.proride-cover.cover5 { background-image: url('bg5_33.jpg'); }
+.proride-cover.cover6 { background-image: url('bg6_33.jpg'); }
 
 @media (min-width: 576px) { 
     .proride-cover { height: 150px;padding-top: 2em; }
@@ -37,6 +41,8 @@
     .proride-cover.cover2 { background-image: url('bg2_50.jpg');background-position: center 30px; }
     .proride-cover.cover3 { background-image: url('bg3_50.jpg'); }
     .proride-cover.cover4 { background-image: url('bg4_50.jpg'); }
+    .proride-cover.cover5 { background-image: url('bg5_50.jpg'); }
+    .proride-cover.cover6 { background-image: url('bg6_50.jpg'); }
 }
 
 @media (min-width: 768px) { 
@@ -45,6 +51,8 @@
     .proride-cover.cover2 { background-image: url('bg2_75.jpg');background-position: center 0; }
     .proride-cover.cover3 { background-image: url('bg3_75.jpg'); }
     .proride-cover.cover4 { background-image: url('bg4_75.jpg'); }
+    .proride-cover.cover5 { background-image: url('bg5_75.jpg'); }
+    .proride-cover.cover6 { background-image: url('bg6_75.jpg'); }
 }
 
 @media (min-width: 992px) {
@@ -53,6 +61,8 @@
     .proride-cover.cover2 { background-image: url('bg2.jpg');background-position: center -40px; }
     .proride-cover.cover3 { background-image: url('bg3.jpg'); }
     .proride-cover.cover4 { background-image: url('bg4.jpg'); }
+    .proride-cover.cover5 { background-image: url('bg5.jpg'); }
+    .proride-cover.cover6 { background-image: url('bg6.jpg'); }
 }
 
 @media (min-width: 1200px) { 
@@ -61,6 +71,8 @@
     .proride-cover.cover2 { background-image: url('bg2.jpg'); }
     .proride-cover.cover3 { background-image: url('bg3.jpg'); }
     .proride-cover.cover4 { background-image: url('bg4.jpg'); }
+    .proride-cover.cover5 { background-image: url('bg5.jpg'); }
+    .proride-cover.cover6 { background-image: url('bg6.jpg'); }
 }
 
 input.ng-invalid:not(form) {
@@ -197,12 +209,53 @@ input.ng-valid:not(form) {
 
 .proride-bgsticker {
     position:relative;
-    font-size:38px;
+    font-size:36px;
     font-style: italic;
     color:white;
-    top:-77px;
+    width:404px;
+    height:103px;
 }
 
+.proride-bgsticker > img {
+    position: absolute;
+}
+.proride-bgsticker > div {
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+.proride-bgsticker-bardet > div {
+    left:32%;
+    top:19%;
+}
+
+.proride-bgsticker-landa > div {
+    left:30%;
+    top:17%;
+}
+
+.proride-bgsticker-quintana > div {
+    left:26%;
+    top:17%;
+}
+
+@media (max-width: 440px) { 
+    .proride-bgsticker {
+        width: 100%;
+        height:auto;
+        font-size: 8vw;
+    }
+
+    .proride-bgsticker > img {
+        position: static;
+        width: 100%;
+        height:auto;
+    }
+}
+
+/*
 .proride-bgsticker-bg {
     overflow: hidden;
     white-space: nowrap;
@@ -220,4 +273,4 @@ input.ng-valid:not(form) {
 
 .proride-bgsticker.bg-quintana { 
     left:110px;
-}
+}*/
