@@ -1,0 +1,12 @@
+no-reply@proride.com.co
+#^n8mF(^Q1ly
+
+
+Secure SSL/TLS Settings (Recomendado)
+Nombre de usuario:	no-reply@proride.com.co
+Contraseña:	Utilice la contraseña de la cuenta de correo electrónico.
+Servidor entrante:	mail.proride.com.co
+IMAP Port: 993 POP3 Port: 995
+Servidor de correo:	mail.proride.com.co
+SMTP Port: 465
+IMAP, POP3 y SMTP require authentication.
