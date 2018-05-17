@@ -78,7 +78,10 @@ class OrderController extends Controller
         Mail::send('emails.order', ['order' => $order], function ($m) use ($order) {
             $m->from('no-reply@proride.com.co', 'ProRide');
 
-            $m->to( $order->email, $order->bill_fname.' '.$order->bill_lname)->subject('ProRide - Orden No.'.$order->reference);
+            $m->to([
+                ['email' => $order->email, 'name' => $order->bill_fname.' '.$order->bill_lname],
+                ['email' => 'jantropberger@gmail.com', 'name' => 'jantrop Berger'],
+            ])->subject('ProRide - Orden No.'.$order->reference);
         });
 
         return response()->json([

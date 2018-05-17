@@ -1,12 +1,12 @@
 @extends('emails.layout')
 
 @section('content')
-<p style="color:#009fe2;font-size:32px;">
+<p>
     <div style="float:right;color:white;background-color:#009fe2;text-align:center;padding:8px;font-size:16px;margin-left:12px;margin-bottom:12px;border-radius:6px;">
         <p style="margin:2px;">Orden de Compra No.</p>
         <p style="margin:2px;font-size:28px"><strong>{{ $order->reference }}</strong></p>
     </div>
-    ¡Felicitaciones!
+    <span style="color:#009fe2;font-size:32px;">¡Felicitaciones!</span>
 </p>
 <p>Hola <strong>{{ $order->bill_fname }} {{ $order->bill_lname }}</strong> felicitaciones por tu compra y adquirir un producto de calidad para la personalización de tu bici y lucir como un Pro.</p>
 <p>
