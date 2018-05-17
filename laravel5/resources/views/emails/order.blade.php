@@ -4,7 +4,10 @@
 <p>¡Felicitaciones!</p>
 <p>Orden de Compra No. <strong>{{ $order->reference }}</strong></p>
 <p>Hola <strong>{{ $order->bill_fname }} {{ $order->bill_lname }}</strong> felicitaciones por tu compra y adquirir un producto de calidad para la personalización de tu bici y lucir como un Pro.</p>
-<p>Has ordenado el diseño <strong>{{ $order->design_name }}</strong> con un paquete de <strong>{{ $order->package_name }}</strong>.</p>
+<p>
+    Has ordenado el diseño <strong>{{ $order->design_name }}</strong>
+    con el nombre <strong>{{ $order->sticker_fname }} {{ $order->sticker_lname }}</strong>
+    y el país <strong>{{ $order->sticker_flagname }}</strong> con un <strong>{{ $order->package_name }}</strong>.</p>
 <p>En el transcurso de las próximas 24 horas un asesor te contactará vía telefónica o E-mail, para coordinar el pago y hacerla la entrega de tu producto.</p>
 <p>Recuerda que trabajamos con materiales en vinilos plasticados y tintas de alta calidad, pero la durabilidad y garantía corresponderá de la manipulación e instalación correcta del producto.</p>
 <p>Esta orden puedes verla online aquí: http://www.proride.com.co/summary/{{ $order->reference }}</p>

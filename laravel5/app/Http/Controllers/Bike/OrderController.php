@@ -53,6 +53,7 @@ class OrderController extends Controller
         $order = new Order();
         $order->reference     = $reference;
         $order->sticker_flag  = $rorder['sticker']['flag']['code'];
+        $order->sticker_flagname = $rorder['sticker']['flag']['name'];
         $order->sticker_fname = $rorder['sticker']['fname'];
         $order->sticker_lname = $rorder['sticker']['lname'];
         $order->design_code   = $rorder['design']['code'];

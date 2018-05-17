@@ -17,6 +17,7 @@ class CreateOrderTable extends Migration
             $table->increments('id');
             $table->string('reference', 32)->unique();
             $table->string('sticker_flag' , 6);
+            $table->string('sticker_flagname', 128);
             $table->string('sticker_fname', 128);
             $table->string('sticker_lname', 128);
             $table->string('design_code', 32);
