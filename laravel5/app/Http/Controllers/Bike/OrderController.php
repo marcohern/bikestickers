@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\OrderReference;
 use App\Order;
+use Mail;
 
 use App\Exceptions\BikeException;
 
@@ -57,7 +58,7 @@ class OrderController extends Controller
         $order->design_code   = $rorder['design']['code'];
         $order->design_name   = $rorder['design']['name'];
         $order->package_code  = $rorder['package']['code'];
-        $order->package_name  = $rorder['package']['name'];
+        $order->package_name  = $rorder['package']['name'].' ('.$rorder['package']['detail'].')';
         $order->price         = $rorder['package']['price'];
         $order->bill_fname    = $rorder['billing']['fname'];
         $order->bill_lname    = $rorder['billing']['lname'];
@@ -72,6 +73,12 @@ class OrderController extends Controller
         $order->created_at = new \DateTime("now");
 
         $order->save();
+
+        Mail::send('emails.order', ['order' => $order], function ($m) use ($order) {
+            $m->from('no-reply@proride.com.co', 'ProRide');
+
+            $m->to( $order->email, $order->bill_fname.' '.$order->bill_lname)->subject('ProRide - Orden No.'.$order->reference);
+        });
 
         return response()->json([
             //'req' => $r->all(),
