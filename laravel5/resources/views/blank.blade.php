@@ -8,12 +8,12 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="/bikestickers/assets/proride/favicon.png">
   <link rel="stylesheet" href="bikestickers/assets/bootstrap/css/bootstrap.min.css">
-  <link href="bikestickers/styles.071dcd0d5a5e49171f1d.bundle.css" rel="stylesheet"/>
+  <link href="bikestickers/styles.924a3e3c2aef8b43ec00.bundle.css" rel="stylesheet"/>
 </head>
 <body>
   <app-root></app-root>
   <script type="text/javascript" src="bikestickers/inline.318b50c57b4eba3d437b.bundle.js"></script>
   <script type="text/javascript" src="bikestickers/polyfills.fa62713060e7012f88ea.bundle.js"></script>
-  <script type="text/javascript" src="bikestickers/main.e6ad9f24af5cfe9c227c.bundle.js"></script>
+  <script type="text/javascript" src="bikestickers/main.a79f377c9d1256aaccab.bundle.js"></script>
 </body>
 </html>

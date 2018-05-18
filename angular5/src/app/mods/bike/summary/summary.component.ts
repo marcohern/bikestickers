@@ -36,6 +36,7 @@ export class SummaryComponent extends OrderBehavior implements OnInit {
     //this.loadOrder();
     var reference = this.route.snapshot.params['id'];
     this.http.get<RemoteOrder>('/api/order/'+reference).subscribe((order:RemoteOrder) => {
+      console.log("order",order);
       this.reference = order.reference;
 
       var flag = this.bs.findFlag(order.sticker_flag);

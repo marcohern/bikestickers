@@ -36,10 +36,9 @@ body {
 .proride-cover.cover2 { background-image: url('assets/proride/bg2_33.jpg');background-position: center 50px; }
 .proride-cover.cover3 { background-image: url('assets/proride/bg3_33.jpg'); }
 .proride-cover.cover4 { background-image: url('assets/proride/bg4_33.jpg'); }
-.proride-cover.cover5 { background-image: url('assets/proride/bg4_33.jpg'); }
-.proride-cover.cover6 { background-image: url('assets/proride/bg4_33.jpg'); }
 .proride-cover.cover5 { background-image: url('assets/proride/bg5_33.jpg'); }
 .proride-cover.cover6 { background-image: url('assets/proride/bg6_33.jpg'); }
+.proride-cover.cover7 { background-image: url('assets/proride/bg7_33.jpg'); }
 
 @media (min-width: 576px) { 
     .proride-cover { height: 150px;padding-top: 2em; }
@@ -49,6 +48,7 @@ body {
     .proride-cover.cover4 { background-image: url('assets/proride/bg4_50.jpg'); }
     .proride-cover.cover5 { background-image: url('assets/proride/bg5_50.jpg'); }
     .proride-cover.cover6 { background-image: url('assets/proride/bg6_50.jpg'); }
+    .proride-cover.cover7 { background-image: url('assets/proride/bg7_50.jpg'); }
 }
 
 @media (min-width: 768px) { 
@@ -59,6 +59,7 @@ body {
     .proride-cover.cover4 { background-image: url('assets/proride/bg4_75.jpg'); }
     .proride-cover.cover5 { background-image: url('assets/proride/bg5_75.jpg'); }
     .proride-cover.cover6 { background-image: url('assets/proride/bg6_75.jpg'); }
+    .proride-cover.cover7 { background-image: url('assets/proride/bg7_75.jpg'); }
 }
 
 @media (min-width: 992px) {
@@ -69,6 +70,7 @@ body {
     .proride-cover.cover4 { background-image: url('assets/proride/bg4.jpg'); }
     .proride-cover.cover5 { background-image: url('assets/proride/bg5.jpg'); }
     .proride-cover.cover6 { background-image: url('assets/proride/bg6.jpg'); }
+    .proride-cover.cover7 { background-image: url('assets/proride/bg7.jpg'); }
 }
 
 @media (min-width: 1200px) { 
