@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Bike;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Mail;
 
 class ContactUsController extends Controller
 {
@@ -36,6 +37,27 @@ class ContactUsController extends Controller
     public function store(Request $r)
     {
         //
+        $contact = new \stdClass();
+        $contact->name = $r->input('name');
+        $contact->email = $r->input('email');
+        $contact->comments = $r->input('comments');
+
+        Mail::send('emails.contact', ['contact' => $contact], function ($m) use ($contact) {
+            $m->from('no-reply@proride.com.co', 'ProRide');
+            $m->replyTo($contact->email, $contact->name);
+
+            $m
+                //->to($order->email, $order->bill_fname.' '.$order->bill_lname)
+                //->bcc('jantropberger@gmail.com', 'Jan Tropberger')
+                ->to('niviadesigner@gmail.com', 'Andres Nivia')
+                //->to('marcohern@gmail.com', 'Marco Hernandez')
+                ->subject($contact->name.' Comenta');
+        });
+        return response()->json([
+            'success' => true,
+            'id' => 0,
+            'ref' => 0
+        ]);
     }
 
     /**
