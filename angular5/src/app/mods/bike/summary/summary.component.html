@@ -1,9 +1,11 @@
 <proride-cover [display]="false"></proride-cover>
 <div class="container">
-    <h2>Orden No.{{reference}}</h2>
+    <h2 *ngIf="!notFound">Orden No.{{reference}}</h2>
+    <h2 *ngIf="notFound">Orden no se encuentra</h2>
 </div>
 <proride-sticker *ngIf="sticker && design" [fname]="sticker.fname" [lname]="sticker.lname" [flag]="sticker.vflag" [design]="design" [mode]="stickerMode"></proride-sticker>
 <div class="container">
+  <div *ngIf="!notFound">
     <div class="row">
       <div class="col-sm-3"></div>
       <div class="col-sm-6">
@@ -64,20 +66,26 @@
           <div class="col-8" *ngIf="pack"><strong>{{pack.price | currency }}</strong></div>
         </div>
         <br><br>
-        <div class="row">
-          <div class="col-md-12 text-center">
-              <div class="btn-group btn-group-lg" role="group" aria-label="Siguiente o Anterior">
-                  <button type="button" class="btn btn-secondary btn-outline-dark" (click)="restart()">Hacer Nuevo Pedido</button>
-              </div>
-              <br><br>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="notFound">
+    <br><br><br><br>
+    <ngb-alert type="danger">Orden especificada no encontrada</ngb-alert>
+    <br><br><br><br>
+  </div>
+  <div class="row">
+      <div class="col-md-12 text-center">
+          <div class="btn-group btn-group-lg" role="group" aria-label="Siguiente o Anterior">
+              <button type="button" class="btn btn-secondary btn-outline-dark" (click)="restart()">Hacer Nuevo Pedido</button>
           </div>
-        </div>
+          <br><br>
       </div>
     </div>
 </div>
 <br>
 <div class="container text-right">
-    <div>
+    <div *ngIf="!notFound">
         <div class="btn btn-primary text-light">Consignación por Banco</div>
         <p>
           <strong>Bancolombia</strong><br>

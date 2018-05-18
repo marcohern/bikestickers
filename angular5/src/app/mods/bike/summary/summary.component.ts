@@ -23,6 +23,7 @@ export class SummaryComponent extends OrderBehavior implements OnInit {
   pack:VisualPackage = null;
   billing:Billing = null;
   reference:string = '';
+  notFound: boolean = false;
 
   constructor(
     private router:Router,
@@ -36,7 +37,6 @@ export class SummaryComponent extends OrderBehavior implements OnInit {
     //this.loadOrder();
     var reference = this.route.snapshot.params['id'];
     this.http.get<RemoteOrder>('/api/order/'+reference).subscribe((order:RemoteOrder) => {
-      console.log("order",order);
       this.reference = order.reference;
 
       var flag = this.bs.findFlag(order.sticker_flag);
@@ -61,7 +61,7 @@ export class SummaryComponent extends OrderBehavior implements OnInit {
       };
       
     }, (error) => {
-      console.error(error);
+      this.notFound = true;
     });
   }
 
