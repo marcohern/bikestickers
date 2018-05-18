@@ -23,6 +23,8 @@ export class PackageComponent extends OrderBehavior implements OnInit {
 
   ngOnInit() {
     this.loadOrder();
+    if (!this.checkNameAndFlagSet()) this.router.navigate(['/name-and-flag']);
+    if (!this.checkDesignSet()) this.router.navigate(['/design']);
     if (this.order.package) {
       this.order.package = this.getSelectedPackage();
       this.order.package.selected = 'btn-primary';

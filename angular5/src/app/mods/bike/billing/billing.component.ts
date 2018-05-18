@@ -38,6 +38,11 @@ export class BillingComponent extends OrderBehavior implements OnInit {
 
   ngOnInit() {
     this.loadOrder();
+    
+    if (!this.checkNameAndFlagSet()) this.router.navigate(['/name-and-flag']);
+    if (!this.checkDesignSet())      this.router.navigate(['/design']);
+    if (!this.checkPackageSet())     this.router.navigate(['/package']);
+
     this.billingFormGroup.setValue({
       fname:this.order.billing.fname,
       lname:this.order.billing.lname,

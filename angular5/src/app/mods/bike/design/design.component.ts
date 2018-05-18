@@ -25,6 +25,7 @@ export class DesignComponent extends OrderBehavior implements OnInit {
 
   ngOnInit() {
     this.loadOrder();
+    if (!this.checkNameAndFlagSet()) this.router.navigate(['/name-and-flag']);
     this.order.design = this.getSelectedOrFirstDesign();
     this.order.design.selected = 'btn-primary';
   }

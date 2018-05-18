@@ -30,6 +30,23 @@ export class OrderBehavior extends FlagDisplayBehavior {
         this.order = null;
     }
 
+    checkNameAndFlagSet() {
+      if (this.order.sticker.fname == '') return false;
+      if (this.order.sticker.lname == '') return false;
+      if (this.order.sticker.vflag == null) return false;
+      return true;
+    }
+
+    checkDesignSet() {
+        if (this.order.design==null) return false;
+        return true;
+    }
+
+    checkPackageSet() {
+        if (this.order.package==null) return false;
+        return true;
+    }
+
     saveFlagName(flag:VisualFlag, fname:string, lname:string) {
         this.order.sticker.flag = flag as Flag;
         this.order.sticker.vflag = flag;
