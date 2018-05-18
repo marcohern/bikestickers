@@ -13,6 +13,24 @@
     Has ordenado el diseño <strong>{{ $order->design_name }}</strong>
     con el nombre <strong>{{ $order->sticker_fname }} {{ $order->sticker_lname }}</strong>
     y el país <strong>{{ $order->sticker_flagname }}</strong> con un <strong>{{ $order->package_name }}</strong>.</p>
+<p><span style="color:#009fe2;font-size:16px;">Producto</span></p>
+<ul>
+    <li><strong>Bandera:</strong> <img src="http://www.proride.com.co/bikestickers/assets/country-flags/png100px/{{ strtolower($order->sticker_flag) }}.png" height="48px" width="auto" /></li>
+    <li><strong>País:</strong> {{ $order->sticker_flagname }}</li>
+    <li><strong>Nombre:</strong> {{ $order->sticker_fname }}</li>
+    <li><strong>Apellido:</strong> {{ $order->sticker_lname }}</li>
+    <li><strong>Diseño:</strong> {{ $order->design_name }}</li>
+    <li><strong>Paquete:</strong> {{ $order->package_name }}</li>
+</ul>
+<p><span style="color:#009fe2;font-size:16px;">Cliente</span></p>
+<ul>
+    <li><strong>Nombre:</strong> {{ $order->bill_fname }} {{ $order->bill_lname }}</li>
+    <li><strong>Email:</strong> {{ $order->email }}</li>
+    <li><strong>Dirección:</strong> {{ $order->address }}</li>
+    <li><strong>Teléfono:</strong> {{ $order->phone }}</li>
+    <li><strong>Ciudad:</strong> {{ $order->city }}</li>
+    <li><strong>País:</strong> {{ $order->country }}</li>
+</ul>
 <p>En el transcurso de las próximas 24 horas un asesor te contactará vía telefónica o E-mail, para coordinar el pago y hacerla la entrega de tu producto.</p>
 <p>Recuerda que trabajamos con materiales en vinilos plasticados y tintas de alta calidad, pero la durabilidad y garantía corresponderá de la manipulación e instalación correcta del producto.</p>
 <p>Lee aquí nuestra Política de Envío y Garantías: http://www.proride.com.co/shipping</p>
