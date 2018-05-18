@@ -80,8 +80,9 @@ class OrderController extends Controller
 
             $m->to([
                 ['email' => $order->email, 'name' => $order->bill_fname.' '.$order->bill_lname],
-                ['email' => 'jantropberger@gmail.com', 'name' => 'jantrop Berger'],
-            ])->subject('ProRide - Orden No.'.$order->reference);
+                ['email' => 'jantropberger@gmail.com', 'name' => 'Jan Tropberger'],
+                ['email' => 'niviadesigner@gmail.com ', 'name' => 'Andres Nivia'],
+            ])->subject('Orden No.'.$order->reference);
         });
 
         return response()->json([
