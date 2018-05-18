@@ -21,6 +21,7 @@
     <li><strong>Apellido:</strong> {{ $order->sticker_lname }}</li>
     <li><strong>Diseño:</strong> {{ $order->design_name }}</li>
     <li><strong>Paquete:</strong> {{ $order->package_name }}</li>
+    <li style="font-size:18px"><strong>Precio:</strong> $ {{ number_format($order->price, 0, ",", ".") }}</li>
 </ul>
 <p><span style="color:#009fe2;font-size:16px;">Cliente</span></p>
 <ul>
