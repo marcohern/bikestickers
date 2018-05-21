@@ -4,6 +4,9 @@ body {
     background-color: black;
 }
 
+p {
+    text-align: justify;
+}
 
 .proride-whatsapp {
     text-align: right;

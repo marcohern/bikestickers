@@ -13,8 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 Route::resource('order', 'Bike\OrderController');
+Route::get('order/list/{year}/{month}/{week?}', 'Bike\OrderController@list');
 Route::resource('contact', 'Bike\ContactUsController');
 Route::post('bikesticker/purchase', 'Bike\BikeStickerController@purchase');
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
