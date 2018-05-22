@@ -77,13 +77,11 @@ class OrderController extends Controller
         $order->save();
 
         Mail::send('emails.order', ['order' => $order], function ($m) use ($order) {
-            $m->from('no-reply@proride.com.co', 'ProRide');
 
-            $m
-                ->to($order->email, $order->bill_fname.' '.$order->bill_lname)
-                ->bcc('jantropberger@gmail.com', 'Jan Tropberger')
-                ->bcc('niviadesigner@gmail.com', 'Andres Nivia')
-                ->subject('Orden No.'.$order->reference);
+            $m->to($order->email, $order->bill_fname.' '.$order->bill_lname)
+              ->bcc(config('proride.email.owner.email'), config('proride.email.from.name'))
+              ->bcc(config('proride.email.info.email'), config('proride.email.info.name'))
+              ->subject('Orden No.'.$order->reference);
         });
 
         return response()->json([

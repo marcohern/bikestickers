@@ -43,15 +43,10 @@ class ContactUsController extends Controller
         $contact->comments = $r->input('comments');
 
         Mail::send('emails.contact', ['contact' => $contact], function ($m) use ($contact) {
-            $m->from('no-reply@proride.com.co', 'ProRide');
             $m->replyTo($contact->email, $contact->name);
 
-            $m
-                //->to($order->email, $order->bill_fname.' '.$order->bill_lname)
-                //->bcc('jantropberger@gmail.com', 'Jan Tropberger')
-                ->to('niviadesigner@gmail.com', 'Andres Nivia')
-                //->to('marcohern@gmail.com', 'Marco Hernandez')
-                ->subject($contact->name.' Comenta');
+            $m->to(config('proride.email.info.email'), config('proride.email.info.name'))
+              ->subject($contact->name.' Comenta');
         });
         return response()->json([
             'success' => true,
