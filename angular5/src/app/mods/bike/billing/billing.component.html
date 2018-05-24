@@ -38,16 +38,37 @@
         </div>
     </div>
     <div class="row">
-            <div class="col-md-12">
-                <p>
-                    Puedes hacer click sobre 'Guardar' si deseas guardar detalles en tu maquina, pero no 
-                    quieres confirmar la orden aun. Mientras no la confirmes, podras hacer ajustes.
-                    Una vez la orden es confirmada, se enviara un correo a tu dirección de email con los detalles de la orden
-                    y unos de nuestros asesores lo contactará.
-                </p>
-                <ngb-alert type="success" *ngIf="savedAlert" (close)="savedAlert=false;">La informacion de Envío guardada!</ngb-alert>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <input class="form-control" type="text" placeholder="Código de Descuento"  formControlName="discount_code" (change)="onSetDiscountCode()"/><br>
+            <ngb-alert type="danger" *ngIf="discountCodeInvalid" (close)="discountCodeInvalid=false;">El código de descuento es inválido o ya expiró!</ngb-alert>
+            <div class="row">
+                <div class="col-4">Subtotal</div>
+                <div class="col-8 text-right"><strong>{{order.billing.subtotal  | currency:'COP':'':'1.0-0'}}</strong></div>
+            </div>
+            <div class="row">
+                <div class="col-4">Descuento</div>
+                <div class="col-8 text-right"><strong>{{order.billing.discount  | currency:'COP':'':'1.0-0'}}</strong></div>
+            </div>
+            <div class="row">
+                <div class="col-4 text-lg"><h2>Total</h2></div>
+                <div class="col-8 text-right"><h2>{{order.billing.total  | currency:'COP':'':'1.0-0'}}</h2></div>
             </div>
         </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            
+            <p>
+                Puedes hacer click sobre 'Guardar' si deseas guardar detalles en tu maquina, pero no 
+                quieres confirmar la orden aun. Mientras no la confirmes, podras hacer ajustes.
+                Una vez la orden es confirmada, se enviara un correo a tu dirección de email con los detalles de la orden
+                y unos de nuestros asesores lo contactará.
+            </p>
+            <ngb-alert type="success" *ngIf="savedAlert" (close)="savedAlert=false;">La informacion de Envío guardada!</ngb-alert>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-12 text-center">
             <div class="btn-group btn-group-lg" role="group" aria-label="Siguiente o Anterior">

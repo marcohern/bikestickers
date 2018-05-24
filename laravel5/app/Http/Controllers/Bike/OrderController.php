@@ -61,7 +61,7 @@ class OrderController extends Controller
         $order->design_name   = $rorder['design']['name'];
         $order->package_code  = $rorder['package']['code'];
         $order->package_name  = $rorder['package']['name'].' ('.$rorder['package']['detail'].')';
-        $order->price         = $rorder['package']['price'];
+        $order->price         = $rorder['billing']['total'];
         $order->bill_fname    = $rorder['billing']['fname'];
         $order->bill_lname    = $rorder['billing']['lname'];
         $order->email         = $rorder['billing']['email'];
@@ -80,7 +80,7 @@ class OrderController extends Controller
 
             $m->to($order->email, $order->bill_fname.' '.$order->bill_lname)
               ->bcc(config('proride.email.owner.email'), config('proride.email.from.name'))
-              ->bcc(config('proride.email.info.email'), config('proride.email.info.name'))
+              //->bcc(config('proride.email.info.email'), config('proride.email.info.name'))
               ->subject('Orden No.'.$order->reference);
         });
 

@@ -57,7 +57,8 @@ export class SummaryComponent extends OrderBehavior implements OnInit {
         state: order.state,
         country: order.country,
         zip: order.zip,
-        phone: order.phone
+        phone: order.phone,
+        total: order.price
       };
       
     }, (error) => {

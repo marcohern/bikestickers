@@ -69,4 +69,12 @@ export class OrderBehavior extends FlagDisplayBehavior {
         this.order.billing = billing;
         this.saveOrder();
     }
+
+    savePrice(subtotal:number, discountCode:string, discount:number, total:number) {
+        this.order.billing.subtotal = subtotal;
+        this.order.billing.discountCode = discountCode;
+        this.order.billing.discount = discount;
+        this.order.billing.total = total;
+        this.saveOrder();
+    }
 }

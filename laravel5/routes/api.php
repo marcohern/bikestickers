@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 Route::resource('order', 'Bike\OrderController');
 Route::get('order/list/{year}/{month}/{week?}', 'Bike\OrderController@list');
 Route::resource('contact', 'Bike\ContactUsController');
+Route::resource('discount', 'Bike\DiscountController');
 Route::post('bikesticker/purchase', 'Bike\BikeStickerController@purchase');
 
 

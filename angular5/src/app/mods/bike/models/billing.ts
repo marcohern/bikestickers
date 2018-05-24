@@ -8,4 +8,9 @@ export class Billing {
     state:string = '';
     country:string = '';
     zip:string = '';
+
+    discountCode: string = '';
+    subtotal: number = 0;
+    discount: number = 0;
+    total: number = 0;
 }
