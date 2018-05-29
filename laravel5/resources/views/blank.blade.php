@@ -5,6 +5,7 @@
   <title>Proride</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sticker adhesivos para personalizar y marcar tu bicicleta, casco y demás implementos para sentirte como un profesional.">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="/bikestickers/assets/proride/favicon.png">
   <link rel="stylesheet" href="bikestickers/assets/bootstrap/css/bootstrap.min.css">
