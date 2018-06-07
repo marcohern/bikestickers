@@ -80,7 +80,8 @@ class OrderController extends Controller
 
             $m->to($order->email, $order->bill_fname.' '.$order->bill_lname)
               ->bcc(config('proride.email.owner.email'), config('proride.email.from.name'))
-              //->bcc(config('proride.email.info.email'), config('proride.email.info.name'))
+              ->bcc(config('proride.email.info.email' ), config('proride.email.info.name'))
+              ->bcc(config('proride.email.sales.email'), config('proride.email.sales.name'))
               ->subject('Orden No.'.$order->reference);
         });
 
