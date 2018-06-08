@@ -1,7 +1,7 @@
-<proride-cover asset="cover5" label="Simple, rápido y profesional"></proride-cover>
+<proride-cover asset="cover5" label="{{'CV SIMPLE FAST PROFESIONAL' | translate}}"></proride-cover>
 <proride-breadcrumbs [level]="1"></proride-breadcrumbs>
 <div class="container">
-    <h2>Diseño</h2>
+    <h2 translate>DESIGN</h2>
 </div>
 <proride-sticker [fname]="order.sticker.fname" [lname]="order.sticker.lname" [flag]="order.sticker.vflag" [design]="order.design" [mode]="stickerMode"></proride-sticker>
 <div class="container">
@@ -17,7 +17,7 @@
     </div>
     <div class="row">
         <div class="col-md-12 text-center">
-            <div *ngIf="order.design"> Seleccionaste <span class="btn btn-dark">{{order.design.name}}</span></div>
+            <div *ngIf="order.design"> <span translate>YOU HAVE PICKED</span> <span class="btn btn-dark">{{order.design.name}}</span></div>
             <div *ngIf="showErrorMessage" class="alert alert-error">Por favor selecciona un diseño</div>
         </div>
     </div>
@@ -25,8 +25,8 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <div class="btn-group btn-group-lg" role="group" aria-label="Siguiente o Anterior">
-                <button type="button" class="btn btn-secondary btn-outline-dark" (click)="previous()">Anterior</button>
-                <button type="button" class="btn btn-secondary btn-outline-dark" (click)="next()" [disabled]="!order.design">Siguiente</button>
+                <button type="button" class="btn btn-secondary btn-outline-dark" (click)="previous()" translate>PREV</button>
+                <button type="button" class="btn btn-secondary btn-outline-dark" (click)="next()" [disabled]="!order.design" translate>NEXT</button>
             </div>
         </div>
     </div>

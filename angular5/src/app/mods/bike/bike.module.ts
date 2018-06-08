@@ -23,9 +23,7 @@ import { ContactComponent } from './contact/contact.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { SearchOrdersComponent } from './search-orders/search-orders.component';
-
-
-
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -34,6 +32,7 @@ import { SearchOrdersComponent } from './search-orders/search-orders.component';
     ReactiveFormsModule,
     NgbModule.forRoot(),
     RequestModule,
+    TranslateModule,
     BikeRoutes
   ],
   declarations: [

@@ -1,7 +1,7 @@
 <ul class="nav nav-fill">
   <li class="nav-item" *ngFor="let crumb of crumbs">
-    <span class="nav-link" *ngIf="!crumb.enabled" [ngClass]="crumb.cls">{{crumb.num}}. {{crumb.name}}</span>
-    <a class="nav-link" *ngIf="crumb.enabled" [ngClass]="crumb.cls" [routerLink]="crumb.route">{{crumb.num}}. {{crumb.name}}</a>
+    <span class="nav-link" *ngIf="!crumb.enabled" [ngClass]="crumb.cls">{{crumb.num}}. {{crumb.name | translate}}</span>
+    <a class="nav-link" *ngIf="crumb.enabled" [ngClass]="crumb.cls" [routerLink]="crumb.route">{{crumb.num}}. {{crumb.name | translate}}</a>
   </li>
 </ul>
 <br>

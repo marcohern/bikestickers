@@ -1,0 +1,36 @@
+{
+    "PRIVACY POLICY": "Políticas de Privacidad",
+    "SHIPPING POLICY": "Política de Envío y Garantías",
+    "ALL RIGHTS RESERVED": "Todos los Derechos Reservados",
+    "DESIGN BY": "Diseño por",
+
+    "BR COUNTRY NAME": "País/Nombre",
+    "BR DESIGN"      : "Diseño",
+    "BR PACKAGE"     : "Paquete",
+    "BR SEND"        : "Envío",
+
+    "MENU START" : "INICIO",
+    "MENU US" : "NOSOTROS",
+    "MENU NEWS" : "NOTICIAS",
+    "MENU CONTACT" : "CONTACTO",
+
+    "CV STICKERS FOR YOUR BIKE": "Stickers para tu Bici",
+    "CV SIMPLE FAST PROFESIONAL": "Simple, rápido y profesional",
+    "CV CUSTOMIZE YOUR BIKE IN 4 STEPS": "Personaliza tu bici en 4 pasos",
+
+    "COUNTRY NAME": "País y Nombre",
+    "DESIGN": "Diseño",
+    "PACKAGE": "Paquete",
+
+    "FIRST NAME": "Nombre",
+    "LAST NAME": "Apellido",
+    "YOU HAVE PICKED": "Seleccionaste",
+    "FREE SHIPPING INCLUDED": "Incluido envío gratis",
+    
+    "pack1-6s-4g-2p": { "TITLE": "Paquete de 6 Sticker", "BRIEF": "4 Grandes y 2 Pequeños" },
+    "pack2-mobile":   { "TITLE": "Sticker Mobile", "BRIEF": "Proximamente" },
+    "pack3-protect":  { "TITLE": "Sticker Protector", "BRIEF": "Proximamente" },
+
+    "NEXT": "Next",
+    "PREV": "Previous"
+}

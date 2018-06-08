@@ -1,8 +1,8 @@
-<proride-cover asset="cover2" label="Stickers para tu Bici"></proride-cover>
+<proride-cover asset="cover2" label="{{ 'CV STICKERS FOR YOUR BIKE' | translate }}"></proride-cover>
 <proride-breadcrumbs [level]="0"></proride-breadcrumbs>
 <form [formGroup]="nameFlagFormGroup" (ngSubmit)="next()" novalidate >
   <div class="container">
-    <h2>País y Nombre</h2>
+    <h2 translate>COUNTRY NAME</h2>
     
     <div class="row">
       <div class="col-md-12">
@@ -22,28 +22,28 @@
       <div class="col-md-6">
           <div class="form-group">
             <div class="input-group">
-                <input type="text" class="form-control form-control-lg" placeholder="*Nombre" aria-label="Nombre" formControlName="fname" required (change)="onChangeName()">
+                <input type="text" class="form-control form-control-lg" placeholder="*{{'FIRST NAME' | translate }}" aria-label="Nombre" formControlName="fname" required (change)="onChangeName()">
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <div class="input-group">
-              <input type="text" class="form-control form-control-lg" placeholder="*Apellido" aria-label="Apellido" formControlName="lname" required (change)="onChangeName()">
+              <input type="text" class="form-control form-control-lg" placeholder="*{{'LAST NAME' | translate }}" aria-label="Apellido" formControlName="lname" required (change)="onChangeName()">
             </div>
           </div>
         </div>
     </div>
     <div class="row">
       <div class="col-md-12 text-center">
-          <button type="submit" class="btn btn-outline-dark btn-lg">Siguiente</button>
+          <button type="submit" class="btn btn-outline-dark btn-lg"><span translate>NEXT</span></button>
       </div>
     </div>
   </div>
 </form>
 <ng-template #flagPicker let-c="close" let-d="dismiss">
   <div class="modal-header">
-    <h4 class="modal-title text-dark">Modal title</h4>
+    <h4 class="modal-title text-dark">Banderas</h4>
     <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>

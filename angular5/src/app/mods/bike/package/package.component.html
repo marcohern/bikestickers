@@ -1,14 +1,14 @@
-<proride-cover asset="cover3" label="Personaliza tu bici en 4 pasos"></proride-cover>
+<proride-cover asset="cover3" label="{{'CV CUSTOMIZE YOUR BIKE IN 4 STEPS' | translate}}"></proride-cover>
 <proride-breadcrumbs [level]="2"></proride-breadcrumbs>
 <div class="container">
-    <h2>Paquete</h2>
+    <h2 translate>PACKAGE</h2>
 </div>
 <proride-sticker [fname]="order.sticker.fname" [lname]="order.sticker.lname" [flag]="order.sticker.vflag" [design]="order.design" [mode]="stickerMode"></proride-sticker>
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-center" *ngIf="order.package">
             <h3 class="text-primary" style="font-style: italic;">{{order.package.price | currency:'COP':'':'1.0-0'}}</h3>
-            <p class="text-primary"><img alt="Envio Gratis" src="{{root}}/assets/proride/transporte.png" class="img-fluid"> Incluido envío gratis</p>
+            <p class="text-primary"><img alt="Envio Gratis" src="{{root}}/assets/proride/transporte.png" class="img-fluid"> <span translate>FREE SHIPPING INCLUDED</span></p>
         </div>
     </div>
     <div class="proride-btpanel">
@@ -21,8 +21,8 @@
                     <img alt="{{package.name}}" *ngIf="package.enabled" src="{{root}}/assets/proride/disenos_{{order.design.code}}.png" width="200" height="200"/>
                     <img alt="{{package.name}}" *ngIf="!package.enabled" src="{{root}}/assets/proride/{{package.code}}.png" width="200" height="200"/>
                     <div class="proride-btpanel-text">
-                        <div class="proride-btpanel-header">{{package.name}}</div>
-                        <div class="proride-btpanel-detail">{{package.detail}}</div>
+                        <div class="proride-btpanel-header">{{package.code + '.TITLE' | translate }}</div>
+                        <div class="proride-btpanel-detail">{{package.code + '.BRIEF' | translate }}</div>
                     </div>
                 </button>
             </div>
@@ -32,8 +32,8 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <div class="btn-group btn-group-lg" role="group" aria-label="Siguiente o Anterior">
-                <button type="button" class="btn btn-secondary btn-outline-dark" (click)="previous()">Anterior</button>
-                <button type="button" class="btn btn-secondary btn-outline-dark" (click)="next()" [disabled]="!order.package">Siguiente</button>
+                <button type="button" class="btn btn-secondary btn-outline-dark" (click)="previous()" translate>PREV</button>
+                <button type="button" class="btn btn-secondary btn-outline-dark" (click)="next()" [disabled]="!order.package" translate>NEXT</button>
             </div>
         </div>
     </div>
