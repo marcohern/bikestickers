@@ -23,6 +23,7 @@
     "DESIGN": "Diseño",
     "PACKAGE": "Paquete",
     "BILLING": "Información de Envío",
+    "ABOUT US":"Acerca de Nosotros",
 
     "FIRST NAME": "Nombre",
     "LAST NAME": "Apellido",
@@ -49,5 +50,10 @@
     "NEXT": "Next",
     "PREV": "Previous",
     "SAVE": "Guardar",
-    "CONFIRM ORDER": "Confirmar Orden"
+    "CONFIRM ORDER": "Confirmar Orden",
+
+    "WE ARE THE BEST PLATFORM": "{{name}} es la mejor plataforma digital en Colombia para crear stickers personalizados para tu bici. Somos expertos en personalizar tu experiencia como ciclista y en darle a tu bici un aspecto profesional.",
+    "SIMPLE FAST PROFESIONAL": "Simple, rápido y profesional.",
+    "WE WERE FOUNDED IN 2018": "{{name}} fue fundado en 2018 por un par de ciclistas entusiastas: Andrew Nivia, diseñador web y su compañero Jan Tropberger, ex ejecutivo de la industria del ciclismo, quien se inspiró en un evento de distribuidores de bicicletas en Niza Francia, en el cuál las Stickers personalizadas en las bicicletas, crearon gran emoción y diversión entre los asistentes.",
+    "HOME IN CITY": "{{name}} con sede en {{city}}, la capital del ciclismo Colombiano, tiene la misión de contagiar la personalización de lo que más te gusta: tu bici."
 }
