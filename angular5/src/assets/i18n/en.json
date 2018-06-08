@@ -24,6 +24,8 @@
     "PACKAGE": "Package",
     "BILLING": "Shipping Information",
     "ABOUT US":"About Us",
+    "NEWS":"News",
+    "INSTAGRAM": "Instagram",
 
     "FIRST NAME": "First Name",
     "LAST NAME": "Last Name",
@@ -55,5 +57,7 @@
     "WE ARE THE BEST PLATFORM": "{{name}} is the best digital platform in Colombia to create customized stickes for your bike. We are experts in customizing your experience as a cyclist and giving your bike a professional look.",
     "SIMPLE FAST PROFESIONAL": "Simple, fast and profesional.",
     "WE WERE FOUNDED IN 2018": "{{name}} was founded in 2018 by a couple of motivated cyclists: web designer Andrew Nivia and his partner and bycicle industry veteran Jan Tropberger, who was inspired by an cyclist event in Nize, France, where the idea customizeable stickers for bycicles generated excitement and fun among the visitors.",
-    "HOME IN CITY": "{{name}}, located in {{city}}, the cyclist capital of Colombia, has a mision to spread the customization of that which you love the most: your bike."
+    "HOME IN CITY": "{{name}}, located in {{city}}, the cyclist capital of Colombia, has a mision to spread the customization of that which you love the most: your bike.",
+    "YOU MAY CHANGE COLOR OF STICKERS": "If you would like to change the background color of your sticker, we are capable of doing so. Just let us know what color you would like. {{name}} offers you all posibilities.",
+    "FOLLOW US ON INSTAGRAM": "Follow us on Instagram and get notified of all our latest news, events and promotions that are available for you."
 }
