@@ -14,7 +14,7 @@ export class AppComponent extends RootBehavior implements OnInit {
 
   constructor(private rs:RequestService, private tr:TranslateService) {
     super();
-    var lang = 'es';
+    var lang = 'en';
     tr.setDefaultLang(lang);
     tr.use(lang);
   }

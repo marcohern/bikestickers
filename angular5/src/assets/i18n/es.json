@@ -17,20 +17,37 @@
     "CV STICKERS FOR YOUR BIKE": "Stickers para tu Bici",
     "CV SIMPLE FAST PROFESIONAL": "Simple, rápido y profesional",
     "CV CUSTOMIZE YOUR BIKE IN 4 STEPS": "Personaliza tu bici en 4 pasos",
+    "CV BRAND YOUR BIKE LIKE A PRO":"Marca tu bici como un Pro",
 
     "COUNTRY NAME": "País y Nombre",
     "DESIGN": "Diseño",
     "PACKAGE": "Paquete",
+    "BILLING": "Información de Envío",
 
     "FIRST NAME": "Nombre",
     "LAST NAME": "Apellido",
+    "EMAIL": "Email",
+    "ADDRESS": "Dirección",
+    "PHONE NUMBER": "Teléfono",
+    "CITY": "Ciudad",
+    "COUNTRY": "País",
+    "DISCOUNT CODE": "Código de Descuento",
+    "SUBTOTAL": "Subtotal",
+    "DISCOUNT": "Descuento",
+    "TOTAL": "Total",
+
     "YOU HAVE PICKED": "Seleccionaste",
     "FREE SHIPPING INCLUDED": "Incluido envío gratis",
+    "SAVE ORDER INFO": "Puedes hacer click sobre 'Guardar' si deseas guardar detalles en tu maquina, pero no quieres confirmar la orden aun. Mientras no la confirmes, podras hacer ajustes. Una vez la orden es confirmada, se enviara un correo a tu dirección de email con los detalles de la orden y unos de nuestros asesores lo contactará.",
+    "SHIPPING INFO SAVED": "Informacion de Envío guardada!",
+    "DISCOUNT CODE INVALID": "El código de descuento es inválido o ya expiró!",
     
     "pack1-6s-4g-2p": { "TITLE": "Paquete de 6 Sticker", "BRIEF": "4 Grandes y 2 Pequeños" },
     "pack2-mobile":   { "TITLE": "Sticker Mobile", "BRIEF": "Proximamente" },
     "pack3-protect":  { "TITLE": "Sticker Protector", "BRIEF": "Proximamente" },
 
     "NEXT": "Next",
-    "PREV": "Previous"
+    "PREV": "Previous",
+    "SAVE": "Guardar",
+    "CONFIRM ORDER": "Confirmar Orden"
 }

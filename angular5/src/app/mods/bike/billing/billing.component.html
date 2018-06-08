@@ -1,57 +1,57 @@
-<proride-cover asset="cover4" label="Marca tu bici como un Pro"></proride-cover>
+<proride-cover asset="cover4" label="{{'CV BRAND YOUR BIKE LIKE A PRO'|translate}}"></proride-cover>
 <proride-breadcrumbs [level]="3"></proride-breadcrumbs>
 <div class="container">
-    <h2>Información de Envío</h2>
+    <h2 translate>BILLING</h2>
 </div>
 <proride-sticker [fname]="order.sticker.fname" [lname]="order.sticker.lname" [flag]="order.sticker.vflag" [design]="order.design" [mode]="stickerMode"></proride-sticker>
 <form [formGroup]="billingFormGroup" (ngSubmit)="next()" novalidate>
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="*Nombre" formControlName="fname" required/><br>
+            <input class="form-control" type="text" placeholder="*{{'FIRST NAME' | translate }}" formControlName="fname" required/><br>
         </div>
         <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="*Apellido"  formControlName="lname" required /><br>
+            <input class="form-control" type="text" placeholder="*{{'LAST NAME' | translate }}"  formControlName="lname" required /><br>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-            <input class="form-control" type="email" placeholder="*Email" formControlName="email" required/><br>
+            <input class="form-control" type="email" placeholder="*{{'EMAIL' | translate }}" formControlName="email" required/><br>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="*Dirección" formControlName="address" required/><br>
+            <input class="form-control" type="text" placeholder="*{{'ADDRESS' | translate }}" formControlName="address" required/><br>
         </div>
         <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="*Teléfono" formControlName="phone" required/><br>
+            <input class="form-control" type="text" placeholder="*{{'PHONE NUMBER' | translate }}" formControlName="phone" required/><br>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="*Ciudad" formControlName="city" required/><br>
+            <input class="form-control" type="text" placeholder="*{{'CITY' | translate }}" formControlName="city" required/><br>
         </div>
         <div class="col-md-6">
-            <input class="form-control" type="text" placeholder="*País"  formControlName="country" required/><br>
+            <input class="form-control" type="text" placeholder="*{{'COUNTRY' | translate }}"  formControlName="country" required/><br>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
-            <input class="form-control" type="text" placeholder="Código de Descuento"  formControlName="discount_code" (change)="onSetDiscountCode()"/><br>
-            <ngb-alert type="danger" *ngIf="discountCodeInvalid" (close)="discountCodeInvalid=false;">El código de descuento es inválido o ya expiró!</ngb-alert>
+            <input class="form-control" type="text" placeholder="{{'DISCOUNT CODE' | translate }}"  formControlName="discount_code" (change)="onSetDiscountCode()"/><br>
+            <ngb-alert type="danger" *ngIf="discountCodeInvalid" (close)="discountCodeInvalid=false;"><span translate>DISCOUNT CODE INVALID</span></ngb-alert>
             <div class="row">
-                <div class="col-4">Subtotal</div>
+                <div class="col-4" translate><span translate>SUBTOTAL</span></div>
                 <div class="col-8 text-right"><strong>{{order.billing.subtotal  | currency:'COP':'':'1.0-0'}}</strong></div>
             </div>
             <div class="row">
-                <div class="col-4">Descuento</div>
+                <div class="col-4"><span translate>DISCOUNT</span></div>
                 <div class="col-8 text-right"><strong>{{order.billing.discount  | currency:'COP':'':'1.0-0'}}</strong></div>
             </div>
             <div class="row">
-                <div class="col-4 text-lg"><h2>Total</h2></div>
+                <div class="col-4 text-lg"><h2 translate>TOTAL</h2></div>
                 <div class="col-8 text-right"><h2>{{order.billing.total  | currency:'COP':'':'1.0-0'}}</h2></div>
             </div>
         </div>
@@ -60,20 +60,15 @@
     <div class="row">
         <div class="col-md-12">
             
-            <p>
-                Puedes hacer click sobre 'Guardar' si deseas guardar detalles en tu maquina, pero no 
-                quieres confirmar la orden aun. Mientras no la confirmes, podras hacer ajustes.
-                Una vez la orden es confirmada, se enviara un correo a tu dirección de email con los detalles de la orden
-                y unos de nuestros asesores lo contactará.
-            </p>
-            <ngb-alert type="success" *ngIf="savedAlert" (close)="savedAlert=false;">La informacion de Envío guardada!</ngb-alert>
+            <p translate>SAVE ORDER INFO</p>
+            <ngb-alert type="success" *ngIf="savedAlert" (close)="savedAlert=false;"><span translate>SHIPPING INFO SAVED</span></ngb-alert>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 text-center">
             <div class="btn-group btn-group-lg" role="group" aria-label="Siguiente o Anterior">
-                <button type="button" class="btn btn-secondary btn-outline-dark" (click)="previous()">Anterior</button>
-                <button type="button" class="btn btn-secondary btn-outline-dark" (click)="save()">Guardar</button>
+                <button type="button" class="btn btn-secondary btn-outline-dark" (click)="previous()"><span translate>PREV</span></button>
+                <button type="button" class="btn btn-secondary btn-outline-dark" (click)="save()"><span translate>SAVE</span></button>
             </div>
             <br><br>
         </div>
@@ -81,7 +76,7 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <div class="btn-group btn-group-lg" role="group" aria-label="Siguiente o Anterior">
-                <button type="submit" class="btn btn-secondary btn-outline-dark">Confirmar Orden</button>
+                <button type="submit" class="btn btn-secondary btn-outline-dark"><span translate>CONFIRM ORDER</span></button>
             </div>
             <br><br>
         </div>
