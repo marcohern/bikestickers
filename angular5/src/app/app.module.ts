@@ -10,9 +10,10 @@ import { AppComponent } from './app.component';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { environment } from '../environments/environment';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, environment.root + '/assets/i18n/', '.json');
 }
 
 @NgModule({
