@@ -33,12 +33,12 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/contact" (click)="toggleMenu()"><span translate>MENU CONTACT</span></a>
       </li>
-      <!--li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/en">English</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" href="/" (click)="setLanguage($event, 'en')">English</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/es">Español</a>
-      </li-->
+        <a class="nav-link" href="/" (click)="setLanguage($event, 'es')">Español</a>
+      </li>
       
     </ul>
   </div>

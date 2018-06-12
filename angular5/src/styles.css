@@ -189,8 +189,9 @@ input.ng-valid:not(form) {
     font-size: 1.5em;
 }
 
-.proride-btpanel-text .proride-btpanel-body {
+.proride-btpanel-text .proride-btpanel-detail {
     font-weight: normal;
+    font-size:0.7em;
 }
 
 .proride-error {

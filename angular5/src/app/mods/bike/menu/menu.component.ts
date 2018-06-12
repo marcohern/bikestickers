@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RootBehavior } from '../behaviors/root-behavior';
+import { BikeLangService } from '../bike-lang.service';
 
 @Component({
   selector: 'mrc-menu',
@@ -10,7 +11,7 @@ export class MenuComponent extends RootBehavior implements OnInit {
   
   public isCollapsed = true;
 
-  constructor() { 
+  constructor(private bsl:BikeLangService) { 
     super();
   }
 
@@ -21,6 +22,11 @@ export class MenuComponent extends RootBehavior implements OnInit {
   toggleMenu() {
     console.log("toggleMenu");
     this.isCollapsed = !this.isCollapsed;
+  }
+
+  setLanguage($event, lang) {
+    $event.preventDefault();
+    this.bsl.setLanguage(lang);
   }
 
 }

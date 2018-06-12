@@ -45,12 +45,12 @@
     "SHIPPING INFO SAVED": "Informacion de Envío guardada!",
     "DISCOUNT CODE INVALID": "El código de descuento es inválido o ya expiró!",
     
-    "pack1-6s-4g-2p": { "TITLE": "Paquete de 6 Sticker", "BRIEF": "4 Grandes y 2 Pequeños" },
+    "pack1-6s-4g-2p": { "TITLE": "Paquete de 6 Sticker", "BRIEF": "4 Grandes de 8.5cm y 2 Pequeños de 6.5cm" },
     "pack2-mobile":   { "TITLE": "Sticker Mobile", "BRIEF": "Proximamente" },
     "pack3-protect":  { "TITLE": "Sticker Protector", "BRIEF": "Proximamente" },
 
-    "NEXT": "Next",
-    "PREV": "Previous",
+    "NEXT": "Siguente",
+    "PREV": "Anterior",
     "SAVE": "Guardar",
     "CONFIRM ORDER": "Confirmar Orden",
 
